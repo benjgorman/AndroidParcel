@@ -45,6 +45,7 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -76,8 +77,15 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
         super.onCreate(savedInstanceState);
         context = this;
         
+        
+        
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);       
+        
         activityManager = getLocalActivityManager();
         setContentView(R.layout.customslidingtabhost);
+        
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
+        
         contentViewLayout = (LinearLayout)findViewById(R.id.contentViewLayout);
         bottomBar = (HorizontalScrollView)findViewById(R.id.bottomBar);
         bottomRadioGroup = (RadioGroup)findViewById(R.id.bottomMenu);

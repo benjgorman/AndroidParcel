@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+
 /*
  * This activity demonstrates the use of ScrollableTabActivity by extending the class
  * 
@@ -24,6 +25,7 @@ public class PharosPackages  extends ScrollableTabActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        
         /*
          * set this activity as the tab bar delegate
          * so that onTabChanged is called when users tap on the bar
@@ -33,6 +35,7 @@ public class PharosPackages  extends ScrollableTabActivity{
         for (int i=0; i<=6; i++)
         {
         	Intent intent;
+        	
         	if (i==2) intent = new Intent(this, PharosParcelActivity.class);
         	else if (i==3) intent = new Intent(this, DemoActivity1.class);
 
@@ -76,4 +79,3 @@ public class PharosPackages  extends ScrollableTabActivity{
     	}
     }
 }
-
