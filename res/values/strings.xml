@@ -2,4 +2,13 @@
 <resources>
     <string name="hello">Hello World, PharosTestActivity!</string>
     <string name="app_name">PharosTest</string>
+    
+    <string name="country_prompt">Where are you sending to?</string>
+    <string-array name="country_array">
+    	<item>United Kingdom</item>
+    	<item>France</item>
+    	<item>Spain</item>
+    	<item>Germany</item>
+    	<item>Ireland</item>
+    </string-array>
 </resources>

@@ -3,7 +3,7 @@
       package="com.benjgorman.pharostest"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="7" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
         <activity android:name=".PharosPackages"
@@ -37,6 +37,27 @@
         
         <activity android:name=".VoiceRecognitionDemo"
                   android:label="VoiceRecognitionDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".SendPackageActivity"
+                  android:label="SendPackageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".OnMyItemSelectedListener"
+                  android:label="OnMyItemSelectedListener">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".GetQuoteActivity"
+                  android:label="GetQuoteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

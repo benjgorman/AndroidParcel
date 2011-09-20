@@ -35,6 +35,9 @@ public class PharosPackages  extends ScrollableTabActivity{
         	Intent intent;
         	if (i==2) intent = new Intent(this, PharosParcelActivity.class);
         	else if (i==3) intent = new Intent(this, DemoActivity1.class);
+
+        	else if (i==1) intent = new Intent(this, SendPackageActivity.class);
+
         	else intent = new Intent(this, DemoActivity2.class);
         	
         	/*
