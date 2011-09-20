@@ -30,10 +30,11 @@ public class PharosPackages  extends ScrollableTabActivity{
          */
         setDelegate(new SliderBarActivityDelegateImpl());
         
-        for (int i=0; i<=5; i++)
+        for (int i=0; i<=6; i++)
         {
         	Intent intent;
         	if (i==2) intent = new Intent(this, PharosParcelActivity.class);
+        	else if (i==3) intent = new Intent(this, DemoActivity1.class);
         	else intent = new Intent(this, DemoActivity2.class);
         	
         	/*
@@ -47,7 +48,6 @@ public class PharosPackages  extends ScrollableTabActivity{
              case 3: this.addTab("History", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
              case 4: this.addTab("Services", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
              case 5: this.addTab("Help", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
-             
             
              default:; break;
          }
