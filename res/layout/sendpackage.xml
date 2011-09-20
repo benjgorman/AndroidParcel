@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="#AAA">
+   	<Button android:id="@+id/btn_getquote" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:text="Get Quote"  
+		android:layout_centerHorizontal="true"/>
+	<Button android:id="@+id/btn_sendpackage" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:text="Send Package"
+		android:layout_below="@+id/btn_getquote" 
+		android:layout_centerHorizontal="true"/>
+</RelativeLayout>
