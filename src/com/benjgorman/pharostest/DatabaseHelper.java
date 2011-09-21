@@ -6,12 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-	private static final String DATABASE_NAME = "applicationdata";
+	private static final String DATABASE_NAME = "PharosParcelDB";
 
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	// Database creation sql statement
-	private static final String DATABASE_CREATE = "create table todo (_id integer primary key autoincrement, "
+	private static final String DATABASE_CREATE = "create table tracking_history (_id integer primary key autoincrement, "
 			+ "category text not null, summary text not null, description text not null);";
 
 	public DatabaseHelper(Context context) {
@@ -27,12 +27,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	// Method is called during an upgrade of the database, e.g. if you increase
 	// the database version
 	@Override
-	public void onUpgrade(SQLiteDatabase database, int oldVersion,
-			int newVersion) {
+	public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
 		Log.w(DatabaseHelper.class.getName(),
 				"Upgrading database from version " + oldVersion + " to "
 						+ newVersion + ", which will destroy all old data");
-		database.execSQL("DROP TABLE IF EXISTS todo");
+		
+		database.execSQL("DROP TABLE IF EXISTS tracking_history");
 		onCreate(database);
 	}
 }
