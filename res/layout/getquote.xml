@@ -6,7 +6,7 @@
   android:layout_height="match_parent">
     <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
     			android:layout_width="wrap_content" 
-    			android:text="Where are you send to?" 
+    			android:text="Where are you sending to?" 
     			android:id="@+id/txt_country" 
     			android:layout_height="wrap_content">
     </TextView>
@@ -15,6 +15,28 @@
     			android:layout_height="wrap_content"
     			android:prompt="@string/country_prompt">
     </Spinner>
-    
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_width="wrap_content" 
+    			android:text="\n How much does it weigh?" 
+    			android:id="@+id/txt_weight" 
+    			android:layout_height="wrap_content"> 
+    </TextView> 
+    <Spinner 	android:layout_width="match_parent" 
+    			android:id="@+id/spn_weight" 
+    			android:layout_height="wrap_content"
+    			android:prompt="@string/weight_prompt">
+    </Spinner>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:layout_width="wrap_content" 
+    			android:text="\n Please note that 'United Kingdom' does not include the Republic of Ireland or the Channel Islands.\n\n" 
+    			android:id="@+id/txt_disclaimer" 
+    			android:gravity="center_horizontal"
+    			android:layout_height="wrap_content"> 
+    </TextView> 
+    <Button 	android:id="@+id/btn_quoteme" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:text="Get Quote!" 
+				android:layout_centerHorizontal="true" android:layout_gravity="center"/>
 </LinearLayout>
 
