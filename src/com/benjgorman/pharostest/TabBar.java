@@ -19,7 +19,7 @@ import android.util.Log;
  * res/layout/customslidingtabhost.xml
  * res/layout/scrollgroupradiobuttonview.xml
  */
-public class PharosPackages  extends ScrollableTabActivity{
+public class TabBar  extends ScrollableTabActivity{
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,11 +49,12 @@ public class PharosPackages  extends ScrollableTabActivity{
         	 * Shades are opaque areas in on and off state are specific as parameters
         	 */
         	 switch (i) {
-             case 1: this.addTab("Packages", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
-             case 2: this.addTab("Tracking", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
-             case 3: this.addTab("History", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
-             case 4: this.addTab("Services", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
-             case 5: this.addTab("Help", R.drawable.star, RadioStateDrawable.SHADE_GRAY, RadioStateDrawable.SHADE_GREEN,intent);;       break;
+
+             case 1: this.addTab("packages", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
+             case 2: this.addTab("Tracking", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
+             case 3: this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
+             case 4: this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
+             case 5: this.addTab("Help", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
             
              default:; break;
          }

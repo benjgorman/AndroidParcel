@@ -11,7 +11,16 @@
     	<item>Germany</item>
     	<item>Ireland</item>
     </string-array>
-    
+	<string name="no_todos">Currently there are no Todo items maintained</string>
+	<string name="menu_insert">Add Item</string>
+	<string name="menu_delete">Delete Todo</string>
+	<string name="todo_summary">Summary</string>
+	<string name="todo_description">Delete Todo</string>
+	<string name="todo_edit_summary">Summary</string>
+	<string name="todo_edit_description">Description</string>
+	<string name="todo_edit_confirm">Confirm</string>
+	<color name="listcolor">#FFE87C</color>
+	<color name="black">#000000</color>
     <string name="weight_prompt">How much does it weigh?</string>
     <string-array name="weight_array">
     	<item>0.5Kg</item>
@@ -34,5 +43,4 @@
     	<item>9.0Kg</item>
     	<item>9.5Kg</item>
     </string-array>
-    
 </resources>

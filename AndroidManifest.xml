@@ -7,62 +7,54 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/CustomTheme" android:debuggable="true">
     
-        <activity android:name=".PharosPackages"
+        <activity android:name=".TabBar"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+			
         <activity android:name=".DemoActivity1"
                   android:label="Demo Activity 1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
         
         <activity android:name=".DemoActivity2"
                   android:label="Demo Activity 2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+           
         </activity>
         
         <activity android:name=".PharosParcelActivity"
                   android:label="PharosParcelActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
         
         <activity android:name=".VoiceRecognitionDemo"
                   android:label="VoiceRecognitionDemo">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
         
         <activity android:name=".SendPackageActivity"
                   android:label="SendPackageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
 
         <activity android:name=".OnMyItemSelectedListener"
                   android:label="OnMyItemSelectedListener">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
         
         <activity android:name=".GetQuoteActivity"
                   android:label="GetQuoteActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            
         </activity>
+
+        <activity android:name=".SendParcel1"
+                  android:label="SendParcel1">
+            
+        </activity>
+
 
     </application>
 </manifest>
