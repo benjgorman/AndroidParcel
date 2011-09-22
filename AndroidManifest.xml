@@ -7,36 +7,46 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/CustomTheme" android:debuggable="true">
     
-        <activity android:name=".TabBar"
+        <activity android:name=".tablayout.TabBar"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-			
-        <activity android:name=".DemoActivity1"
-                  android:label="Demo Activity 1">
+		
+		<activity android:name=".tabs.HelpTab"
+                  android:label="Help Tab">
             
         </activity>
         
-        <activity android:name=".DemoActivity2"
-                  android:label="Demo Activity 2">
+        <activity android:name=".activities.TrackingHistory"
+                  android:label="Tracking History">
+            
+        </activity>
+        	
+        <activity android:name=".tabs.ServicesTab"
+                  android:label="Services Tab">
+            
+        </activity>
+        
+        <activity android:name=".tabs.HistoryTab"
+                  android:label="History Tab">
            
         </activity>
         
-        <activity android:name=".PharosParcelActivity"
-                  android:label="PharosParcelActivity">
+        <activity android:name=".tabs.TrackingTab"
+                  android:label="Tracking Tab">
             
         </activity>
         
-        <activity android:name=".VoiceRecognitionDemo"
+        <activity android:name=".activites.VoiceRecognitionDemo"
                   android:label="VoiceRecognitionDemo">
             
         </activity>
         
-        <activity android:name=".SendPackageActivity"
-                  android:label="SendPackageActivity">
+        <activity android:name=".tabs.PackagesTab"
+                  android:label="Packages Tab">
             
         </activity>
 
@@ -45,13 +55,18 @@
             
         </activity>
         
-        <activity android:name=".GetQuoteActivity"
+        <activity android:name=".activites.GetQuoteActivity"
                   android:label="GetQuoteActivity">
             
         </activity>
 
-        <activity android:name=".SendParcel1"
+        <activity android:name=".activites.SendParcel1"
                   android:label="SendParcel1">
+            
+        </activity>
+        
+        <activity android:name=".activites.TrackingResult"
+                  android:label="TrackingResult">
             
         </activity>
 

@@ -2,23 +2,24 @@ package com.benjgorman.pharostest.stores;
 
 public class OrderStore {
 	
-	public static final String TABLE_NAME = "Order";
+	public static final String TABLE_NAME = "Orders";
 	public static final String ID = "_id";
 	public static final String ROW_CREATED_AT = "createdAt";
 	public static final String TRACKING_NO = "trackingNo";
-	public static final String DELIVER_ID = "deliver";
-	public static final String PICKUP_ID = "pickup";
+	public static final String PICKUP_ID = "pickupID";
+	public static final String DELIVER_ID = "deliverID";
+	public static final String PARCEL_ID = "parcelID";
 	public static final String TABLE_CREATE = "CREATE TABLE " + 
 			TABLE_NAME + " (" + 
 			ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-			TRACKING_NO	+ " TEXT, " + 
+			TRACKING_NO + " TEXT, " + 
 			PICKUP_ID + " INT, " + 
 			DELIVER_ID + " INT, " + 
+			PARCEL_ID + " INT, " + 
 			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " + 
 			"UNIQUE (" + TRACKING_NO + "))";
 
 	private String trackingNo;
-	private String orderNo;
 	private AddressStore pickup;
 	private AddressStore deliver;
 	private ParcelStore parcel;
@@ -26,7 +27,6 @@ public class OrderStore {
 	public OrderStore(String trackingNo, String orderNo, AddressStore pickup,
 			AddressStore deliver, ParcelStore parcel) {
 		this.trackingNo = trackingNo;
-		this.orderNo = orderNo;
 		this.pickup = pickup;
 		this.deliver = deliver;
 		this.parcel = parcel;
@@ -45,12 +45,7 @@ public class OrderStore {
 	public void setTrackingNo(String trackingNo) {
 		this.trackingNo = trackingNo;
 	}
-	public String getOrderNo() {
-		return orderNo;
-	}
-	public void setOrderNo(String orderNo) {
-		this.orderNo = orderNo;
-	}
+
 	public AddressStore getPickup() {
 		return pickup;
 	}

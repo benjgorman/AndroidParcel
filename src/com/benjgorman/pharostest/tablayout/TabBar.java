@@ -1,4 +1,12 @@
-package com.benjgorman.pharostest;
+package com.benjgorman.pharostest.tablayout;
+
+import com.benjgorman.pharostest.R;
+import com.benjgorman.pharostest.R.drawable;
+import com.benjgorman.pharostest.tabs.HelpTab;
+import com.benjgorman.pharostest.tabs.HistoryTab;
+import com.benjgorman.pharostest.tabs.PackagesTab;
+import com.benjgorman.pharostest.tabs.ServicesTab;
+import com.benjgorman.pharostest.tabs.TrackingTab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,13 +44,6 @@ public class TabBar  extends ScrollableTabActivity{
         {
         	Intent intent;
         	
-        	if (i==2) intent = new Intent(this, InitiateTrackingActivity.class);
-        	else if (i==3) intent = new Intent(this, DemoActivity1.class);
-
-        	else if (i==1) intent = new Intent(this, PackagesTab.class);
-
-        	else intent = new Intent(this, DemoActivity2.class);
-        	
         	/*
         	 * This adds a title and an image to the tab bar button
         	 * Image should be a PNG file with transparent background.
@@ -50,11 +51,26 @@ public class TabBar  extends ScrollableTabActivity{
         	 */
         	 switch (i) {
 
-             case 1: this.addTab("packages", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
-             case 2: this.addTab("Tracking", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
-             case 3: this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
-             case 4: this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
-             case 5: this.addTab("Help", R.drawable.tabup, R.drawable.tabdown, intent);;       break;
+             case 1: 
+            	 intent = new Intent(this, PackagesTab.class);
+            	 this.addTab("Packages", R.drawable.tabup, R.drawable.tabdown, intent);;   
+            	 break;
+             case 2: 
+            	 intent = new Intent(this, TrackingTab.class);
+            	 this.addTab("Tracking", R.drawable.tabup, R.drawable.tabdown, intent);;      
+            	 break;
+             case 3: 
+            	 intent = new Intent(this, HistoryTab.class);
+            	 this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 break;
+             case 4:
+            	 intent = new Intent(this, ServicesTab.class);
+            	 this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 break;
+             case 5:
+            	 intent = new Intent(this, HelpTab.class);
+            	 this.addTab("Help", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 break;
             
              default:; break;
          }

@@ -5,31 +5,40 @@ public class ParcelStore {
 	public static final String TABLE_NAME = "Parcel";
 	public static final String ID = "_id";
 	public static final String ROW_CREATED_AT = "createdAt";
-	public static final String PARCEL_ID = "parcelNO";
-	public static final String ORDER_NO = "orderNo";
 	public static final String WEIGHT = "weight";
-	public static final String HEIGHT = "height";
+	public static final String LENGTH = "length";
 	public static final String WIDTH = "width";
+	public static final String HEIGHT = "height";
 	public static final String TABLE_CREATE = "CREATE TABLE " + 
 			TABLE_NAME + " (" + 
-			ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-			HEIGHT + " INT, " +
-			WIDTH	+ " TEXT, " + 
-			WEIGHT + " INT, " + 
-			ORDER_NO + " INT, " + 
-			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " ;
+			ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +  
+			LENGTH + " INT, " +
+			WEIGHT	+ " DOUBLE, " + 
+			WIDTH + " INT, " + 
+			HEIGHT + " INT, " + 
+			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 	
 	private Integer width;
 	private Integer height;
 	private Integer weight;
 	private Integer orderNo;
+	private Integer length;
 	
-	public ParcelStore(Integer width, Integer height, Integer orderNo, Integer weight) {
+	public ParcelStore(Integer width, Integer height, Integer orderNo, Integer weight, Integer length) {
 		this.width = width;
 		this.height = height;
 		this.weight = weight;
+		this.length = length;
 		this.orderNo = orderNo;
 		
+	}
+	
+	public void setLength(Integer length) {
+		this.length = length;
+	}
+
+	public Integer getLength() {
+		return length;
 	}
 
 	public Integer getWidth() {

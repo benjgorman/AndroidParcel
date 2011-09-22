@@ -1,14 +1,19 @@
 package com.benjgorman.pharostest;
 
+import com.benjgorman.pharostest.stores.OrderStore;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 
 public class DatabaseAdapter {
 
 	// Database fields
+	private static final String TAG = "Halp";
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_CATEGORY = "category";
 	public static final String KEY_SUMMARY = "summary";
@@ -20,48 +25,57 @@ public class DatabaseAdapter {
 
 	public DatabaseAdapter(Context context) {
 		this.context = context;
-	}
-
-	public DatabaseAdapter open() throws SQLException {
-		dbHelper = new DatabaseHelper(context);
-		database = dbHelper.getWritableDatabase();
-		return this;
+		
+		DatabaseHelper dbHelper = new DatabaseHelper(this.context);
+		
+		this.database = dbHelper.getWritableDatabase();
 	}
 
 	public void close() {
 		dbHelper.close();
 	}
 
-	/**
-	 * Create a new todo If the todo is successfully created return the new
-	 * rowId for that note, otherwise return a -1 to indicate failure.
-	 */
-	public long createTodo(String category, String summary, String description) {
-		ContentValues initialValues = createContentValues(category, summary,
-				description);
+	
+	public long insertOrder(String trackingNo) {
+		
+		long result = 0;
+		Log.d(TAG, "Inserting parcel number to the database");
 
-		return database.insert(DATABASE_TABLE, null, initialValues);
+		//check if order has been tracked before
+		Cursor cursor = this.database.query(OrderStore.TABLE_NAME, new String[] { OrderStore.TRACKING_NO },
+						OrderStore.TRACKING_NO + " = '" + trackingNo + "'", null, null, null, null);
+		
+		//if an order has been tracked before
+		if (!cursor.moveToFirst()) {
+			
+			String insert = "INSERT INTO " + OrderStore.TABLE_NAME + " (" + OrderStore.TRACKING_NO + ") values (?)";
+			
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			
+			insertStatement.bindString(1, trackingNo);
+			
+			result = insertStatement.executeInsert();
+			
+			Log.d(TAG, "Inserted - Database returned " + result);
+		
+		}
+		else 
+		{
+			//order exists already, no need to do anything else
+			Log.d(TAG, "That parcel number already exists in the database");
+		}
+
+		/* Close the cursor */
+		if (cursor != null && !cursor.isClosed()) 
+		{
+			cursor.close();
+		}
+
+		return result;
 	}
+	
 
-	/**
-	 * Update the todo
-	 */
-	public boolean updateTodo(long rowId, String category, String summary,
-			String description) {
-		ContentValues updateValues = createContentValues(category, summary,
-				description);
-
-		return database.update(DATABASE_TABLE, updateValues, KEY_ROWID + "="
-				+ rowId, null) > 0;
-	}
-
-	/**
-	 * Deletes todo
-	 */
-	public boolean deleteTodo(long rowId) {
-		return database.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
-	}
-
+	
 	/**
 	 * Return a Cursor over the list of all todo in the database
 	 * 
@@ -86,13 +100,5 @@ public class DatabaseAdapter {
 		return mCursor;
 	}
 
-	private ContentValues createContentValues(String category, String summary,
-			String description) {
-		ContentValues values = new ContentValues();
-		values.put(KEY_CATEGORY, category);
-		values.put(KEY_SUMMARY, summary);
-		values.put(KEY_DESCRIPTION, description);
-		return values;
-	}
 }
 

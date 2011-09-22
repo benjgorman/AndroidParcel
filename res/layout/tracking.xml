@@ -9,20 +9,24 @@
     android:layout_height="wrap_content" 
     android:text="Please press Scan button to open barcode scanner"
     />
-<Button android:layout_gravity="left" android:id="@+id/button1" android:text="Scan" android:layout_width="78dp" android:layout_height="61dp"></Button>
-<TextView android:id="@+id/TextView01" android:layout_below="@+id/AnalogClock01" android:layout_width="wrap_content" 
-		  android:text="@+id/TextView01" android:layout_height="wrap_content">
-		  </TextView>
-<Button android:text="Speak" android:id="@+id/btn_speak" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:layout_gravity="left" android:id="@+id/button1" android:text="Scan Number" android:layout_width="78dp" android:layout_height="61dp"></Button>
+
+<Button android:text="Speak Number" android:id="@+id/btn_speak" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+<EditText
+        android:id="@+id/editTextSimple"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+</EditText>
+<Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Recently Tracked" android:id="@+id/btn_track_history" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="VoiceRecognition Demo!"
-    />
+
 </LinearLayout>
 </LinearLayout>
