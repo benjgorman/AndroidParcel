@@ -23,6 +23,7 @@ public class PharosParcelActivity extends Activity
         
 		 TextView tv1 = (TextView) findViewById(R.id.TextView01);
      	tv1.setText("Barcode");
+     	
         
      	
      	

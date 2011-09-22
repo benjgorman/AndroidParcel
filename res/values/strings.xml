@@ -21,4 +21,26 @@
 	<string name="todo_edit_confirm">Confirm</string>
 	<color name="listcolor">#FFE87C</color>
 	<color name="black">#000000</color>
+    <string name="weight_prompt">How much does it weigh?</string>
+    <string-array name="weight_array">
+    	<item>0.5Kg</item>
+    	<item>1.0Kg</item>
+    	<item>1.5Kg</item>
+    	<item>2.0Kg</item>
+    	<item>2.5Kg</item>
+    	<item>3.0Kg</item>
+    	<item>3.5Kg</item>
+    	<item>4.0Kg</item>
+    	<item>4.5Kg</item>
+    	<item>5.0Kg</item>
+    	<item>5.5Kg</item>
+    	<item>6.0Kg</item>
+    	<item>6.5Kg</item>
+    	<item>7.0Kg</item>
+    	<item>7.5Kg</item>
+    	<item>8.0Kg</item>
+    	<item>8.5Kg</item>
+    	<item>9.0Kg</item>
+    	<item>9.5Kg</item>
+    </string-array>
 </resources>
