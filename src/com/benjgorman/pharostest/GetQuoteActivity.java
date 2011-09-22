@@ -31,17 +31,17 @@ public class GetQuoteActivity extends Activity{
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         
-        final Button button = (Button) findViewById(R.id.btn_quoteme);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	Builder builder = new AlertDialog.Builder();
-                builder.setTitle("Quote");
-                builder.setMessage("Your quote is: ");
-                builder.setPositiveButton("Send this package", null);
-                builder.setNegativeButton("Cancel", null);
-                builder.show();                
-            }
-        });
+//        final Button button = (Button) findViewById(R.id.btn_quoteme);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//            	Builder builder = new AlertDialog.Builder();
+//                builder.setTitle("Quote");
+//                builder.setMessage("Your quote is: ");
+//                builder.setPositiveButton("Send this package", null);
+//                builder.setNegativeButton("Cancel", null);
+//                builder.show();                
+//            }
+//        });
         
        // spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());       
     }
