@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollView01" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+<RelativeLayout
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">	
+
+  	<TextView android:id="@+id/txt_parceldetails" 
+				android:layout_width="wrap_content"	
+				android:layout_height="wrap_content" 
+				android:text="Parcel Details:" 
+				android:textColor="#FFF" 
+				android:textStyle="bold" 
+				android:textSize="20dip">
+	</TextView>
+
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:layout_width="wrap_content" 
+    			android:text="The price for this parcel will be confirmed once you have entered parcel details.
+Maximum single dimension is 270cm. Maximum weight for the Standard service is 30kg." 
+    			android:id="@+id/txt_parcelinfo" 
+    			android:layout_height="wrap_content" 
+    			android:layout_below="@id/txt_parceldetails">
+    </TextView>
+    
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium"
+    			android:layout_width="wrap_content"  
+    			android:text="Description:"
+    			android:id="@+id/txt_description" 
+    		  	android:layout_height="wrap_content" 
+    		  	android:layout_below="@id/txt_parcelinfo">
+    </TextView>
+    
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_width="wrap_content" 
+    			android:text="  Weight (kg):" 
+    			android:id="@+id/txt_weight" 
+    			android:layout_height="wrap_content" 
+    			android:layout_toRightOf="@id/txt_description"
+    			android:layout_below="@id/txt_parcelinfo">
+    </TextView>
+    
+    <EditText android:id="@+id/description" 
+    		  android:layout_height="wrap_content" 
+    		  android:layout_width="55dp"
+    		  android:layout_below="@id/txt_description">
+    </EditText>
+    
+    <EditText android:id="@+id/weight" 
+    		  android:layout_height="wrap_content" 
+    		  android:layout_width="55dp"
+    		  android:layout_toRightOf="@id/description"
+    		  android:layout_below="@id/txt_weight"
+    		  android:layout_marginRight="30dp">
+    </EditText>
+    
+<!-- 	<EditText android:id="@+id/lastname"  -->
+<!--     		  android:layout_height="wrap_content"  -->
+<!--     		  android:layout_width="55dp" -->
+<!--     		  android:layout_toRightOf="@id/firstname" -->
+<!--     		  android:layout_below="@id/txt_lastname" -->
+<!--     		  android:layout_marginRight="30dp"> -->
+<!--     </EditText> -->
+    
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_width="wrap_content" 
+    			android:text="Length (cm)" 
+    			android:id="@+id/txt_length" 
+    			android:layout_height="wrap_content" 
+    			android:layout_below="@id/description">
+    </TextView>
+    
+    <EditText android:id="@+id/length" 
+    		  android:layout_height="wrap_content" 
+    		  android:layout_width="55dp"
+    		  android:layout_below="@id/txt_length"
+    		  android:layout_marginRight="30dp">
+    </EditText>
+    
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_width="wrap_content" 
+    			android:text="  Width (cm)" 
+    			android:id="@+id/txt_width" 
+    			android:layout_height="wrap_content" 
+    			android:layout_below="@id/description"
+    			android:layout_toRightOf="@id/txt_length">
+    </TextView>
+    
+    <EditText android:id="@+id/width" 
+    		  android:layout_height="wrap_content" 
+    		  android:layout_width="55dp"
+    		  android:layout_below="@id/txt_width"
+    		  android:layout_toRightOf="@+id/length"
+    		  android:layout_marginRight="30dp">
+    </EditText>
+	
+    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_width="wrap_content" 
+    			android:text="  Height (cm)" 
+    			android:id="@+id/txt_height" 
+    			android:layout_height="wrap_content"
+    			android:layout_toRightOf="@id/txt_width" 
+    			android:layout_below="@id/description">
+    </TextView>
+    
+    <EditText android:id="@+id/height" 
+    		  android:layout_height="wrap_content" 
+    		  android:layout_width="55dp"
+    		  android:layout_below="@id/txt_height"
+    		  android:layout_toRightOf="@id/width"
+    		  android:layout_marginRight="30dp">
+    </EditText>
+    
+<!--     <CheckBox android:text="Residential?"  -->
+<!--     		  android:id="@+id/residential"  -->
+<!--     		  android:layout_height="wrap_content"  -->
+<!--     		  android:layout_width="wrap_content"  -->
+<!-- 			  android:layout_below="@+id/txt_companyname" -->
+<!--     		  android:layout_toRightOf="@+id/companyname" -->
+<!--     		  android:onClick="checkResidential"> -->
+<!--     </CheckBox>	 -->
+    
+<!--     <TextView 	android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!--     			android:layout_width="wrap_content"  -->
+<!--     			android:text="Address:"  -->
+<!--     			android:id="@+id/txt_address"  -->
+<!--     			android:layout_height="wrap_content"  -->
+<!--     			android:layout_below="@id/companyname"> -->
+<!--     </TextView> -->
+    
+<!--     <EditText android:id="@+id/address"  -->
+<!--     		  android:layout_height="wrap_content"  -->
+<!--     		  android:layout_width="55dp" -->
+<!--     		  android:layout_below="@id/txt_address" -->
+<!--     		  android:layout_marginRight="30dp"> -->
+<!--     </EditText>       -->
+    
+<!--     <TextView 	android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!--     			android:layout_width="wrap_content"  -->
+<!--     			android:text="Town/City:"  -->
+<!--     			android:id="@+id/txt_town"  -->
+<!--     			android:layout_height="wrap_content"  -->
+<!--     			android:layout_below="@id/address"> -->
+<!--     </TextView> -->
+    
+<!--     <EditText android:id="@+id/town"  -->
+<!--     		  android:layout_height="wrap_content"  -->
+<!--     		  android:layout_width="55dp" -->
+<!--     		  android:layout_below="@id/txt_town" -->
+<!--     		  android:layout_marginRight="30dp"> -->
+<!--     </EditText>     -->
+    
+<!--     <TextView 	android:textAppearance="?android:attr/textAppearanceMedium"  -->
+<!--     			android:layout_width="wrap_content"  -->
+<!--     			android:text="Postcode/Zip Code:"  -->
+<!--     			android:id="@+id/txt_postcode"  -->
+<!--     			android:layout_height="wrap_content"  -->
+<!--     			android:layout_below="@id/town"> -->
+<!--     </TextView> -->
+    
+<!--     <EditText android:id="@+id/postcode"  -->
+<!--     		  android:layout_height="wrap_content"  -->
+<!--     		  android:layout_width="55dp" -->
+<!--     		  android:layout_below="@id/txt_postcode" -->
+<!--     		  android:layout_marginRight="30dp"> -->
+<!--     </EditText>     -->
+    
+<!--    	<Button android:id="@+id/btn_usethisaddress"  -->
+<!-- 		android:layout_width="wrap_content"  -->
+<!-- 		android:layout_height="wrap_content"  -->
+<!-- 		android:text="Use This Address"   -->
+<!-- 		android:layout_centerHorizontal="true" -->
+<!-- 		android:layout_below="@+id/postcode"/> -->
+	
+<!-- 	   	<Button android:id="@+id/btn_clear"  -->
+<!-- 		android:layout_width="wrap_content"  -->
+<!-- 		android:layout_height="wrap_content"  -->
+<!-- 		android:text="Clear"   -->
+<!-- 		android:layout_centerHorizontal="true" -->
+<!-- 		android:layout_below="@+id/postcode" -->
+<!-- 		android:layout_toRightOf="@+id/btn_usethisaddress"/> -->
+    
+</RelativeLayout>
+</ScrollView>
