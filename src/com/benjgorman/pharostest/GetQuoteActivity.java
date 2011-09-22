@@ -46,8 +46,10 @@ public class GetQuoteActivity extends Activity{
 //                builder.setPositiveButton("Send this package", null);
 //                builder.setNegativeButton("Cancel", null);
 //                builder.show();                
+
             }
         });
+
         
        // spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());       
     }
