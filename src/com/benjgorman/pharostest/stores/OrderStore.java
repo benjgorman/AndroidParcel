@@ -24,7 +24,8 @@ public class OrderStore {
 	private AddressStore deliver;
 	private ParcelStore parcel;
 	
-	public OrderStore(String trackingNo, String orderNo, AddressStore pickup,
+	
+	public OrderStore(String trackingNo, AddressStore pickup,
 			AddressStore deliver, ParcelStore parcel) {
 		this.trackingNo = trackingNo;
 		this.pickup = pickup;

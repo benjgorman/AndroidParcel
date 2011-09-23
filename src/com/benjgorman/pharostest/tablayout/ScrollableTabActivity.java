@@ -57,7 +57,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.OnCheckedChangeListener{
-	
+
 	private LocalActivityManager activityManager;
 	private LinearLayout contentViewLayout;
 	private LinearLayout.LayoutParams contentViewLayoutParams;
@@ -71,12 +71,12 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
 	private SliderBarActivityDelegate delegate;
 	private int defaultOffShade;
 	private int defaultOnShade;
-	
+
 	private IntentFilter changeTabIntentFilter;
 	private ChangeTabBroadcastReceiver changeTabBroadcastReceiver;
 	public static String CURRENT_TAB_INDEX;
 	public static String ACTION_CHANGE_TAB = "com.mobyfactory.changeTab";
-	
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

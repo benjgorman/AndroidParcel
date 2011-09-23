@@ -1,6 +1,10 @@
 package com.benjgorman.pharostest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -40,4 +44,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		database.execSQL("DROP TABLE IF EXISTS address");
 		onCreate(database);
 	}
+	
 }

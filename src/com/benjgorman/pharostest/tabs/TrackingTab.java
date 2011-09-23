@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.benjgorman.pharostest.DatabaseAdapter;
@@ -55,9 +56,9 @@ public class TrackingTab extends Activity
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) 
             { 
-                	//get data from cell
-            		String test = "455";
-                	beginTracking(test);
+                	final EditText simpleEditText = (EditText) findViewById(R.id.editBarcode);
+                	String trackingNo = simpleEditText.getText().toString();
+                	beginTracking(trackingNo);
             }
         
         });

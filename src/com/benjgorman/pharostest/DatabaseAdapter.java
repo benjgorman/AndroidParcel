@@ -1,5 +1,8 @@
 package com.benjgorman.pharostest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.benjgorman.pharostest.stores.OrderStore;
 
 import android.content.ContentValues;
@@ -74,8 +77,43 @@ public class DatabaseAdapter {
 		return result;
 	}
 	
+	/**
+	 * returns the parcel history as a list of parcel objects
+	 * 
+	 * @return
+	 */
+	public List<OrderStore> listOrderHistory() {
+		
+		Cursor cursor = this.getOrderCursor();
+		List<OrderStore> list = new ArrayList<OrderStore>();
 
+		// If a record exists
+		if (cursor.moveToFirst()) {
+			do {
+				OrderStore order = new OrderStore(cursor.getColumnName(1), null, null, null);
+				list.add(order);
+			} while (cursor.moveToNext());
+		}
+
+		// Close the cursor
+		if (cursor != null && !cursor.isClosed()) {
+			cursor.close();
+		}
+
+		return list;
+	}
 	
+	/**
+	 * returns a cursor to navigate around the parcels data
+	 * 
+	 * @return
+	 */
+	public Cursor getOrderCursor() {
+		return this.database.query(OrderStore.TABLE_NAME, new String[] { OrderStore.ID, OrderStore.TRACKING_NO }, null, null, null,
+				null, OrderStore.ROW_CREATED_AT + " DESC");
+	}
+	
+
 	/**
 	 * Return a Cursor over the list of all todo in the database
 	 * 

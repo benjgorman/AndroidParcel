@@ -20,7 +20,7 @@
             
         </activity>
         
-        <activity android:name=".activities.TrackingHistory"
+        <activity android:name=".activites.TrackingHistory"
                   android:label="Tracking History">
             
         </activity>
@@ -79,6 +79,6 @@
         	      android:label="SendParcel3">
             
         </activity>
-
+		<uses-permission android:name="android.permission.INTERNET" />
     </application>
 </manifest>

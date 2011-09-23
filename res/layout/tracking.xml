@@ -9,15 +9,17 @@
     android:layout_height="wrap_content" 
     android:text="Please press Scan button to open barcode scanner"
     />
-<Button android:layout_gravity="left" android:id="@+id/button1" android:text="Scan Number" android:layout_width="78dp" android:layout_height="61dp"></Button>
+<Button android:layout_gravity="left" android:id="@+id/button1" android:text="Scan Number" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 
 <Button android:text="Speak Number" android:id="@+id/btn_speak" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 
 <EditText
-        android:id="@+id/editTextSimple"
+        android:id="@+id/editBarcode"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:hint="Enter tracking number">
 </EditText>
+
 <Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 <Button android:text="Recently Tracked" android:id="@+id/btn_track_history" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 
