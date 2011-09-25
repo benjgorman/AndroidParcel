@@ -6,31 +6,155 @@
     android:background="#ffffff"
     android:id="@+id/layout_main"
     >
+    
+	<ViewFlipper 
+	android:id="@+id/details"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">  
 
-    <ViewFlipper android:id="@+id/details"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">  
-
-        <LinearLayout
-               android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#ffffff">
-
-            <TextView android:id="@+id/tv_country"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="18px"
-            android:text="Country" >
-            </TextView>
-            <Spinner android:text=""
-            android:id="@+id/spinner_country"
-            android:layout_width="200px"
-            android:layout_height="55px">
-            </Spinner>
-        </LinearLayout> 
+		<LinearLayout
+		android:id="@+id/RLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		>
+			<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="#ffffff">
+			
+				<TextView
+					android:id="@+id/lblTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Title"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+				<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="18sp" 
+    			android:id="@+id/txtTitle" 
+   				android:layout_alignParentTop="true" 
+    			android:layout_toRightOf="@+id/lblTitle"
+    			android:layout_centerHorizontal="true">
+    			</EditText>
+    			
+    			<LinearLayout
+    			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
+    			<TextView
+					android:id="@+id/lblForename"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Forename"
+					android:layout_weight="1"
+					
+      			/>
+      			<TextView
+					android:id="@+id/lblSurname"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Surname"
+					android:layout_weight="1"
+					
+      			/>
+    			</LinearLayout>
+    			
+    			<LinearLayout
+    			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
+				
+					<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="18sp" 
+	    			android:id="@+id/txtForename"
+	    			android:layout_weight="1"
+	   				>
+    				</EditText>
+    			
+	    			<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="18sp" 
+	    			android:id="@+id/txtSurname" 
+	    			android:layout_weight="1">
+	    			</EditText>
+	    			
+				</LinearLayout>
+    			
+    			<TextView
+					android:id="@+id/lblPhone"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Phone Number"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="18sp" 
+    			android:id="@+id/txtPhone" 
+   				android:layout_alignParentTop="true" 
+    			android:layout_toRightOf="@+id/lblPhone"
+    			android:layout_centerHorizontal="true">
+    			</EditText>
+    			<TextView
+					android:id="@+id/lblEmail"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Email Address"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="18sp" 
+    			android:id="@+id/txtEmail" 
+   				android:layout_alignParentTop="true" 
+    			android:layout_toRightOf="@+id/lblEmail"
+    			android:layout_centerHorizontal="true">
+    			</EditText>
+    			<TextView
+					android:id="@+id/lblCollection"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="18px"
+					android:text="Collection Address"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+    			<Spinner android:text="No Saved Addresses"
+            	android:id="@+id/spinner_collection_address"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content">
+            	</Spinner>
+    </LinearLayout>
+</LinearLayout>
 
         <LinearLayout
                android:orientation="vertical"
@@ -52,7 +176,7 @@
             android:layout_height="55px">
             </EditText>
         </LinearLayout> 
-
-    </ViewFlipper>
+</ViewFlipper>
+    
 
 </LinearLayout>
