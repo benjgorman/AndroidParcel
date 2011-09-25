@@ -2,6 +2,7 @@ package com.benjgorman.pharostest.tablayout;
 
 import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.R.drawable;
+import com.benjgorman.pharostest.activites.AccordianSampleActivity;
 import com.benjgorman.pharostest.tabs.HelpTab;
 import com.benjgorman.pharostest.tabs.HistoryTab;
 import com.benjgorman.pharostest.tabs.PackagesTab;
@@ -64,7 +65,7 @@ public class TabBar  extends ScrollableTabActivity{
             	 this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       
             	 break;
              case 4:
-            	 intent = new Intent(this, ServicesTab.class);
+            	 intent = new Intent(this, AccordianSampleActivity.class);
             	 this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       
             	 break;
              case 5:

@@ -78,7 +78,13 @@
         <activity android:name=".SendParcel3"
         	      android:label="SendParcel3">
             
+        </activity>      
+        
+        <activity android:name=".AccordianSampleActivity"
+        		  android:label="AccordianSampleActivity">
         </activity>
+   
+
 		<uses-permission android:name="android.permission.INTERNET" />
     </application>
 </manifest>
