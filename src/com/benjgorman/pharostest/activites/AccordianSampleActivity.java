@@ -3,6 +3,7 @@ package com.benjgorman.pharostest.activites;
 import com.benjgorman.pharostest.R;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -10,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
@@ -26,6 +28,31 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
  {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.accordian);
+  
+  Button button = (Button)findViewById(R.id.btn_email);
+  button.setOnClickListener(
+     	new OnClickListener()
+      	{
+				public void onClick(View v) {
+					Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+
+					String aEmailList[] = { "norrehlienad90@hotmail.com" };
+					String aEmailCCList[] = { "" };
+					String aEmailBCCList[] = { "" };
+
+					emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
+					emailIntent.putExtra(android.content.Intent.EXTRA_CC, aEmailCCList);
+					emailIntent.putExtra(android.content.Intent.EXTRA_BCC, aEmailBCCList);
+
+					emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Additional Question");
+
+					emailIntent.setType("plain/text");
+					emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+
+					startActivity(emailIntent);
+				}	
+     	}
+   );
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);

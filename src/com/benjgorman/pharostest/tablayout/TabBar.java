@@ -65,7 +65,7 @@ public class TabBar  extends ScrollableTabActivity{
             	 this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       
             	 break;
              case 4:
-            	 intent = new Intent(this, AccordianSampleActivity.class);
+            	 intent = new Intent(this, ServicesTab.class);
             	 this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       
             	 break;
              case 5:
