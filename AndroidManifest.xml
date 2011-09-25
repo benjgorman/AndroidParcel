@@ -85,8 +85,8 @@
             
         </activity>      
         
-        <activity android:name=".AccordianSampleActivity"
-        		  android:label="AccordianSampleActivity">
+        <activity android:name=".activites.AccordianSampleActivity"
+        		  android:label="Accordian Sample Activity">
         </activity>
    
 

@@ -174,6 +174,7 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
              }
          }
  }
+ 
  public class ScaleAnimToShow extends ScaleAnimation
  {
 
