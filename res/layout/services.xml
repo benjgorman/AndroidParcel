@@ -12,4 +12,13 @@
 		android:textStyle="bold" 
 		android:textSize="20dip"
 		android:layout_centerInParent="true"/>
+		
+		<Button android:layout_width="wrap_content" 
+			android:text="Get Quote" 
+			android:layout_height="wrap_content" 
+			android:id="@+id/btn_getquote" 
+			android:layout_below="@+id/TextView01" 
+			android:layout_centerHorizontal="true" 
+			android:layout_marginBottom="66dp">
+	</Button>
 </RelativeLayout>
