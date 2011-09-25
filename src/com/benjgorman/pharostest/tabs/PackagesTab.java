@@ -3,6 +3,7 @@ package com.benjgorman.pharostest.tabs;
 import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.R.id;
 import com.benjgorman.pharostest.R.layout;
+import com.benjgorman.pharostest.SendParcel;
 import com.benjgorman.pharostest.activites.GetQuoteActivity;
 import com.benjgorman.pharostest.activites.SendParcel1;
 
@@ -43,7 +44,7 @@ public class PackagesTab extends Activity{
            	new OnClickListener()
             	{
     				public void onClick(View v) {
-    				Intent intent = new Intent(context, SendParcel1.class);
+    				Intent intent = new Intent(context, SendParcel.class);
    			        context.startActivity(intent);
     				}	
            	}

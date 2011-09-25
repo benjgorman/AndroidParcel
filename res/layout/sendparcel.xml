@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:id="@+id/layout_main"
+    >
+
+    <ViewFlipper android:id="@+id/details"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">  
+
+        <LinearLayout
+               android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff">
+
+            <TextView android:id="@+id/tv_country"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18px"
+            android:text="Country" >
+            </TextView>
+            <Spinner android:text=""
+            android:id="@+id/spinner_country"
+            android:layout_width="200px"
+            android:layout_height="55px">
+            </Spinner>
+        </LinearLayout> 
+
+        <LinearLayout
+               android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff">
+
+            <TextView android:id="@+id/tv_income"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18px"
+            android:text="Income" >
+            </TextView>
+            <EditText android:text=""
+            android:id="@+id/et_income"
+            android:layout_width="200px"
+            android:layout_height="55px">
+            </EditText>
+        </LinearLayout> 
+
+    </ViewFlipper>
+
+</LinearLayout>
