@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:minWidth="300dp" 
+		 android:minHeight="200dp">
+         
+         
+               <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              		android:orientation="vertical"
+              		android:layout_width="fill_parent"
+              		android:layout_height="wrap_content"
+              		>
+              		<Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="I'm adding more parcels which vary in size, weight and delivery address"
+     			 />
+     			 <Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="I'm adding more parcels to the same address"
+     			 />
+     			 <Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="I'm adding more identical parcels, but to different addresses"
+     			 />
+     			 <Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="I'm finished, take me to the checkout"
+     			 />
+     			 </LinearLayout>
+ </LinearLayout>

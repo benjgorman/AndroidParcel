@@ -5,7 +5,7 @@ import com.benjgorman.pharostest.R.id;
 import com.benjgorman.pharostest.R.layout;
 import com.benjgorman.pharostest.SendParcel;
 import com.benjgorman.pharostest.activites.GetQuoteActivity;
-import com.benjgorman.pharostest.activites.SendParcel1;
+
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,7 +20,8 @@ public class PackagesTab extends Activity{
 	
 	Context context;
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) 
+	{
         super.onCreate(savedInstanceState);
         
         
@@ -32,11 +33,12 @@ public class PackagesTab extends Activity{
         button.setOnClickListener(
            	new OnClickListener()
             	{
-    				public void onClick(View v) {
-    				Intent intent = new Intent(context, GetQuoteActivity.class);
-   			        context.startActivity(intent);
+    				public void onClick(View v) 
+    				{
+    					Intent intent = new Intent(context, GetQuoteActivity.class);
+    					context.startActivity(intent);
     				}	
-           	}
+            	}
          );
         
         Button button2 = (Button)findViewById(R.id.btn_sendpackage);
@@ -47,7 +49,19 @@ public class PackagesTab extends Activity{
     				Intent intent = new Intent(context, SendParcel.class);
    			        context.startActivity(intent);
     				}	
-           	}
+            	}
+         );
+        
+        Button button3 = (Button)findViewById(R.id.btn_camera);
+        button3.setOnClickListener(
+           	new OnClickListener()
+            	{
+    				public void onClick(View v) 
+    				{
+    					Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+    					context.startActivity(cameraIntent);
+    				}	
+            	}
          );
         
     }

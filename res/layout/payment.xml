@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="#ffffff">
+    <Button android:onClick="selfDestruct" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pay with Paypal" android:layout_gravity="center"></Button>
+     			 <TextView
+					android:id="@+id/lblOr"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="OR"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true" android:gravity="center|center_horizontal"/>
+            	<TextView
+					android:id="@+id/lblCard"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Select a Payment Method"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+    			<LinearLayout
+      			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff" 
+      			>
+    			<Spinner android:text="No Saved Addresses"
+            	android:id="@+id/spinner_card"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1">
+            	</Spinner>
+            	<Button
+            	 android:id="@+id/btn_addCard"
+    			 android:layout_height="fill_parent"
+     			 android:layout_width="wrap_content"
+     			 android:text="Add" 
+     			 android:layout_weight="1"/>
+     			 </LinearLayout>
+	    			<CheckBox android:id="@+id/check1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="There are no prohibited items in this consignment" android:textColor="@color/black"/>
+				<CheckBox android:id="@+id/check1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="I understand that to prepare this consignment I'll need: adequate packaging, a working printer, and my printed labels" android:textColor="@color/black"/>
+				<CheckBox android:id="@+id/check1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="I have read and understood the terms and conditions" android:textColor="@color/black"/>
+				<Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="Finish Order"
+     			 android:onClick="selfDestruct" />
+			
+	</LinearLayout>

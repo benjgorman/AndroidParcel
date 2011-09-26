@@ -237,11 +237,26 @@
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
       			/>
+    			<LinearLayout
+      			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff" 
+      			>
     			<Spinner android:text="No Saved Addresses"
             	android:id="@+id/spinner_recepient_address"
-            	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content">
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1">
             	</Spinner>
+            	<Button
+            	 android:id="@+id/btn_addRAddress"
+    			 android:layout_height="fill_parent"
+     			 android:layout_width="wrap_content"
+     			 android:text="Add" 
+     			 android:layout_weight="1"/>
+     			 </LinearLayout>
+            	
             	     			
       			<LinearLayout
     			android:orientation="horizontal"
@@ -336,7 +351,7 @@
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Email Address"
+					android:text="Description"
 					android:layout_alignParentTop="true"
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
@@ -351,9 +366,22 @@
 	    			android:layout_centerHorizontal="true">
     			</EditText>
     			
+    			<LinearLayout
+    			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
     			<CheckBox android:id="@+id/check1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Android" />
+				<TextView
+					android:id="@+id/lblInsurance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Insure parcel for (£)"
+      				/>
 				<EditText 
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
@@ -362,6 +390,19 @@
 	   				android:layout_alignParentTop="true" 
 	    			android:layout_centerHorizontal="true">
 	    			</EditText>
+    			</LinearLayout>
+    			<TextView
+					android:id="@+id/lblInsurance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="10px"
+					android:text="Do not complete if using Yodel or valued under £50. 
+Insurance cost using UPS is 1.5% of cost value, subject to a minimum of £4.75. 
+Restricted or Prohibited items will not be covered for loss or damage."
+      				/>
+    			
+    			
 				
             	
     </LinearLayout>
@@ -387,71 +428,11 @@
             	android:layout_height="wrap_content">
             	</Spinner>
             	<Button
+            	 android:id="@+id/btn_accept"
     			 android:layout_height="wrap_content"
      			 android:layout_width="wrap_content"
-     			 android:text="self destruct"
-     			 android:onClick="selfDestruct" />
-     			 <TextView
-					android:id="@+id/lblOr"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="OR"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true"
-      			/>
-            	<TextView
-					android:id="@+id/lblCard"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="Select a Payment Method"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true"
-      			/>
-    			<Spinner android:text="Select a Credit Card"
-            	android:id="@+id/spinner_service"
-            	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content">
-            	</Spinner>
-            	<TextView
-					android:id="@+id/lblCcv"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="Email Address"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true"
-      				/>
-            	<EditText 
-					android:layout_height="wrap_content" 
-	    			android:layout_width="fill_parent" 
-	    			android:textSize="14sp" 
-	    			android:id="@+id/txtCcv" 
-	   				android:layout_alignParentTop="true" 
-	    			android:layout_centerHorizontal="true">
-	    			</EditText>
-	    			<CheckBox android:id="@+id/check1"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:text="Android" />
-				<CheckBox android:id="@+id/check1"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:text="Android" />
-				<CheckBox android:id="@+id/check1"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:text="Android" />
-				<Button
-    			 android:layout_height="wrap_content"
-     			 android:layout_width="wrap_content"
-     			 android:text="self destruct"
-     			 android:onClick="selfDestruct" />
-			
+     			 android:text="Accept Changes"
+     			 />
 	</LinearLayout>
 </ViewFlipper>
     

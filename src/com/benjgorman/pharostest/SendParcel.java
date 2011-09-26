@@ -3,6 +3,7 @@ package com.benjgorman.pharostest;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
@@ -35,9 +36,13 @@ public class SendParcel extends Activity implements OnTouchListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);  
 
         // Set main.XML as the layout for this Activity
         setContentView(R.layout.sendparcel);
+        
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
 
         // Add these two lines
         LinearLayout layMain = (LinearLayout) findViewById(R.id.layout_main);
@@ -58,7 +63,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             	Context mContext = v.getContext();
             	Dialog dialog = new Dialog(mContext);
 
-            	dialog.setContentView(R.layout.custom_dialog);
+            	dialog.setContentView(R.layout.add_address);
             	dialog.setTitle("Add Address");
 
             	
@@ -66,6 +71,40 @@ public class SendParcel extends Activity implements OnTouchListener{
             }
         
         });
+        
+        final Button button6 = (Button) findViewById(R.id.btn_addRAddress);
+        button6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) 
+            {
+            	Context mContext = v.getContext();
+            	Dialog dialog = new Dialog(mContext);
+
+            	dialog.setContentView(R.layout.add_address);
+            	dialog.setTitle("Add Address");
+
+            	
+            	dialog.show();
+            }
+        
+        });
+        
+        final Button button7 = (Button) findViewById(R.id.btn_accept);
+        button7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) 
+            {
+            	Context mContext = v.getContext();
+            	Dialog dialog = new Dialog(mContext);
+
+            	dialog.setContentView(R.layout.order_options);
+            	dialog.setTitle("What will you do now?");
+
+            	
+            	dialog.show();
+            }
+        
+        });
+        
+        
         
     
   

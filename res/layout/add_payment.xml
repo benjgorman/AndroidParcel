@@ -1,0 +1,167 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="vertical"
+              android:minWidth="300dp" 
+			  android:minHeight="400dp"
+              android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:padding="10dp"
+              >
+              <ScrollView
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+              
+              <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              >
+              <TextView
+					android:id="@+id/lblCardType"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Card Type"
+      			/>
+    			<Spinner android:text="No Services"
+            	android:id="@+id/spinner_card_type"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content">
+            	</Spinner>
+              <TextView
+					android:id="@+id/lblCardName"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Name on card"
+      			/>
+      			<EditText 
+				android:layout_height="fill_parent" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtCardName" >
+    			</EditText>
+    			<TextView
+					android:id="@+id/lblCardNo"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Number on card"
+      			/>
+      			<EditText 
+				android:layout_height="fill_parent" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtCardNo" >
+    			</EditText>
+    			
+    			
+    			<TextView
+					android:id="@+id/lblCardStartMonth"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Card start Month / Year"
+      			/>
+      			
+      			
+      			<LinearLayout
+      			xmlns:android="http://schemas.android.com/apk/res/android"
+            	android:orientation="horizontal"
+              	android:layout_width="fill_parent"
+              	android:layout_height="wrap_content">
+	      			<EditText 
+					android:layout_height="fill_parent" 
+	    			android:layout_width="100px" 
+	    			android:textSize="14sp" 
+	    			android:id="@+id/txtCardStartMonth" >
+	    			</EditText>
+	    			<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="fill_parent"
+						android:textColor="#000000"
+						android:textSize="20px"
+						android:text="/"
+	      			/>
+	    			<EditText 
+					android:layout_height="fill_parent" 
+	    			android:layout_width="100px" 
+	    			android:textSize="14sp" 
+	    			android:id="@+id/txtCardStartYear" >
+	    			</EditText>
+    			</LinearLayout>
+    			<TextView
+					android:id="@+id/lblCardStartMonth"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Card end Month / Year"
+      			/>
+    			<LinearLayout
+      			xmlns:android="http://schemas.android.com/apk/res/android"
+            	android:orientation="horizontal"
+              	android:layout_width="fill_parent"
+              	android:layout_height="wrap_content">
+	      			<EditText 
+					android:layout_height="fill_parent" 
+	    			android:layout_width="100px" 
+	    			android:textSize="14sp" 
+	    			android:id="@+id/txtCardEndMonth" >
+	    			</EditText>
+	    			<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="fill_parent"
+						android:textColor="#000000"
+						android:textSize="20px"
+						android:text="/"
+	      			/>
+	    			<EditText 
+					android:layout_height="fill_parent" 
+	    			android:layout_width="100px" 
+	    			android:textSize="14sp" 
+	    			android:id="@+id/txtCardEndYear" >
+	    			</EditText>
+    			</LinearLayout>
+
+    			
+    			<TextView
+					android:id="@+id/lblCardIssueNor"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Card Issue No"
+      			/>
+      			<EditText 
+				android:layout_height="fill_parent" 
+    			android:layout_width="100px" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtCardIssueNo" >
+    			</EditText>
+    			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              		android:orientation="horizontal"
+              		android:layout_width="fill_parent"
+              		android:layout_height="fill_parent"
+              		>
+    			<Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="Save"
+     			 android:layout_weight="1"
+     			 />
+     			 
+     			 <Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="Cancel"
+     			 android:layout_weight="1"
+     			 />
+     			 </LinearLayout>
+     			 </LinearLayout>
+    </ScrollView>
+</LinearLayout>

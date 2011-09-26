@@ -1,65 +1,40 @@
 package com.benjgorman.pharostest.activites;
 
-import com.benjgorman.pharostest.R;
-
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.*;
+import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 
-public class AccordianSampleActivity extends ListActivity implements OnClickListener
+import com.benjgorman.pharostest.R;
+
+public class FAQ extends ListActivity implements OnClickListener
 {
  public OnLongClickListener longClickListner;
- LinearLayout panel1,panel2,panel3,panel4,panel5;
- TextView text1,text2,text3,text4,text5;
+ LinearLayout panel1,panel2,panel3,panel4,panel5, panel6, panel7, panel8;
+ TextView text1,text2,text3,text4,text5, text6, text7, text8;
  View openLayout;
  
  @Override
  public void onCreate(Bundle savedInstanceState)
  {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.accordian);
-  
-  Button button = (Button)findViewById(R.id.btn_email);
-  button.setOnClickListener(
-     	new OnClickListener()
-      	{
-				public void onClick(View v) {
-					Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-
-					String aEmailList[] = { "norrehlienad90@hotmail.com" };
-					String aEmailCCList[] = { "" };
-					String aEmailBCCList[] = { "" };
-
-					emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-					emailIntent.putExtra(android.content.Intent.EXTRA_CC, aEmailCCList);
-					emailIntent.putExtra(android.content.Intent.EXTRA_BCC, aEmailBCCList);
-
-					emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Additional Question");
-
-					emailIntent.setType("plain/text");
-					emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
-
-					startActivity(emailIntent);
-				}	
-     	}
-   );
+  setContentView(R.layout.faq);
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);
   panel3 = (LinearLayout) findViewById(R.id.panel3);
   panel4 = (LinearLayout) findViewById(R.id.panel4);
   panel5 = (LinearLayout) findViewById(R.id.panel5);
-  
+  panel6 = (LinearLayout) findViewById(R.id.panel6);
+  panel7 = (LinearLayout) findViewById(R.id.panel7);
+  panel8 = (LinearLayout) findViewById(R.id.panel8);
   //panel1.setVisibility(View.VISIBLE);
   
   //panel1.setVisibility(View.VISIBLE);
@@ -71,12 +46,18 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
   text3 = (TextView) findViewById(R.id.text3);
   text4 = (TextView) findViewById(R.id.text4);
   text5 = (TextView) findViewById(R.id.text5);
+  text6 = (TextView) findViewById(R.id.text6);
+  text7 = (TextView) findViewById(R.id.text7);
+  text8 = (TextView) findViewById(R.id.text8);
   
   text1.setOnClickListener(this);
   text2.setOnClickListener(this);
   text3.setOnClickListener(this);
   text4.setOnClickListener(this);
   text5.setOnClickListener(this);
+  text6.setOnClickListener(this);
+  text7.setOnClickListener(this);
+  text8.setOnClickListener(this);
   
  }
 
@@ -97,6 +78,12 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
    panel4.startAnimation(new ScaleAnimToHide(1.0f, 1.0f, 1.0f, 0.0f, 500, panel4, true));
   if(openLayout == panel5)
    panel5.startAnimation(new ScaleAnimToHide(1.0f, 1.0f, 1.0f, 0.0f, 500, panel5, true));
+  if(openLayout == panel6)
+   panel6.startAnimation(new ScaleAnimToHide(1.0f, 1.0f, 1.0f, 0.0f, 500, panel6, true));
+  if(openLayout == panel7)
+	panel7.startAnimation(new ScaleAnimToHide(1.0f, 1.0f, 1.0f, 0.0f, 500, panel7, true));
+  if(openLayout == panel8)
+	panel8.startAnimation(new ScaleAnimToHide(1.0f, 1.0f, 1.0f, 0.0f, 500, panel8, true));
  }
  private void hideOthers(View layoutView)
  {
@@ -153,6 +140,33 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
     if(v != View.VISIBLE)
     {
      panel5.startAnimation(new ScaleAnimToShow(1.0f, 1.0f, 1.0f, 0.0f, 500, panel5, true));
+    }
+   }
+   else if(layoutView.getId() == R.id.text6)
+   {
+    v = panel6.getVisibility();
+    hideThemAll();
+    if(v != View.VISIBLE)
+    {
+     panel6.startAnimation(new ScaleAnimToShow(1.0f, 1.0f, 1.0f, 0.0f, 500, panel6, true));
+    }
+   }
+   else if(layoutView.getId() == R.id.text7)
+   {
+    v = panel7.getVisibility();
+    hideThemAll();
+    if(v != View.VISIBLE)
+    {
+     panel7.startAnimation(new ScaleAnimToShow(1.0f, 1.0f, 1.0f, 0.0f, 500, panel7, true));
+    }
+   }
+   else if(layoutView.getId() == R.id.text8)
+   {
+    v = panel8.getVisibility();
+    hideThemAll();
+    if(v != View.VISIBLE)
+    {
+     panel8.startAnimation(new ScaleAnimToShow(1.0f, 1.0f, 1.0f, 0.0f, 500, panel8, true));
     }
    }
   }

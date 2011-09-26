@@ -88,5 +88,12 @@
         <activity android:name=".activites.AccordianSampleActivity"
         		  android:label="Accordian Sample Activity">
         </activity>
+
+
+        <activity android:name=".activites.FAQ"
+        		  android:label="FAQ">
+        </activity>   
+
+
     </application>
 </manifest>

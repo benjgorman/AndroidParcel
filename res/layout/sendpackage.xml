@@ -20,6 +20,15 @@
 			android:layout_marginBottom="66dp">
 	</Button>
 	
+	<Button android:layout_width="wrap_content" 
+			android:text="camera" 
+			android:layout_height="wrap_content" 
+			android:id="@+id/btn_camera" 
+			android:layout_below="@+id/btn_sendpackage" 
+			android:layout_centerHorizontal="true" 
+			android:layout_marginBottom="66dp">
+	</Button>
+	
 	<TextView android:id="@+id/TextView01" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content" 

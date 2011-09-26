@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="vertical"
+              android:minWidth="300dp" 
+			  android:minHeight="400dp"
+              android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:padding="10dp"
+              >
+              <ScrollView
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+              
+              <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              >
+              <TextView
+					android:id="@+id/lblLine1"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Address Line 1"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
+      			/>
+      			<EditText 
+				android:layout_height="fill_parent" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtline1" 
+   				android:layout_alignParentTop="true" 
+    			android:layout_toRightOf="@+id/lblline1"
+    			android:layout_centerHorizontal="true">
+    			</EditText>
+             
+              <TextView
+					android:id="@+id/lblLine2"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Address Line 2"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtline2" 
+   				>
+    			</EditText>
+             
+              <TextView
+					android:id="@+id/lblLine3"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Address Line 3"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtline3" 
+   				>
+    			</EditText>
+    			
+    			<TextView
+					android:id="@+id/lblCity"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="City"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtCity" >
+    			</EditText>
+    			
+    			<TextView
+					android:id="@+id/lblCounty"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="County"
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" >
+    			</EditText>
+    			
+    			<TextView
+					android:id="@+id/lblPostcode"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Postcode"
+
+      			/>
+      			<EditText 
+				android:layout_height="wrap_content" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtPostcode" 
+>
+    			</EditText>
+    			
+    			 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              		android:orientation="horizontal"
+              		android:layout_width="fill_parent"
+              		android:layout_height="fill_parent"
+              		>
+    			<Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="Save"
+     			 android:layout_weight="1"
+     			 />
+     			 
+     			 <Button
+    			 android:layout_height="wrap_content"
+     			 android:layout_width="fill_parent"
+     			 android:text="Cancel"
+     			 android:layout_weight="1"
+     			 />
+     			 </LinearLayout>
+     			 </LinearLayout>
+    </ScrollView>
+</LinearLayout>
