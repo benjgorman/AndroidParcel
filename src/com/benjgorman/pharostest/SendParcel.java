@@ -38,8 +38,8 @@ public class SendParcel extends Activity implements OnTouchListener{
         LinearLayout layMain = (LinearLayout) findViewById(R.id.layout_main);
         layMain.setOnTouchListener((OnTouchListener) this); 
 
-        // Add a few countries to the spinner
-        Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_country);
+         //Add a few countries to the spinner
+        Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_collection_address);
         ArrayAdapter countryArrayAdapter = new ArrayAdapter(this,
                     android.R.layout.simple_spinner_dropdown_item,
                     new String[] { "Canada", "USA" });
