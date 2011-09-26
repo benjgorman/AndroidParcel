@@ -25,7 +25,7 @@ public class ServicesTab extends ListActivity implements OnClickListener
  public void onCreate(Bundle savedInstanceState)
  {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.accordian);
+  setContentView(R.layout.services);
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);

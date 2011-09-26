@@ -179,6 +179,96 @@
   
     </LinearLayout>
     
+   <LinearLayout android:layout_marginTop="2dip"
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" 
+      android:orientation="vertical" 
+      android:layout_gravity="center">
+      
+  <TextView android:text="Do I get compensated if my parcel is lost or damaged?" 
+  android:id="@+id/text6" 
+  android:padding="5dip" 
+  android:background="#005555" 
+   android:layout_width="fill_parent" 
+   android:layout_height="wrap_content" />
+   
+  <LinearLayout android:id="@+id/panel6" 
+  android:visibility="gone" 
+  android:orientation="vertical" 
+  android:layout_width="fill_parent"
+   android:layout_height="wrap_content">
+   
+   <TextView android:layout_margin="2dip" 
+   android:text="You have up to 10 days to submit a loss or damage claim. If the goods are damaged, please sign to accept them. If you sign for the item in 'good condition' you will not be able to process a claim, so please mark them as damaged when signing. If you do not have time to check the items, please note 'goods unchecked'. /n/n Please see the Help Section of our website for more information."
+    android:padding="5dip" 
+    android:background="#777777" 
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" />
+     
+  </LinearLayout>
+  
+    </LinearLayout>
+    
+   <LinearLayout android:layout_marginTop="2dip"
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" 
+      android:orientation="vertical" 
+      android:layout_gravity="center">
+      
+  <TextView android:text="Do I have to pay customs / import or other surcharges for deliveries abroad?" 
+  android:id="@+id/text7" 
+  android:padding="5dip" 
+  android:background="#005555" 
+   android:layout_width="fill_parent" 
+   android:layout_height="wrap_content" />
+   
+  <LinearLayout android:id="@+id/panel7" 
+  android:visibility="gone" 
+  android:orientation="vertical" 
+  android:layout_width="fill_parent"
+   android:layout_height="wrap_content">
+   
+   <TextView android:layout_margin="2dip" 
+   android:text="VAT is automatically added to countries in the European Union. Other charges, such as customs or import tax, are at the discretion of the customs officials in the receiving country, and therefore cannot be calculated prior to delivery. This means that the recipient is responsible for paying the extra fees, should they arise. If the recipient does not pay these fees, Pharos Parcel reserve the right to invoice you for the actual costs, should they be charged back to you as the sender."
+    android:padding="5dip" 
+    android:background="#777777" 
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" />
+     
+  </LinearLayout>
+  
+    </LinearLayout>
+
+   <LinearLayout android:layout_marginTop="2dip"
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" 
+      android:orientation="vertical" 
+      android:layout_gravity="center">
+      
+  <TextView android:text="I have changed my mind about a booking. How do I cancel?" 
+  android:id="@+id/text8" 
+  android:padding="5dip" 
+  android:background="#005555" 
+   android:layout_width="fill_parent" 
+   android:layout_height="wrap_content" />
+   
+  <LinearLayout android:id="@+id/panel8" 
+  android:visibility="gone" 
+  android:orientation="vertical" 
+  android:layout_width="fill_parent"
+   android:layout_height="wrap_content">
+   
+   <TextView android:layout_margin="2dip" 
+   android:text="Please contact info@pharosparcel.co.uk as soon as possible and refuse any collection. If your item has already been collected, we will attempt to stop the delivery, but cannot be held responsible as it is no longer in our control. Should cancellations be successful, Pharos Parcel reserve the right to charge any fees incurred, up to the full value of the booking."
+    android:padding="5dip" 
+    android:background="#777777" 
+     android:layout_width="fill_parent"
+      android:layout_height="wrap_content" />
+     
+  </LinearLayout>
+  
+    </LinearLayout>
+    
  <ListView android:id="@android:id/list" 
  android:layout_width="fill_parent" 
  android:visibility="gone"

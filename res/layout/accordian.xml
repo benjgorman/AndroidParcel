@@ -214,14 +214,5 @@
     			android:gravity="center_horizontal"
     			android:layout_height="wrap_content"> 
     </TextView> 
-    
-    	<Button android:layout_width="wrap_content" 
-			android:text="Ask Us a Question!" 
-			android:layout_height="wrap_content" 
-			android:id="@+id/btn_email" 
-			
-			android:layout_centerHorizontal="true" 
-			android:layout_marginBottom="66dp">
-	</Button>
    
 </LinearLayout>
