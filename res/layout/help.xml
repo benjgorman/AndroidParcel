@@ -1,296 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- android:orientation="vertical" android:layout_width="fill_parent" android:background="#ffffff"
- android:layout_height="fill_parent">
- <LinearLayout android:layout_width="fill_parent" 
- android:layout_height="wrap_content" 
- android:orientation="vertical" 
- android:layout_gravity="center">
- 
-  <TextView android:text="Can I specify a collection time?" 
-  android:id="@+id/text1" 
-  android:padding="5dip" 
-  android:background="#005555"  
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content" />
-  
-  <LinearLayout android:id="@+id/panel1" 
-  android:visibility="gone"  
-  android:orientation="vertical" 
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content">
-  
-   <TextView android:layout_margin="2dip" 
-   android:text="When booking a parcel, it is normally collected on the same day up until 6pm. If you miss any cut-off times for same day collection, we will advise you of the next one available." 
-   android:padding="5dip" 
-   android:background="#777777"  
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  </LinearLayout>
-  
-   </LinearLayout>
-    
-    <LinearLayout android:layout_marginTop="2dip" 
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:orientation="vertical" 
-    android:layout_gravity="center">
-    
-  <TextView android:text="Do I need to package up my delivery?" 
-  android:id="@+id/text2" 
-  android:padding="5dip" 
-  android:background="#005555"  
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content" />
-  
-  <LinearLayout android:id="@+id/panel2" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content">
-  
-   <TextView android:layout_margin="2dip" 
-   android:text="Yes, either in a suitable box, padded envelope, or wrapped in suitable paper. Advice on packaging your items can be found here . Please note we cannot collect palettes, crates or unpackaged goods." 
-   android:padding="5dip" 
-   android:background="#777777"  
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-<!--    <TextView android:layout_margin="2dip"  -->
-<!--    android:text="Delivery by end of the next working day throughout most of Europe, US and Canada." -->
-<!--     android:padding="5dip" -->
-<!--      android:background="#777777"  -->
-<!--       android:layout_width="fill_parent"  -->
-<!--       android:layout_height="wrap_content" /> -->
-      
-<!--    <TextView android:layout_margin="2dip" -->
-<!--     android:text="Rest of World Delivery within 1 – 4 working days."  -->
-<!--     android:padding="5dip"  -->
-<!--     android:background="#777777"   -->
-<!--     android:layout_width="fill_parent"  -->
-<!--     android:layout_height="wrap_content" /> -->
-    
-  </LinearLayout>
-  
-    </LinearLayout>
-    
-    <LinearLayout android:layout_marginTop="2dip" 
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:orientation="vertical" 
-    android:layout_gravity="center">
-    
-  <TextView android:text="Do I need a label for my parcels?" 
-  android:id="@+id/text3" 
-  android:padding="5dip" 
-  android:background="#005555"  
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content" />
-  
-  <LinearLayout android:id="@+id/panel3" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent" 
-  android:layout_height="wrap_content">
-  
-   <TextView android:layout_margin="2dip" 
-   android:text="Yes. When completing a booking, you will be able to download and print a waybill, containing delivery information and a barcode, which you should securely attach to your parcel(s)." 
-   android:padding="5dip" 
-   android:background="#777777" 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-     android:layout_height="wrap_content" />
-     
-<!--    <TextView android:layout_margin="2dip"  -->
-<!--    android:text="Europe delivery in 2 -5 working days – a great service at a competitive price." -->
-<!--     android:padding="5dip"  -->
-<!--     android:background="#777777"  -->
-<!--      android:layout_width="fill_parent"  -->
-<!--      android:layout_height="wrap_content" /> -->
-       
-  </LinearLayout>
-  
-    </LinearLayout>
-    
-    <LinearLayout android:layout_marginTop="2dip"
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" 
-      android:orientation="vertical" 
-      android:layout_gravity="center">
-      
-  <TextView android:text="What if I don't know how heavy my parcel is?" 
-  android:id="@+id/text4" 
-  android:padding="5dip" 
-  android:background="#005555" 
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  <LinearLayout android:id="@+id/panel4" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent"
-   android:layout_height="wrap_content">
-   
-   <TextView android:layout_margin="2dip" 
-   android:text="It is your responsibility to provide accurate information about the dimensions and weight of your parcel(s). Any false or erroneous information will be noted and, upon delivery, Pharos Parcel will charge you any additional fees incurred, plus an administration charge of £10."
-    android:padding="5dip" 
-    android:background="#777777" 
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" />
-     
-  </LinearLayout>
-  
-    </LinearLayout>
-    
-    <LinearLayout android:layout_marginTop="2dip"
-     android:layout_width="fill_parent" 
-     android:layout_height="wrap_content" 
-     android:orientation="vertical"
-      android:layout_gravity="center">
-      
-  <TextView android:text="Do I get compensated if my parcel is not delivered on time?" 
-  android:id="@+id/text5" 
-  android:padding="5dip" 
-  android:background="#005555" 
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  <LinearLayout android:id="@+id/panel5"
-   android:visibility="gone"
-    android:orientation="vertical"
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content">
-      
-   <TextView android:layout_margin="2dip"
-    android:text="Some of our services are guaranteed delivery only. We will always attempt to collect your parcel the same day and work hard to make sure this happens." 
-    android:padding="5dip" 
-    android:background="#777777"  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" />
-    
-<!--    <TextView android:layout_margin="2dip" -->
-<!--     android:text="You can specify am, pm, evening, avoid school run and Saturday delivery options."  -->
-<!--     android:padding="5dip" -->
-<!--      android:background="#777777"  -->
-<!--       android:layout_width="fill_parent"  -->
-<!--       android:layout_height="wrap_content" /> -->
-      
-  </LinearLayout>
-  
-    </LinearLayout>
-    
-   <LinearLayout android:layout_marginTop="2dip"
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" 
-      android:orientation="vertical" 
-      android:layout_gravity="center">
-      
-  <TextView android:text="Do I get compensated if my parcel is lost or damaged?" 
-  android:id="@+id/text6" 
-  android:padding="5dip" 
-  android:background="#005555" 
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  <LinearLayout android:id="@+id/panel6" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent"
-   android:layout_height="wrap_content">
-   
-   <TextView android:layout_margin="2dip" 
-   android:text="You have up to 10 days to submit a loss or damage claim. If the goods are damaged, please sign to accept them. If you sign for the item in 'good condition' you will not be able to process a claim, so please mark them as damaged when signing. If you do not have time to check the items, please note 'goods unchecked'. /n/n Please see the Help Section of our website for more information."
-    android:padding="5dip" 
-    android:background="#777777" 
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" />
-     
-  </LinearLayout>
-  
-    </LinearLayout>
-    
-   <LinearLayout android:layout_marginTop="2dip"
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" 
-      android:orientation="vertical" 
-      android:layout_gravity="center">
-      
-  <TextView android:text="Do I have to pay customs / import or other surcharges for deliveries abroad?" 
-  android:id="@+id/text7" 
-  android:padding="5dip" 
-  android:background="#005555" 
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  <LinearLayout android:id="@+id/panel7" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent"
-   android:layout_height="wrap_content">
-   
-   <TextView android:layout_margin="2dip" 
-   android:text="VAT is automatically added to countries in the European Union. Other charges, such as customs or import tax, are at the discretion of the customs officials in the receiving country, and therefore cannot be calculated prior to delivery. This means that the recipient is responsible for paying the extra fees, should they arise. If the recipient does not pay these fees, Pharos Parcel reserve the right to invoice you for the actual costs, should they be charged back to you as the sender."
-    android:padding="5dip" 
-    android:background="#777777" 
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" />
-     
-  </LinearLayout>
-  
-    </LinearLayout>
-
-   <LinearLayout android:layout_marginTop="2dip"
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" 
-      android:orientation="vertical" 
-      android:layout_gravity="center">
-      
-  <TextView android:text="I have changed my mind about a booking. How do I cancel?" 
-  android:id="@+id/text8" 
-  android:padding="5dip" 
-  android:background="#005555" 
-   android:layout_width="fill_parent" 
-   android:layout_height="wrap_content" />
-   
-  <LinearLayout android:id="@+id/panel8" 
-  android:visibility="gone" 
-  android:orientation="vertical" 
-  android:layout_width="fill_parent"
-   android:layout_height="wrap_content">
-   
-   <TextView android:layout_margin="2dip" 
-   android:text="Please contact info@pharosparcel.co.uk as soon as possible and refuse any collection. If your item has already been collected, we will attempt to stop the delivery, but cannot be held responsible as it is no longer in our control. Should cancellations be successful, Pharos Parcel reserve the right to charge any fees incurred, up to the full value of the booking."
-    android:padding="5dip" 
-    android:background="#777777" 
-     android:layout_width="fill_parent"
-      android:layout_height="wrap_content" />
-     
-  </LinearLayout>
-  
-    </LinearLayout>
-    
- <ListView android:id="@android:id/list" 
- android:layout_width="fill_parent" 
- android:visibility="gone"
-  android:layout_height="340dip"  
-  android:drawSelectorOnTop="false" 
-   android:dividerHeight="0px"/>
-   
-    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
-    			android:layout_width="wrap_content" 
-    			android:text="\n There is no insurance on Yodel services. Also, please see weight and dimension restrictions.\n\n" 
-    			android:id="@+id/txt_disclaimer" 
-    			android:gravity="center_horizontal"
-    			android:layout_height="wrap_content"> 
-    </TextView> 
-    
-    	<Button android:layout_width="wrap_content" 
-			android:text="Ask Us a Question!" 
+    android:layout_height="fill_parent" 
+    android:background="#AAA">
+	<Button android:layout_width="wrap_content" 
+			android:text="Ask Additional Question" 
 			android:layout_height="wrap_content" 
 			android:id="@+id/btn_email" 
-			
+			android:layout_centerVertical="true" 
+			android:layout_centerHorizontal="true">
+	</Button>
+	
+	<Button android:layout_width="wrap_content" 
+			android:text="FAQ" 
+			android:layout_height="wrap_content" 
+			android:id="@+id/btn_faq" 
+			android:layout_above="@+id/btn_email" 
 			android:layout_centerHorizontal="true" 
 			android:layout_marginBottom="66dp">
 	</Button>
-   
-</LinearLayout>
+	
+	<TextView android:id="@+id/TextView01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:text="OR" android:textSize="20dip" 
+			android:textColor="#FFF" 
+			android:textStyle="bold" 
+			android:layout_above="@+id/btn_email" 
+			android:layout_centerHorizontal="true" 
+			android:layout_marginBottom="19dp">
+	</TextView>
+</RelativeLayout>

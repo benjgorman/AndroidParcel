@@ -30,21 +30,27 @@ public class GetQuoteActivity extends Activity{
         
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
                
-        Spinner spinner = (Spinner) findViewById(R.id.spn_country);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.country_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        //Add a few countries to the spinner
+       Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_collection_address);
+       ArrayAdapter countryArrayAdapter = new ArrayAdapter(this,
+                   android.R.layout.simple_spinner_dropdown_item,
+                   new String[] { "UK", "Ireland", "Canada", "USA", "France", "Spain", "Germany", });
+       spinnerCountries.setAdapter(countryArrayAdapter);
+       
+       //Add a few countries to the spinner
+      Spinner spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
+      ArrayAdapter weightArrayAdapter = new ArrayAdapter(this,
+                  android.R.layout.simple_spinner_dropdown_item,
+                  new String[] { "0.5kg", "1kg", "1.5kg", "2kg", "2.5kg", "3kg", "3.5kg", "4kg", });
+      spinnerWeight.setAdapter(weightArrayAdapter);
         
-        Spinner spinner2 = (Spinner) findViewById(R.id.spn_weight);
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
-                this, R.array.weight_array, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
+        
+
         
         final Button button = (Button) findViewById(R.id.btn_quoteme);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	
 //            	Builder builder = new AlertDialog.Builder();
 //                builder.setTitle("Quote");
 //                builder.setMessage("Your quote is: ");

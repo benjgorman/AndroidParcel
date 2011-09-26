@@ -88,7 +88,10 @@
         <activity android:name=".activites.AccordianSampleActivity"
         		  android:label="Accordian Sample Activity">
         </activity>
-   
+
+        <activity android:name=".activites.FAQ"
+        		  android:label="FAQ">
+        </activity>   
 
 		<uses-permission android:name="android.permission.INTERNET" />
     </application>
