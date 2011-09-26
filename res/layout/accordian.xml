@@ -10,7 +10,7 @@
   <TextView android:text="Express - UPS Air Service" 
   android:id="@+id/text1" 
   android:padding="5dip" 
-  android:background="#005555"  
+  android:background="#FF3300"  
   android:layout_width="fill_parent" 
   android:layout_height="wrap_content" />
   
@@ -61,7 +61,7 @@
   <TextView android:text="Express Saver - UPS Air Service" 
   android:id="@+id/text2" 
   android:padding="5dip" 
-  android:background="#005555"  
+  android:background="#FF3300"  
   android:layout_width="fill_parent" 
   android:layout_height="wrap_content" />
   
@@ -105,7 +105,7 @@
   <TextView android:text="Standard - UPS Road Service" 
   android:id="@+id/text3" 
   android:padding="5dip" 
-  android:background="#005555"  
+  android:background="#FF3300"  
   android:layout_width="fill_parent" 
   android:layout_height="wrap_content" />
   
@@ -142,7 +142,7 @@
   <TextView android:text="Expedited - UPS Expedited Service" 
   android:id="@+id/text4" 
   android:padding="5dip" 
-  android:background="#005555" 
+  android:background="#FF3300" 
    android:layout_width="fill_parent" 
    android:layout_height="wrap_content" />
    
@@ -172,7 +172,7 @@
   <TextView android:text="Standard - UK and Northern Ireland Yodel" 
   android:id="@+id/text5" 
   android:padding="5dip" 
-  android:background="#005555" 
+  android:background="#FF3300" 
    android:layout_width="fill_parent" 
    android:layout_height="wrap_content" />
    

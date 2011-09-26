@@ -3,32 +3,43 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="1">
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Please press Scan button to open barcode scanner"
-    />
-<Button android:layout_gravity="left" android:id="@+id/button1" android:text="Scan Number" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-
-<Button android:text="Speak Number" android:id="@+id/btn_speak" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-
+    android:background="#ffffff"
+ 	>
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android" android:layout_margin="24dip" android:layout_marginTop="24dip">
+			<Button 
+			android:id="@+id/button1" 
+			android:text="Scan Number" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			</Button>
+<Button android:id="@+id/btn_speak"
+        android:layout_width="fill_parent"
+        android:onClick="speakButtonClicked"
+        android:layout_height="wrap_content"
+        android:text="Click Me!" />
+<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
 <EditText
         android:id="@+id/editBarcode"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:hint="Enter tracking number">
 </EditText>
+<Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="100px" android:layout_height="wrap_content" android:layout_weight="1">
+</Button>
+</LinearLayout>
 
-<Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-<Button android:text="Recently Tracked" android:id="@+id/btn_track_history" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+<Button android:text="Recently Tracked" android:id="@+id/btn_track_history" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
 
 </LinearLayout>
+<ListView android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
 </LinearLayout>
