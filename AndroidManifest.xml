@@ -4,7 +4,7 @@
       android:versionCode="1"
       android:versionName="1.0">
     <uses-sdk android:minSdkVersion="4" />
-
+	<uses-permission android:name="android.permission.INTERNET" />
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/CustomTheme" android:debuggable="true">
     
         <activity android:name=".tablayout.TabBar"
@@ -88,8 +88,5 @@
         <activity android:name=".activites.AccordianSampleActivity"
         		  android:label="Accordian Sample Activity">
         </activity>
-   
-
-		<uses-permission android:name="android.permission.INTERNET" />
     </application>
 </manifest>

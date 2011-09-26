@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.ViewFlipper;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,13 +20,16 @@ import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class SendParcel extends Activity implements OnTouchListener{
 
     float downXValue;
+    private static final int MY_PASSWORD_DIALOG_ID = 4;
 
     /** Called when the activity is first created. */
     @Override
@@ -44,6 +49,27 @@ public class SendParcel extends Activity implements OnTouchListener{
                     android.R.layout.simple_spinner_dropdown_item,
                     new String[] { "Canada", "USA" });
         spinnerCountries.setAdapter(countryArrayAdapter);
+        
+        
+        final Button button5 = (Button) findViewById(R.id.btn_addAddress);
+        button5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) 
+            {
+            	Context mContext = v.getContext();
+            	Dialog dialog = new Dialog(mContext);
+
+            	dialog.setContentView(R.layout.custom_dialog);
+            	dialog.setTitle("Add Address");
+
+            	
+            	dialog.show();
+            }
+        
+        });
+        
+    
+  
+        // TODO: Create Dialog here and return it (see subsequent steps)
 
     }
 

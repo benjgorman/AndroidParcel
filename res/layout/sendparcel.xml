@@ -147,11 +147,25 @@
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
       			/>
+      			<LinearLayout
+      			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff" 
+      			>
     			<Spinner android:text="No Saved Addresses"
             	android:id="@+id/spinner_collection_address"
-            	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content">
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1">
             	</Spinner>
+            	<Button
+            	 android:id="@+id/btn_addAddress"
+    			 android:layout_height="fill_parent"
+     			 android:layout_width="wrap_content"
+     			 android:text="Add" 
+     			 android:layout_weight="1"/>
+     			 </LinearLayout>
     </LinearLayout>
 </LinearLayout>
 <LinearLayout
