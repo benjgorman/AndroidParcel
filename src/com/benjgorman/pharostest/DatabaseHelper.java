@@ -16,7 +16,7 @@ import com.benjgorman.pharostest.stores.ParcelStore;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "PharosParcelDB";
 
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -39,9 +39,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				"Upgrading database from version " + oldVersion + " to "
 						+ newVersion + ", which will destroy all old data");
 		
-		database.execSQL("DROP TABLE IF EXISTS parcel");
-		database.execSQL("DROP TABLE IF EXISTS order");
-		database.execSQL("DROP TABLE IF EXISTS address");
+		database.execSQL("DROP TABLE IF EXISTS " + ParcelStore.TABLE_NAME);
+		database.execSQL("DROP TABLE IF EXISTS " + OrderStore.TABLE_NAME);
+		database.execSQL("DROP TABLE IF EXISTS " + AddressStore.TABLE_NAME);
 		onCreate(database);
 	}
 	

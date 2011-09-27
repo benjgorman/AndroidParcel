@@ -24,10 +24,6 @@ public class AddressStore {
 			POSTCODE + " TEXT, " +
 			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 	
-	private String forename;
-	private String surname;
-	private String email;
-	private String phone;
 	private String line1;
 	private String line2;
 	private String line3;
@@ -38,13 +34,8 @@ public class AddressStore {
 	
 		
 	
-	public AddressStore(String forename, String surname, String email,
-			String phone, String line1, String line2, String line3,
+	public AddressStore(String line1, String line2, String line3,
 			String region, String city, String country, String postcode) {
-		this.forename = forename;
-		this.surname = surname;
-		this.email = email;
-		this.phone = phone;
 		this.line1 = line1;
 		this.line2 = line2;
 		this.line3 = line3;
@@ -54,31 +45,7 @@ public class AddressStore {
 		this.postcode = postcode;
 	}
 	
-	public String getForename() {
-		return forename;
-	}
-	
-	public void setForename(String forename) {
-		this.forename = forename;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+
 	public String getLine1() {
 		return line1;
 	}

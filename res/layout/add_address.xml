@@ -95,7 +95,8 @@
       			<EditText 
 				android:layout_height="wrap_content" 
     			android:layout_width="fill_parent" 
-    			android:textSize="14sp" >
+    			android:textSize="14sp"
+    			android:id="@+id/txtCounty" > >
     			</EditText>
     			
     			<TextView
@@ -121,7 +122,7 @@
               		android:layout_height="fill_parent"
               		>
     			<Button
-    			android:id="@+id/btn_save_add"
+    			android:id="@+id/btn_save_address"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
      			 android:text="Save"

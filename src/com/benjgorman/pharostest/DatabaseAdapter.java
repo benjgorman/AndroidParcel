@@ -3,6 +3,7 @@ package com.benjgorman.pharostest;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.benjgorman.pharostest.stores.AddressStore;
 import com.benjgorman.pharostest.stores.OrderStore;
 
 import android.content.ContentValues;
@@ -36,6 +37,49 @@ public class DatabaseAdapter {
 
 	public void close() {
 		dbHelper.close();
+	}
+	
+	/**
+	 * Adds an address to the database. If it already exists it returns the ID of the one found.
+	 * @param address
+	 * @return addressID
+	 */
+	public String insertAddress(AddressStore address) {
+		String addressID = null;
+
+		Cursor cursor = this.database.query(AddressStore.TABLE_NAME, 
+				new String[] {AddressStore.ID}, 
+				AddressStore.LINE1 + " = '" + address.getLine1() + "' AND " + 
+				AddressStore.POSTCODE + " = '" + address.getPostcode() + "'",
+				null, null, null, null);
+
+		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+			// Address found
+			addressID = cursor.getString(0);
+		} else {
+			// Address not found, add the address
+			String insert = "INSERT INTO " +
+					AddressStore.TABLE_NAME + " (" + 
+					AddressStore.LINE1 + ", " +
+					AddressStore.LINE2 + ", " +
+					AddressStore.LINE3 + ", " +
+					AddressStore.CITY + ", " +
+					AddressStore.COUNTRY + ", " +
+					AddressStore.POSTCODE +
+				") values (?, ?, ?, ?, ?, ?)";
+
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			insertStatement.bindString(2, address.getLine1());
+			insertStatement.bindString(3, address.getLine2());
+			insertStatement.bindString(4, address.getCity());
+			insertStatement.bindString(5, address.getCountry());
+			insertStatement.bindString(6, address.getPostcode());
+
+			Long result = insertStatement.executeInsert();
+			addressID = result.toString();
+		}
+
+		return addressID;
 	}
 
 	
@@ -77,6 +121,7 @@ public class DatabaseAdapter {
 		return result;
 	}
 	
+	
 	/**
 	 * returns the parcel history as a list of parcel objects
 	 * 
@@ -111,6 +156,16 @@ public class DatabaseAdapter {
 	public Cursor getOrderCursor() {
 		return this.database.query(OrderStore.TABLE_NAME, new String[] { OrderStore.ID, OrderStore.TRACKING_NO }, null, null, null,
 				null, OrderStore.ROW_CREATED_AT + " DESC");
+	}
+	
+	/**
+	 * returns a cursor to navigate around the parcels data
+	 * 
+	 * @return
+	 */
+	public Cursor getAddressCursor() {
+		return this.database.query(AddressStore.TABLE_NAME, new String[] { AddressStore.ID, AddressStore.LINE1, AddressStore.CITY }, null, null, null,
+				null, AddressStore.ROW_CREATED_AT + " DESC");
 	}
 	
 

@@ -41,7 +41,15 @@ public class TrackingResult extends Activity{
         generateMap("http://maps.googleapis.com/maps/api/staticmap?center=Glenrothes,UK&zoom=14&size=400x200&sensor=false");
         
         TextView t = (TextView)findViewById(R.id.lblTrackingNo);
-        t.setText("trackingNo");
+        
+        String value = null;
+        Bundle extras = getIntent().getExtras();
+		if(extras !=null) 
+		{
+			value = extras.getString("trackingNo");
+		}
+		
+        t.setText(value);
                
 	}
 	
