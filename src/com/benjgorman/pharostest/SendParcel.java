@@ -73,10 +73,21 @@ public class SendParcel extends Activity implements OnTouchListener{
             public void onClick(View v) 
             {
             	Context mContext = v.getContext();
-            	Dialog dialog = new Dialog(mContext);
+            	final Dialog dialog = new Dialog(mContext);
 
             	dialog.setContentView(R.layout.add_address);
             	dialog.setTitle("Add Address");
+            	
+            	final Button button10 = (Button) dialog.findViewById(R.id.btn_cancel_address);
+                button10.setOnClickListener(new View.OnClickListener() {
+                	@Override  
+                	public void onClick(View v) 
+                    {
+
+                    	dialog.dismiss();
+                    }
+                
+                });
 
             	
             	dialog.show();
