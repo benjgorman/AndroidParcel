@@ -147,7 +147,11 @@ public class TrackingTab extends Activity
 		  	db.insertOrder(trackingNo);
 		  	
 		  		Intent intent = new Intent(this, TrackingResult.class);
+		  		
+		  		intent.putExtra("trackingNo",trackingNo);
+		  		
 		  		this.startActivity(intent);
+		  		
 			}	
     	}
     

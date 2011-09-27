@@ -161,9 +161,9 @@
             	</Spinner>
             	<Button
             	 android:id="@+id/btn_addAddress"
-    			 android:layout_height="fill_parent"
-     			 android:layout_width="wrap_content"
-     			 android:text="Add" 
+    			 android:layout_height="60px"
+     			 android:layout_width="80px"
+     			 android:text="+" 
      			 android:layout_weight="1"/>
      			 </LinearLayout>
     </LinearLayout>
@@ -175,7 +175,7 @@
 			android:background="#ffffff">
 			
 				<LinearLayout
-    			android:orientation="horizontal"
+    			android:orientation="vertical"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:background="#ffffff">
@@ -185,46 +185,35 @@
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Name"
+					android:text="Recepient's Full Name"
 					android:layout_weight="1"
 					
       			/>
+      			<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="14sp" 
+	    			android:id="@+id/txtName"
+	    			android:layout_weight="1"
+	   				/>
       			<TextView
 					android:id="@+id/lblNumber"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Number"
+					android:text="Recepient Phone Number"
 					android:layout_weight="1"
 					
       			/>
-    			</LinearLayout>
-    			
-    			<LinearLayout
-    			android:orientation="horizontal"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:background="#ffffff">
-				
-					<EditText 
-					android:layout_height="wrap_content" 
-	    			android:layout_width="fill_parent" 
-	    			android:textSize="14sp" 
-	    			android:id="@+id/txtName"
-	    			android:layout_weight="1"
-	   				>
-    				</EditText>
-    			
-	    			<EditText 
+      			<EditText 
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
 	    			android:id="@+id/txtPhone" 
 	    			android:layout_weight="1">
-	    			</EditText>
-	    			
-				</LinearLayout>
+	    		</EditText>
+    			</LinearLayout>
     			
     			<TextView
 					android:id="@+id/lblCollection"
@@ -251,14 +240,22 @@
             	</Spinner>
             	<Button
             	 android:id="@+id/btn_addRAddress"
-    			 android:layout_height="fill_parent"
-     			 android:layout_width="wrap_content"
-     			 android:text="Add" 
+    			 android:layout_height="60px"
+     			 android:layout_width="80px"
+     			 android:text="+" 
      			 android:layout_weight="1"/>
      			 </LinearLayout>
+    			
+    			
+				
             	
-            	     			
-      			<LinearLayout
+    </LinearLayout>
+    <LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="#ffffff">
+			    			<LinearLayout
     			android:orientation="horizontal"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
@@ -401,16 +398,6 @@
 Insurance cost using UPS is 1.5% of cost value, subject to a minimum of £4.75. 
 Restricted or Prohibited items will not be covered for loss or damage."
       				/>
-    			
-    			
-				
-            	
-    </LinearLayout>
-    <LinearLayout
-			android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:background="#ffffff">
 				<TextView
 					android:id="@+id/lblService"
 					android:layout_width="wrap_content"

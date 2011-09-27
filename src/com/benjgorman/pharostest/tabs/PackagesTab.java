@@ -52,17 +52,17 @@ public class PackagesTab extends Activity{
             	}
          );
         
-        Button button3 = (Button)findViewById(R.id.btn_camera);
-        button3.setOnClickListener(
-           	new OnClickListener()
-            	{
-    				public void onClick(View v) 
-    				{
-    					Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-    					context.startActivity(cameraIntent);
-    				}	
-            	}
-         );
+//        Button button3 = (Button)findViewById(R.id.btn_camera);
+//        button3.setOnClickListener(
+//           	new OnClickListener()
+//            	{
+//    				public void onClick(View v) 
+//    				{
+//    					Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//    					context.startActivity(cameraIntent);
+//    				}	
+//            	}
+//         );
         
     }
 }

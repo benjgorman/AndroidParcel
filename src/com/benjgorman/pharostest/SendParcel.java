@@ -49,11 +49,23 @@ public class SendParcel extends Activity implements OnTouchListener{
         layMain.setOnTouchListener((OnTouchListener) this); 
 
          //Add a few countries to the spinner
-        Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_collection_address);
+        Spinner spinnerRecepient = (Spinner) findViewById(R.id.spinner_recepient_address);
+        ArrayAdapter receArrayAdapter = new ArrayAdapter(this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    new String[] { "7 Spey Grove, Glasgow", "12 Oakland Avenue, London" });
+        spinnerRecepient.setAdapter(receArrayAdapter);
+        
+        Spinner spinnerCollection = (Spinner) findViewById(R.id.spinner_collection_address);
         ArrayAdapter countryArrayAdapter = new ArrayAdapter(this,
                     android.R.layout.simple_spinner_dropdown_item,
-                    new String[] { "Canada", "USA" });
-        spinnerCountries.setAdapter(countryArrayAdapter);
+                    new String[] { "17 Abertay Crescent, Dundee", "Queen Mother Building, Dundee" });
+        spinnerCollection.setAdapter(countryArrayAdapter);
+        
+        Spinner spinnerServices = (Spinner) findViewById(R.id.spinner_service);
+        ArrayAdapter servicesArrayAdapter = new ArrayAdapter(this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    new String[] { "UPS Standard (UK 1-2 Working Days, Europe 1-5 Working Days)", "UPS Express (UK Next Working Day, ROW 1-3 Working Days)", "UPS Express Saver (UK Next Working Day, ROW 2-4 Working Days)", "UPS	Expedited (Rest Of World 2-7 Working Days)", "Yodel	Standard Service 1 -3 Working Days", "Yodel	Saturday delivery service", "Yodel AM Delivery 1 - 3 Working Days","Yodel PM Delivery 1 - 3 Working Days","Yodel Evening Delivery, 1 - 3 Working Days", "Yodel Avoid School Run Delivery, 1 - 3 Working Days", "Yodel	 Northern Ireland Standard Service 1-5 Working Days", });
+        spinnerServices.setAdapter(servicesArrayAdapter);
         
         
         final Button button5 = (Button) findViewById(R.id.btn_addAddress);
@@ -74,16 +86,30 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button6 = (Button) findViewById(R.id.btn_addRAddress);
         button6.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+        	@Override 
+        	public void onClick(View v) 
             {
             	Context mContext = v.getContext();
-            	Dialog dialog = new Dialog(mContext);
+            	final Dialog dialog = new Dialog(mContext);
 
             	dialog.setContentView(R.layout.add_address);
             	dialog.setTitle("Add Address");
-
             	
-            	dialog.show();
+            	
+            	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_address);
+                button9.setOnClickListener(new View.OnClickListener() {
+                	@Override  
+                	public void onClick(View v) 
+                    {
+
+                    	dialog.dismiss();
+                    }
+                
+                });
+                
+                dialog.show();
+                
+            	
             }
         
         });
@@ -102,8 +128,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             	dialog.show();
             }
         
-        });
-        
+        });      
         
         
     

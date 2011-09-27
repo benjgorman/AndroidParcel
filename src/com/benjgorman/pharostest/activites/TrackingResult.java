@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 
@@ -37,12 +38,25 @@ public class TrackingResult extends Activity{
         
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
         
-        generateMap("http://www.google.co.uk/images/nav_logo89.png");
+        generateMap("http://maps.googleapis.com/maps/api/staticmap?center=Glenrothes,UK&zoom=14&size=400x200&sensor=false");
+        
+        TextView t = (TextView)findViewById(R.id.lblTrackingNo);
+        t.setText("trackingNo");
                
 	}
 	
+	public String getTrackingNo()
+	{
+		Bundle extras = getIntent().getExtras();
+		if(extras !=null) 
+		{
+			String value = extras.getString("trackingNo");
+			return value;
+		}
+		return null;
+	}
 	
-	void generateMap(String fileUrl)
+	public void generateMap(String fileUrl)
 	{
 		Bitmap bmImg;
         URL myFileUrl = null;          

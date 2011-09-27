@@ -43,4 +43,17 @@
     	<item>9.0Kg</item>
     	<item>9.5Kg</item>
     </string-array>
+    <string-array name="services">
+    <item>UPS Standard £</item>
+    <item>UPS Express £</item>
+    <item>UPS Express Saver £</item>
+    <item>UPS Expedited £</item>
+    <item>Yodel	Standard £</item>
+    <item>Yodel	Saturday delivery service £</item>
+    <item>Yodel	AM Delivery £</item>
+    <item>Yodel	PM Delivery £</item>
+    <item>Yodel	Evening Delivery £</item>
+    <item>Yodel	Avoid School Run £</item>
+    <item>Yodel	Northern Ireland £</item>
+</string-array>
 </resources>

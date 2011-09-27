@@ -121,6 +121,7 @@
               		android:layout_height="fill_parent"
               		>
     			<Button
+    			android:id="@+id/btn_save_add"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
      			 android:text="Save"
@@ -128,6 +129,7 @@
      			 />
      			 
      			 <Button
+     			 android:id="@+id/btn_cancel_address"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
      			 android:text="Cancel"

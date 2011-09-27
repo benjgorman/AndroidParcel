@@ -10,18 +10,7 @@
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		xmlns:android="http://schemas.android.com/apk/res/android" android:layout_margin="24dip" android:layout_marginTop="24dip">
-			<Button 
-			android:id="@+id/button1" 
-			android:text="Scan Number" 
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content">
-			</Button>
-<Button android:id="@+id/btn_speak"
-        android:layout_width="fill_parent"
-        android:onClick="speakButtonClicked"
-        android:layout_height="wrap_content"
-        android:text="Click Me!" />
-<LinearLayout
+		<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
@@ -34,6 +23,17 @@
 <Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="100px" android:layout_height="wrap_content" android:layout_weight="1">
 </Button>
 </LinearLayout>
+			<Button 
+			android:id="@+id/button1" 
+			android:text="Scan Number" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			</Button>
+<Button android:id="@+id/btn_speak"
+        android:layout_width="fill_parent"
+        android:onClick="speakButtonClicked"
+        android:layout_height="wrap_content"
+        android:text="Speak Number" />
 
 <Button android:text="Recently Tracked" android:id="@+id/btn_track_history" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
 
