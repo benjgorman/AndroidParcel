@@ -44,7 +44,7 @@ public class GetQuoteActivity extends ListActivity{
       
       Button buttonNext = (Button) findViewById(R.id.btn_quoteme);
       buttonNext.setOnClickListener(new View.OnClickListener() {
-          @Override
+//          @Override
 		public void onClick(View view) {
               // Get the ViewFlipper from the layout
               ViewFlipper vf = (ViewFlipper) findViewById(R.id.quote);
@@ -58,7 +58,7 @@ public class GetQuoteActivity extends ListActivity{
       // Set the listener for Button_Previous, a quick and dirty way to create a listener
       Button buttonPrevious = (Button) findViewById(R.id.btn_back);
       buttonPrevious.setOnClickListener(new View.OnClickListener() {
-          @Override
+//          @Override
 		public void onClick(View view) {
               // Get the ViewFlipper from the layout
               ViewFlipper vf = (ViewFlipper) findViewById(R.id.quote);

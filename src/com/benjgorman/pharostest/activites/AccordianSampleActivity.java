@@ -33,7 +33,7 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
   button.setOnClickListener(
      	new OnClickListener()
       	{
-				@Override
+//				@Override
 				public void onClick(View v) {
 					Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 
@@ -81,7 +81,7 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
   
  }
 
- @Override
+// @Override
 public void onClick(View v)
  {
   hideOthers(v);

@@ -117,7 +117,9 @@
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
 	    			android:id="@+id/txtName"
+	    			android:hint="Joe Bloggs"
 	    			android:layout_weight="1"
+	    			android:nextFocusDown="@+id/txtPhone"
 	   				/>
       			<TextView
 					android:id="@+id/lblNumber"
@@ -132,6 +134,8 @@
       			<EditText 
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
+	    			android:numeric="integer"
+	    			android:hint="1234 56789"
 	    			android:textSize="14sp" 
 	    			android:id="@+id/txtPhone" 
 	    			android:layout_weight="1">
@@ -239,6 +243,8 @@
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
+					android:numeric="integer"
+					android:hint="kg"
 	    			android:id="@+id/txtWeight"
 	    			android:layout_weight="1"
 	   				>
@@ -247,6 +253,8 @@
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
 	    			android:id="@+id/txtLength"
 	    			android:layout_weight="1"
 	   				>
@@ -255,6 +263,8 @@
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
 	    			android:id="@+id/txtWidth"
 	    			android:layout_weight="1"
 	   				>
@@ -263,6 +273,8 @@
 					android:layout_height="wrap_content" 
 	    			android:layout_width="fill_parent" 
 	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
 	    			android:id="@+id/txtHeight"
 	    			android:layout_weight="1"
 	   				>

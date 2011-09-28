@@ -30,7 +30,7 @@ public class PackagesTab extends Activity{
         button.setOnClickListener(
            	new OnClickListener()
             	{
-    				@Override
+//    				@Override
 					public void onClick(View v) 
     				{
     					Intent intent = new Intent(context, GetQuoteActivity.class);
@@ -43,7 +43,7 @@ public class PackagesTab extends Activity{
         button2.setOnClickListener(
            	new OnClickListener()
             	{
-    				@Override
+//    				@Override
 					public void onClick(View v) {
     				Intent intent = new Intent(context, SendParcel.class);
    			        context.startActivity(intent);

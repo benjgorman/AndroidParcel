@@ -61,7 +61,7 @@ public class FAQ extends ListActivity implements OnClickListener
   
  }
 
- @Override
+// @Override
 public void onClick(View v)
  {
   hideOthers(v);

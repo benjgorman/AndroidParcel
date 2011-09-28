@@ -52,7 +52,7 @@ public class TrackingTab extends Activity
 
         final Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
-            @Override
+//            @Override
 			public void onClick(View v) 
             {
             	IntentIntegrator.initiateScan(TrackingTab.this);
@@ -62,7 +62,7 @@ public class TrackingTab extends Activity
         
         final Button button4 = (Button) findViewById(R.id.btn_track_history);
         button4.setOnClickListener(new View.OnClickListener() {
-            @Override
+//            @Override
 			public void onClick(View v) 
             {
 		  		launchHistory();
@@ -72,7 +72,7 @@ public class TrackingTab extends Activity
         
         final Button button3 = (Button) findViewById(R.id.btn_text);
         button3.setOnClickListener(new View.OnClickListener() {
-            @Override
+//            @Override
 			public void onClick(View v) 
             { 
                 	final EditText simpleEditText = (EditText) findViewById(R.id.editBarcode);

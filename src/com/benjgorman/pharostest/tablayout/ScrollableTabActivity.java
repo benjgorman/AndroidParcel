@@ -266,7 +266,7 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
     	defaultOnShade = onShade;
     }
     
-    @Override
+    
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
     	try
     	{

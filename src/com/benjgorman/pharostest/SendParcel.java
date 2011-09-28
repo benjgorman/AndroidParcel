@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import android.app.Activity;
@@ -54,7 +55,7 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button5 = (Button) findViewById(R.id.btn_addAddress);
         button5.setOnClickListener(new View.OnClickListener() {
-            @Override
+            
 			public void onClick(View v) 
             {
             	Context mContext = v.getContext();
@@ -65,7 +66,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             	
             	final Button button10 = (Button) dialog.findViewById(R.id.btn_cancel_address);
                 button10.setOnClickListener(new View.OnClickListener() {
-                	@Override
+                	
 					public void onClick(View v) 
                     {
 
@@ -76,7 +77,7 @@ public class SendParcel extends Activity implements OnTouchListener{
                 
                 final Button button11 = (Button) dialog.findViewById(R.id.btn_save_address);
                 button11.setOnClickListener(new View.OnClickListener() {
-                	@Override
+                	
 					public void onClick(View v) 
                     {
                 		EditText simpleEditText;
@@ -120,7 +121,7 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button6 = (Button) findViewById(R.id.btn_addRAddress);
         button6.setOnClickListener(new View.OnClickListener() {
-        	@Override
+        	
 			public void onClick(View v) 
             {
             	Context mContext = v.getContext();
@@ -132,7 +133,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             	
             	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_address);
                 button9.setOnClickListener(new View.OnClickListener() {
-                	@Override  
+                	 
                 	public void onClick(View v) 
                     {
 
@@ -143,7 +144,7 @@ public class SendParcel extends Activity implements OnTouchListener{
                 
                 final Button button12 = (Button) dialog.findViewById(R.id.btn_save_address);
                 button12.setOnClickListener(new View.OnClickListener() {
-                	@Override
+                	
 					public void onClick(View v) 
                     {
                 		EditText simpleEditText;
@@ -189,7 +190,7 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button8 = (Button) findViewById(R.id.btn_add_details);
         button8.setOnClickListener(new View.OnClickListener() {
-        	@Override
+        	
 			public void onClick(View v) 
             {
             	Context mContext = v.getContext();
@@ -201,7 +202,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             	
             	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_details);
                 button9.setOnClickListener(new View.OnClickListener() {
-                	@Override  
+                	 
                 	public void onClick(View v) 
                     {
 
@@ -212,7 +213,7 @@ public class SendParcel extends Activity implements OnTouchListener{
                 
                 final Button button12 = (Button) dialog.findViewById(R.id.btn_save_details);
                 button12.setOnClickListener(new View.OnClickListener() {
-                	@Override
+                	
 					public void onClick(View v) 
                     {
                 		EditText simpleEditText;
@@ -248,23 +249,32 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         });
         
+    	EditText nameEdit = (EditText) findViewById(R.id.txtName);
+    	String sName = nameEdit.getText().toString();
+        if (sName.matches("")){
+        	Toast.makeText(this, "gfdgdf", Toast.LENGTH_SHORT).show();
+        	return;
+        }
+        
         final Button button7 = (Button) findViewById(R.id.btn_accept);
         button7.setOnClickListener(new View.OnClickListener() {
-            @Override
+                 	           
 			public void onClick(View v) 
             {
-            	final Context mContext = v.getContext();
-            	final Dialog dialog = new Dialog(mContext);
-
+            	final Context mContext = v.getContext();               
+            	final Dialog dialog = new Dialog(mContext);           	
+            	
             	dialog.setContentView(R.layout.order_options);
             	dialog.setTitle("What will you do now?");
             	
+            	
             	 final Button button12 = (Button) dialog.findViewById(R.id.btn_go_checkout);
                  button12.setOnClickListener(new View.OnClickListener() {
-                 	@Override
+                 	
+                	 
  					public void onClick(View v) 
-                     {
-                 		
+                     { 	
+
                  		Intent intent = new Intent(mContext, Checkout.class);
        			        mContext.startActivity(intent);
        			        
@@ -358,7 +368,7 @@ public class SendParcel extends Activity implements OnTouchListener{
     }
     
 
-    @Override
+    
 	public boolean onTouch(View arg0, MotionEvent arg1) {
 
         // Get the action that was done on this touch event
