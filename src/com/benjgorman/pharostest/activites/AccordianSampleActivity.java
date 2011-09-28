@@ -4,6 +4,7 @@ import com.benjgorman.pharostest.R;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -28,6 +29,8 @@ public class AccordianSampleActivity extends ListActivity implements OnClickList
  {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.accordian);
+  
+  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
   
   Button button = (Button)findViewById(R.id.btn_email);
   button.setOnClickListener(

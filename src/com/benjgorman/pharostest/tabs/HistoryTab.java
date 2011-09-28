@@ -7,6 +7,7 @@ import com.benjgorman.pharostest.stores.OrderStore;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,8 @@ public class HistoryTab extends ListActivity{
 
 		super.onCreate(savedInstanceState);
 		ListAdapter adapter;
+		
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
 		setContentView(R.layout.history);
         

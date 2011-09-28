@@ -137,6 +137,7 @@
 	    			android:numeric="integer"
 	    			android:hint="1234 56789"
 	    			android:textSize="14sp" 
+	    			android:inputType="phone"
 	    			android:id="@+id/txtPhone" 
 	    			android:layout_weight="1">
 	    		</EditText>
@@ -245,6 +246,7 @@
 	    			android:textSize="14sp" 
 					android:numeric="integer"
 					android:hint="kg"
+					android:inputType="phone"
 	    			android:id="@+id/txtWeight"
 	    			android:layout_weight="1"
 	   				>
@@ -255,6 +257,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:inputType="phone"
 	    			android:id="@+id/txtLength"
 	    			android:layout_weight="1"
 	   				>
@@ -265,6 +268,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:inputType="phone"
 	    			android:id="@+id/txtWidth"
 	    			android:layout_weight="1"
 	   				>
@@ -275,6 +279,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:inputType="phone"
 	    			android:id="@+id/txtHeight"
 	    			android:layout_weight="1"
 	   				>

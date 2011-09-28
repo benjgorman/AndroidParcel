@@ -9,6 +9,7 @@ import java.net.URL;
 import com.benjgorman.pharostest.R;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class TrackingResult extends Activity{
     public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+		
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);  
 		

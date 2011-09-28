@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,8 @@ public class SendParcel extends Activity implements OnTouchListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);  
 

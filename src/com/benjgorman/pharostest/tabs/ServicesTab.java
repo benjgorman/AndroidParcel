@@ -3,6 +3,7 @@ package com.benjgorman.pharostest.tabs;
 import com.benjgorman.pharostest.R;
 
 import android.app.ListActivity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -26,6 +27,8 @@ public class ServicesTab extends ListActivity implements OnClickListener
  {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.services);
+  
+  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);

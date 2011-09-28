@@ -8,6 +8,7 @@ import com.benjgorman.pharostest.activites.GetQuoteActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +22,7 @@ public class PackagesTab extends Activity{
 	{
         super.onCreate(savedInstanceState);
         
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         setContentView(R.layout.sendpackage);
      

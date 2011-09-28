@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class TrackingTab extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracking);
+        
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         Button speakButton = (Button) findViewById(R.id.btn_speak);
         
