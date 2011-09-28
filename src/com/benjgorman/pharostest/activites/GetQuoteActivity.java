@@ -4,6 +4,7 @@ import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.SendParcel;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -21,6 +22,8 @@ public class GetQuoteActivity extends ListActivity{
     public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+		
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);  
 		

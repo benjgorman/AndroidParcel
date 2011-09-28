@@ -1,6 +1,7 @@
 package com.benjgorman.pharostest.activites;
 
 import android.app.ListActivity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,8 @@ public class FAQ extends ListActivity implements OnClickListener
  {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.faq);
+  
+  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);
