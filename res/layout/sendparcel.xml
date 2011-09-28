@@ -60,26 +60,7 @@
 			android:layout_height="wrap_content"
 			android:background="#ffffff">
 			
-    			<TextView
-					android:id="@+id/lblEmail"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="Email Address"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true"
-      			/>
-      			<EditText 
-				android:layout_height="wrap_content" 
-    			android:layout_width="fill_parent" 
-    			android:textSize="14sp" 
-    			android:id="@+id/txtEmail" 
-   				android:layout_alignParentTop="true" 
-    			android:layout_toRightOf="@+id/lblEmail"
-    			android:layout_centerHorizontal="true">
-    			</EditText>
+    			
     			<TextView
 					android:id="@+id/lblCollection"
 					android:layout_width="wrap_content"
@@ -116,16 +97,7 @@
             	android:layout_alignParentRight="true">
             	</Button>
      		</RelativeLayout>
-  
-    </LinearLayout>
-</LinearLayout>
-<LinearLayout
-			android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:background="#ffffff">
-			
-				<LinearLayout
+     		<LinearLayout
     			android:orientation="vertical"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
@@ -176,31 +148,36 @@
 					android:layout_alignParentTop="true"
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
-      			/>
-    			<LinearLayout
-      			android:orientation="vertical"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:background="#ffffff" 
-      			>
-    			<Spinner android:text="No Saved Addresses"
+      			/>			
+      			
+      			<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="60px"
+			android:background="#ffffff">
+			
+				<Spinner android:text="No details"
             	android:id="@+id/spinner_recepient_address"
             	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content"
-            	android:layout_weight="1">
+            	android:layout_height="fill_parent"
+            	android:background="@android:drawable/btn_default"
+            	android:layout_weight="1"
+            	android:layout_toLeftOf="@+id/btn_addRAddress">
             	</Spinner>
-            	<Button
-            	 android:id="@+id/btn_addRAddress"
-    			  android:layout_width="40px"
-     			 android:layout_height="wrap_content"
-     			 android:text="+" 
-     			 android:layout_weight="1"/>
-     			 </LinearLayout>
-    			
-    			
-				
-            	
+            	<Button 
+            	android:id="@+id/btn_addRAddress"
+            	android:text="+"
+            	android:layout_height="fill_parent"
+            	android:layout_width="wrap_content"
+            	android:layout_alignParentTop="true"
+            	android:layout_alignParentRight="true">
+            	</Button>
+     		</RelativeLayout>
+	
     </LinearLayout>
+  
+    </LinearLayout>
+
     <LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"

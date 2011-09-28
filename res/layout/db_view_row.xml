@@ -9,13 +9,23 @@ android:id="@+id/tvDBViewRow"
 android:layout_width="fill_parent"
 android:layout_height="wrap_content"
 android:textColor="#000000"
-android:textSize="14px">
-</TextView>
+android:textSize="14px"/>
 <TextView android:text=""
 android:id="@+id/tvDBViewRow1"
 android:layout_width="fill_parent"
 android:layout_height="wrap_content"
 android:textColor="#000000"
-android:textSize="14px">
-</TextView>
+android:textSize="14px"/>
+<TextView android:text=""
+android:id="@+id/tvDBViewRow2"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textColor="#000000"
+android:textSize="14px"/>
+<TextView android:text=""
+android:id="@+id/tvDBViewRow3"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textColor="#000000"
+android:textSize="14px"/>
 </LinearLayout> 
