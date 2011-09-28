@@ -29,17 +29,31 @@
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
       			/>
-		<Spinner android:text="No details"
+      			
+      		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="60px"
+			android:background="#ffffff">
+			
+				<Spinner android:text="No details"
             	android:id="@+id/spinner_details"
             	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content">
+            	android:layout_height="fill_parent"
+            	android:background="@android:drawable/btn_default"
+            	android:layout_weight="1"
+            	android:layout_toLeftOf="@+id/btn_add_details">
             	</Spinner>
-            	<Button
-            	 android:id="@+id/btn_add_details"
-    			 android:layout_height="wrap_content"
-     			 android:layout_width="wrap_content"
-     			 android:text="+"
-     			 />
+            	<Button 
+            	android:id="@+id/btn_add_details"
+            	android:text="+"
+            	android:layout_height="fill_parent"
+            	android:layout_width="wrap_content"
+            	android:layout_alignParentTop="true"
+            	android:layout_alignParentRight="true">
+            	</Button>
+     		</RelativeLayout>
+     			 
 			<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
@@ -77,24 +91,32 @@
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
       			/>
-      			<LinearLayout
-      			android:orientation="vertical"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:background="#ffffff" 
-      			>
-    			<Spinner android:text="No Saved Addresses"
+      			
+
+			<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="60px"
+			android:background="#ffffff">
+			
+				<Spinner android:text="No details"
             	android:id="@+id/spinner_collection_address"
             	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content"
-            	>
+            	android:layout_height="fill_parent"
+            	android:background="@android:drawable/btn_default"
+            	android:layout_weight="1"
+            	android:layout_toLeftOf="@+id/btn_addAddress">
             	</Spinner>
-            	<Button
-            	 android:id="@+id/btn_addAddress"
-     			 android:layout_width="wrap_content"
-     			 android:layout_height="wrap_content"
-     			 android:text="+" />
-     			 </LinearLayout>
+            	<Button 
+            	android:id="@+id/btn_addAddress"
+            	android:text="+"
+            	android:layout_height="fill_parent"
+            	android:layout_width="wrap_content"
+            	android:layout_alignParentTop="true"
+            	android:layout_alignParentRight="true">
+            	</Button>
+     		</RelativeLayout>
+  
     </LinearLayout>
 </LinearLayout>
 <LinearLayout
