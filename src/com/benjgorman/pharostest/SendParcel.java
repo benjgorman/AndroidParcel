@@ -249,42 +249,47 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         });
         
-    	EditText nameEdit = (EditText) findViewById(R.id.txtName);
-    	String sName = nameEdit.getText().toString();
-        if (sName.matches("")){
-        	Toast.makeText(this, "gfdgdf", Toast.LENGTH_SHORT).show();
-        	return;
-        }
         
         final Button button7 = (Button) findViewById(R.id.btn_accept);
         button7.setOnClickListener(new View.OnClickListener() {
                  	           
 			public void onClick(View v) 
             {
-            	final Context mContext = v.getContext();               
-            	final Dialog dialog = new Dialog(mContext);           	
+				final Context mContext = v.getContext();               
+            	final Dialog dialog = new Dialog(mContext);   
             	
-            	dialog.setContentView(R.layout.order_options);
-            	dialog.setTitle("What will you do now?");
-            	
-            	
-            	 final Button button12 = (Button) dialog.findViewById(R.id.btn_go_checkout);
-                 button12.setOnClickListener(new View.OnClickListener() {
-                 	
-                	 
- 					public void onClick(View v) 
-                     { 	
-
-                 		Intent intent = new Intent(mContext, Checkout.class);
-       			        mContext.startActivity(intent);
-       			        
-             		  	dialog.dismiss();
-                     }
-                 
-                 });
-
-            	
-            	dialog.show();
+				EditText nameEdit = (EditText) findViewById(R.id.txtName);
+		    	String sName = nameEdit.getText().toString();
+		    	
+		        if (sName.matches("")) {
+		        	Toast.makeText(mContext, "You have not entered a Name!", Toast.LENGTH_SHORT).show();
+		        	return;
+		        }
+		        else
+		        {
+		                         	
+	            	dialog.setContentView(R.layout.order_options);
+	            	dialog.setTitle("What will you do now?");
+	            	
+	            	
+	            	 final Button button12 = (Button) dialog.findViewById(R.id.btn_go_checkout);
+	                 button12.setOnClickListener(new View.OnClickListener() {
+	                 	
+	                	 
+	 					public void onClick(View v) 
+	                     { 	
+	
+	                 		Intent intent = new Intent(mContext, Checkout.class);
+	       			        mContext.startActivity(intent);
+	       			        
+	             		  	dialog.dismiss();
+	                     }
+	                 
+	                 });
+	
+	            	
+	            	dialog.show();
+		        }
             }
         
         });      
