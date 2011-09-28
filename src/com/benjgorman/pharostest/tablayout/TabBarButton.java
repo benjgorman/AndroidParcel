@@ -34,8 +34,6 @@
 package com.benjgorman.pharostest.tablayout;
 
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.drawable;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;

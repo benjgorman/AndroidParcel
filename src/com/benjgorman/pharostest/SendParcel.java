@@ -1,7 +1,10 @@
 package com.benjgorman.pharostest;
 
+import com.benjgorman.pharostest.activites.Checkout;
+import com.benjgorman.pharostest.activites.FAQ;
 import com.benjgorman.pharostest.stores.AddressStore;
-import com.benjgorman.pharostest.stores.OrderStore;
+import com.benjgorman.pharostest.stores.DetailsStore;
+import com.benjgorman.pharostest.stores.RAddressStore;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -17,22 +20,11 @@ import android.widget.ViewFlipper;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
-import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.ViewFlipper;
 
 public class SendParcel extends Activity implements OnTouchListener{
 
@@ -53,37 +45,17 @@ public class SendParcel extends Activity implements OnTouchListener{
 
         // Add these two lines
         LinearLayout layMain = (LinearLayout) findViewById(R.id.layout_main);
-        layMain.setOnTouchListener((OnTouchListener) this); 
+        layMain.setOnTouchListener(this); 
 
-         //Add a few countries to the spinner
-        Spinner spinnerRecepient = (Spinner) findViewById(R.id.spinner_recepient_address);
-        ArrayAdapter receArrayAdapter = new ArrayAdapter(this,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    new String[] { "7 Spey Grove, Glasgow", "12 Oakland Avenue, London" });
-        spinnerRecepient.setAdapter(receArrayAdapter);
-
-        Spinner spinnerCollection = (Spinner) findViewById(R.id.spinner_collection_address);       
-        
-        DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
-        Cursor addressCursor = db.getAddressCursor();
-        
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
-                this, R.layout.spinner_dropdown,   addressCursor,               
-                new String[] { AddressStore.LINE1 },         
-                new int[] {R.id.spinItem}); 
-        
-        spinnerCollection.setAdapter(adapter);
-        
-        Spinner spinnerServices = (Spinner) findViewById(R.id.spinner_service);
-        ArrayAdapter servicesArrayAdapter = new ArrayAdapter(this,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    new String[] { "UPS Standard (UK 1-2 Working Days, Europe 1-5 Working Days)", "UPS Express (UK Next Working Day, ROW 1-3 Working Days)", "UPS Express Saver (UK Next Working Day, ROW 2-4 Working Days)", "UPS	Expedited (Rest Of World 2-7 Working Days)", "Yodel	Standard Service 1 -3 Working Days", "Yodel	Saturday delivery service", "Yodel AM Delivery 1 - 3 Working Days","Yodel PM Delivery 1 - 3 Working Days","Yodel Evening Delivery, 1 - 3 Working Days", "Yodel Avoid School Run Delivery, 1 - 3 Working Days", "Yodel	 Northern Ireland Standard Service 1-5 Working Days", });
-        spinnerServices.setAdapter(servicesArrayAdapter);
-        
+        setCollectionAddressSpinner();
+        setRecepientAddressSpinner();
+        setServicesSpinner();
+        setDetailsSpinner();
         
         final Button button5 = (Button) findViewById(R.id.btn_addAddress);
         button5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+            @Override
+			public void onClick(View v) 
             {
             	Context mContext = v.getContext();
             	final Dialog dialog = new Dialog(mContext);
@@ -93,7 +65,8 @@ public class SendParcel extends Activity implements OnTouchListener{
             	
             	final Button button10 = (Button) dialog.findViewById(R.id.btn_cancel_address);
                 button10.setOnClickListener(new View.OnClickListener() {
-                	public void onClick(View v) 
+                	@Override
+					public void onClick(View v) 
                     {
 
                     	dialog.dismiss();
@@ -103,7 +76,8 @@ public class SendParcel extends Activity implements OnTouchListener{
                 
                 final Button button11 = (Button) dialog.findViewById(R.id.btn_save_address);
                 button11.setOnClickListener(new View.OnClickListener() {
-                	public void onClick(View v) 
+                	@Override
+					public void onClick(View v) 
                     {
                 		EditText simpleEditText;
                 		
@@ -131,6 +105,8 @@ public class SendParcel extends Activity implements OnTouchListener{
                 		AddressStore address = new AddressStore(line1, line2, line3, region, city, country, postcode);
             		  	db.insertAddress(address);
             		  	
+            		  	setCollectionAddressSpinner();
+            		  	
             		  	dialog.dismiss();
                     }
                 
@@ -144,13 +120,14 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button6 = (Button) findViewById(R.id.btn_addRAddress);
         button6.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) 
+        	@Override
+			public void onClick(View v) 
             {
             	Context mContext = v.getContext();
             	final Dialog dialog = new Dialog(mContext);
 
             	dialog.setContentView(R.layout.add_address);
-            	dialog.setTitle("Add Address");
+            	dialog.setTitle("Add Recepient Address");
             	
             	
             	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_address);
@@ -164,8 +141,108 @@ public class SendParcel extends Activity implements OnTouchListener{
                 
                 });
                 
-                dialog.show();
+                final Button button12 = (Button) dialog.findViewById(R.id.btn_save_address);
+                button12.setOnClickListener(new View.OnClickListener() {
+                	@Override
+					public void onClick(View v) 
+                    {
+                		EditText simpleEditText;
+                		
+                		simpleEditText = (EditText) dialog.findViewById(R.id.txtline1);
+                    	String line1 = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtline2);
+                    	String line2 = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtline3);
+                    	String line3 = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtCity);
+                    	String city = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtCounty);
+                    	String region = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtPostcode);
+                    	String postcode = simpleEditText.getText().toString();
+                    	
+                    	String country = "United Kingdom";
+
+                		DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+                		RAddressStore address = new RAddressStore(line1, line2, line3, region, city, country, postcode);
+            		  	db.insertRAddress(address);
+            		  	
+            		  	setRecepientAddressSpinner();
+            		  	
+            		  	dialog.dismiss();
+                    }
                 
+                });
+
+            	
+            	dialog.show();
+                
+            	
+            }
+        
+        });
+        
+        final Button button8 = (Button) findViewById(R.id.btn_add_details);
+        button8.setOnClickListener(new View.OnClickListener() {
+        	@Override
+			public void onClick(View v) 
+            {
+            	Context mContext = v.getContext();
+            	final Dialog dialog = new Dialog(mContext);
+
+            	dialog.setContentView(R.layout.add_details);
+            	dialog.setTitle("Add Your Details");
+            	
+            	
+            	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_details);
+                button9.setOnClickListener(new View.OnClickListener() {
+                	@Override  
+                	public void onClick(View v) 
+                    {
+
+                    	dialog.dismiss();
+                    }
+                
+                });
+                
+                final Button button12 = (Button) dialog.findViewById(R.id.btn_save_details);
+                button12.setOnClickListener(new View.OnClickListener() {
+                	@Override
+					public void onClick(View v) 
+                    {
+                		EditText simpleEditText;
+                		
+                		simpleEditText = (EditText) dialog.findViewById(R.id.txtTitle);
+                    	String title = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtForename);
+                    	String forename = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtSurname);
+                    	String surname = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtPhone);
+                    	String phone = simpleEditText.getText().toString();
+                    	
+
+                		DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+                		DetailsStore details = new DetailsStore(title, forename, surname, phone);
+            		  	db.insertDetails(details);
+            		  	
+            		  	setDetailsSpinner();
+            		  	
+            		  	dialog.dismiss();
+                    }
+                
+                });
+
+            	
+            	dialog.show();
             	
             }
         
@@ -173,13 +250,28 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         final Button button7 = (Button) findViewById(R.id.btn_accept);
         button7.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+            @Override
+			public void onClick(View v) 
             {
-            	Context mContext = v.getContext();
-            	Dialog dialog = new Dialog(mContext);
+            	final Context mContext = v.getContext();
+            	final Dialog dialog = new Dialog(mContext);
 
             	dialog.setContentView(R.layout.order_options);
             	dialog.setTitle("What will you do now?");
+            	
+            	 final Button button12 = (Button) dialog.findViewById(R.id.btn_go_checkout);
+                 button12.setOnClickListener(new View.OnClickListener() {
+                 	@Override
+ 					public void onClick(View v) 
+                     {
+                 		
+                 		Intent intent = new Intent(mContext, Checkout.class);
+       			        mContext.startActivity(intent);
+       			        
+             		  	dialog.dismiss();
+                     }
+                 
+                 });
 
             	
             	dialog.show();
@@ -187,15 +279,87 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         });      
         
-        
+    }
     
-  
-        // TODO: Create Dialog here and return it (see subsequent steps)
+    private void setServicesSpinner() {
+    	
+    	Spinner spinnerServices = (Spinner) findViewById(R.id.spinner_service);
+        ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    new String[] { "UPS Standard (UK 1-2 Working Days, Europe 1-5 Working Days)", "UPS Express (UK Next Working Day, ROW 1-3 Working Days)", "UPS Express Saver (UK Next Working Day, ROW 2-4 Working Days)", "UPS	Expedited (Rest Of World 2-7 Working Days)", "Yodel	Standard Service 1 -3 Working Days", "Yodel	Saturday delivery service", "Yodel AM Delivery 1 - 3 Working Days","Yodel PM Delivery 1 - 3 Working Days","Yodel Evening Delivery, 1 - 3 Working Days", "Yodel Avoid School Run Delivery, 1 - 3 Working Days", "Yodel	 Northern Ireland Standard Service 1-5 Working Days", });
+        spinnerServices.setAdapter(servicesArrayAdapter);
+		
+	}
 
+	public void setCollectionAddressSpinner() {
+    
+    	Spinner s2 = (Spinner) findViewById(R.id.spinner_collection_address);
+        
+        DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+        
+        Cursor cur = db.getAddressCursor();
+             
+        final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
+            R.layout.db_view_row, // Use a template
+                                                  // that displays a
+                                                  // text view
+            cur, // Give the cursor to the list adapter
+            new String[] {AddressStore.POSTCODE, AddressStore.CITY}, // Map the NAME column in the
+                                                 // people database to...
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+                                             // the XML template
+                                                 
+        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        s2.setAdapter(adapter2);
+    }
+    
+    public void setRecepientAddressSpinner() {
+        
+    	Spinner s2 = (Spinner) findViewById(R.id.spinner_recepient_address);
+        
+        DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+        
+        Cursor cur = db.getRAddressCursor();
+             
+        final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
+            R.layout.db_view_row, // Use a template
+                                                  // that displays a
+                                                  // text view
+            cur, // Give the cursor to the list adapter
+            new String[] {RAddressStore.LINE1, RAddressStore.CITY}, // Map the NAME column in the
+                                                 // people database to...
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+                                             // the XML template
+                                                 
+        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        s2.setAdapter(adapter2);
+    }
+    
+    public void setDetailsSpinner() {
+	
+    	Spinner s2 = (Spinner) findViewById(R.id.spinner_details);
+        
+        DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+        
+        Cursor cur = db.getDetailsCursor();
+             
+        final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
+            R.layout.db_view_row, // Use a template
+                                                  // that displays a
+                                                  // text view
+            cur, // Give the cursor to the list adapter
+            new String[] {DetailsStore.TITLE ,DetailsStore.SURNAME}, // Map the NAME column in the
+                                                 // people database to...
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+                                             // the XML template
+                                                 
+        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        s2.setAdapter(adapter2);
     }
     
 
-    public boolean onTouch(View arg0, MotionEvent arg1) {
+    @Override
+	public boolean onTouch(View arg0, MotionEvent arg1) {
 
         // Get the action that was done on this touch event
         switch (arg1.getAction())

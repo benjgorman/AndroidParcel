@@ -1,8 +1,6 @@
 package com.benjgorman.pharostest.tablayout;
 
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.drawable;
-import com.benjgorman.pharostest.activites.AccordianSampleActivity;
 import com.benjgorman.pharostest.tabs.HelpTab;
 import com.benjgorman.pharostest.tabs.HistoryTab;
 import com.benjgorman.pharostest.tabs.PackagesTab;
@@ -91,7 +89,8 @@ public class TabBar  extends ScrollableTabActivity{
     	 * Optional callback method
     	 * called when users tap on the tab bar button
     	 */
-    	protected void onTabChanged(int tabIndex) 
+    	@Override
+		protected void onTabChanged(int tabIndex) 
     	{
     		Log.d("onTabChanged",""+tabIndex);
     	}

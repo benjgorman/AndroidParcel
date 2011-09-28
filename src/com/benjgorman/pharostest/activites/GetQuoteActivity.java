@@ -2,13 +2,7 @@ package com.benjgorman.pharostest.activites;
 
 import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.SendParcel;
-import com.benjgorman.pharostest.R.array;
-import com.benjgorman.pharostest.R.id;
-import com.benjgorman.pharostest.R.layout;
-
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +13,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.ViewFlipper;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
-import android.app.AlertDialog;
 import android.app.ListActivity;
 
 public class GetQuoteActivity extends ListActivity{
@@ -54,7 +44,8 @@ public class GetQuoteActivity extends ListActivity{
       
       Button buttonNext = (Button) findViewById(R.id.btn_quoteme);
       buttonNext.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
+          @Override
+		public void onClick(View view) {
               // Get the ViewFlipper from the layout
               ViewFlipper vf = (ViewFlipper) findViewById(R.id.quote);
 
@@ -67,7 +58,8 @@ public class GetQuoteActivity extends ListActivity{
       // Set the listener for Button_Previous, a quick and dirty way to create a listener
       Button buttonPrevious = (Button) findViewById(R.id.btn_back);
       buttonPrevious.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
+          @Override
+		public void onClick(View view) {
               // Get the ViewFlipper from the layout
               ViewFlipper vf = (ViewFlipper) findViewById(R.id.quote);
               // Set an animation from res/anim: I pick push left out

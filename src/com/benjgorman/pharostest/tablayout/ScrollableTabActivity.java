@@ -36,9 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.id;
-import com.benjgorman.pharostest.R.layout;
-
 import android.app.ActivityGroup;
 import android.app.LocalActivityManager;
 import android.content.BroadcastReceiver;
@@ -137,10 +134,11 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
         titleList	= new ArrayList();
         states 		= new ArrayList();
         
-        buttonLayoutParams = new RadioGroup.LayoutParams(320/5, RadioGroup.LayoutParams.WRAP_CONTENT);
+        buttonLayoutParams = new RadioGroup.LayoutParams(320/5, LayoutParams.WRAP_CONTENT);
     }
     
-    public void onResume()
+    @Override
+	public void onResume()
     {
     	changeTabIntentFilter = new IntentFilter(ACTION_CHANGE_TAB);
     	changeTabBroadcastReceiver = new ChangeTabBroadcastReceiver();
@@ -148,7 +146,8 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
     	super.onResume();
     }
     
-    public void onPause()
+    @Override
+	public void onPause()
     {
     	unregisterReceiver(changeTabBroadcastReceiver);
     	super.onPause();
@@ -185,7 +184,7 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
     	}
     	RadioStateDrawable.width = width;
 		RadioStateDrawable.screen_width = screen_width;
-		buttonLayoutParams = new RadioGroup.LayoutParams(width, RadioGroup.LayoutParams.WRAP_CONTENT);
+		buttonLayoutParams = new RadioGroup.LayoutParams(width, LayoutParams.WRAP_CONTENT);
     	
     	for (int i=0; i<intentList.size(); i++)
     	{
@@ -267,7 +266,8 @@ public class ScrollableTabActivity extends ActivityGroup  implements RadioGroup.
     	defaultOnShade = onShade;
     }
     
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
+    @Override
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
     	try
     	{
     		if (delegate!=null) delegate.onTabChanged(checkedId);

@@ -2,25 +2,17 @@ package com.benjgorman.pharostest.tabs;
 
 import com.benjgorman.pharostest.DatabaseAdapter;
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.layout;
 import com.benjgorman.pharostest.activites.TrackingResult;
 import com.benjgorman.pharostest.stores.OrderStore;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.ListActivity;
 
 public class HistoryTab extends ListActivity{

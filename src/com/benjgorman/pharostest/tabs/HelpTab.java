@@ -27,7 +27,8 @@ public class HelpTab extends Activity{
         button.setOnClickListener(
            	new OnClickListener()
             	{
-    				public void onClick(View v) {
+    				@Override
+					public void onClick(View v) {
     				Intent intent = new Intent(context, FAQ.class);
    			        context.startActivity(intent);
     				}	
@@ -38,7 +39,8 @@ public class HelpTab extends Activity{
         button2.setOnClickListener(
            	new OnClickListener()
             	{
-      				public void onClick(View v) {
+      				@Override
+					public void onClick(View v) {
       					Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 
       					String aEmailList[] = { "norrehlienad90@hotmail.com" };

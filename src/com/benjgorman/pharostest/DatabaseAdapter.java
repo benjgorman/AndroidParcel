@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.benjgorman.pharostest.stores.AddressStore;
+import com.benjgorman.pharostest.stores.DetailsStore;
 import com.benjgorman.pharostest.stores.OrderStore;
+import com.benjgorman.pharostest.stores.RAddressStore;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -22,7 +23,6 @@ public class DatabaseAdapter {
 	public static final String KEY_CATEGORY = "category";
 	public static final String KEY_SUMMARY = "summary";
 	public static final String KEY_DESCRIPTION = "description";
-	private static final String DATABASE_TABLE = "todo";
 	private Context context;
 	private SQLiteDatabase database;
 	private DatabaseHelper dbHelper;
@@ -37,6 +37,92 @@ public class DatabaseAdapter {
 
 	public void close() {
 		dbHelper.close();
+	}
+	
+	/**
+	 * Adds an address to the database. If it already exists it returns the ID of the one found.
+	 * @param address
+	 * @return addressID
+	 */
+	public String insertDetails(DetailsStore details) {
+		String detailsID = null;
+
+		Cursor cursor = this.database.query(DetailsStore.TABLE_NAME, 
+				new String[] {DetailsStore.ID}, 
+				DetailsStore.SURNAME + " = '" + details.getSurname() + "' AND " + 
+				DetailsStore.PHONE + " = '" + details.getPhone() + "'",
+				null, null, null, null);
+
+		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+			// Address found
+			detailsID = cursor.getString(0);
+		} else {
+			// Address not found, add the address
+			String insert = "INSERT INTO " +
+					DetailsStore.TABLE_NAME + " (" + 
+					DetailsStore.TITLE + ", " +
+					DetailsStore.FORENAME + ", " +
+					DetailsStore.SURNAME + ", " +
+					DetailsStore.PHONE +
+				") values (?, ?, ?, ?)";
+
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			insertStatement.bindString(1, details.getTitle());
+			insertStatement.bindString(2, details.getForename());
+			insertStatement.bindString(3, details.getSurname());
+			insertStatement.bindString(4, details.getPhone());
+
+			Long result = insertStatement.executeInsert();
+			detailsID = result.toString();
+		}
+
+		return detailsID;
+	}
+	
+	/**
+	 * Adds an address to the database. If it already exists it returns the ID of the one found.
+	 * @param address
+	 * @return addressID
+	 */
+	public String insertRAddress(RAddressStore address) {
+		String addressID = null;
+
+		Cursor cursor = this.database.query(RAddressStore.TABLE_NAME, 
+				new String[] {RAddressStore.ID}, 
+				RAddressStore.LINE1 + " = '" + address.getLine1() + "' AND " + 
+				RAddressStore.POSTCODE + " = '" + address.getPostcode() + "'",
+				null, null, null, null);
+
+		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+			// Address found
+			addressID = cursor.getString(0);
+		} else {
+			// Address not found, add the address
+			String insert = "INSERT INTO " +
+					RAddressStore.TABLE_NAME + " (" + 
+					RAddressStore.LINE1 + ", " +
+					RAddressStore.LINE2 + ", " +
+					RAddressStore.LINE3 + ", " +
+					RAddressStore.CITY + ", " +
+					RAddressStore.COUNTRY + ", " +
+					RAddressStore.REGION + ", " +
+					RAddressStore.POSTCODE +
+				") values (?, ?, ?, ?, ?, ?, ?)";
+
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			insertStatement.bindString(1, address.getLine1());
+			insertStatement.bindString(2, address.getLine2());
+			insertStatement.bindString(3, address.getLine3());
+			insertStatement.bindString(4, address.getCity());
+			insertStatement.bindString(5, address.getCountry());
+			insertStatement.bindString(6, address.getPostcode());
+			insertStatement.bindString(7, address.getPostcode());
+
+			Long result = insertStatement.executeInsert();
+			addressID = result.toString();
+		}
+
+		return addressID;
 	}
 	
 	/**
@@ -65,15 +151,18 @@ public class DatabaseAdapter {
 					AddressStore.LINE3 + ", " +
 					AddressStore.CITY + ", " +
 					AddressStore.COUNTRY + ", " +
+					AddressStore.REGION + ", " +
 					AddressStore.POSTCODE +
-				") values (?, ?, ?, ?, ?, ?)";
+				") values (?, ?, ?, ?, ?, ?, ?)";
 
 			SQLiteStatement insertStatement = this.database.compileStatement(insert);
-			insertStatement.bindString(2, address.getLine1());
-			insertStatement.bindString(3, address.getLine2());
+			insertStatement.bindString(1, address.getLine1());
+			insertStatement.bindString(2, address.getLine2());
+			insertStatement.bindString(3, address.getLine3());
 			insertStatement.bindString(4, address.getCity());
 			insertStatement.bindString(5, address.getCountry());
 			insertStatement.bindString(6, address.getPostcode());
+			insertStatement.bindString(7, address.getPostcode());
 
 			Long result = insertStatement.executeInsert();
 			addressID = result.toString();
@@ -164,34 +253,30 @@ public class DatabaseAdapter {
 	 * @return
 	 */
 	public Cursor getAddressCursor() {
-		return this.database.query(AddressStore.TABLE_NAME, new String[] { AddressStore.ID, AddressStore.LINE1, AddressStore.CITY }, null, null, null,
+		return this.database.query(AddressStore.TABLE_NAME, new String[] { AddressStore.ID, AddressStore.LINE1, AddressStore.CITY, AddressStore.POSTCODE }, null, null, null,
 				null, AddressStore.ROW_CREATED_AT + " DESC");
 	}
 	
-
 	/**
-	 * Return a Cursor over the list of all todo in the database
+	 * returns a cursor to navigate around the parcels data
 	 * 
-	 * @return Cursor over all notes
+	 * @return
 	 */
-	public Cursor fetchAllTodos() {
-		return database.query(DATABASE_TABLE, new String[] { KEY_ROWID,
-				KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION }, null, null, null,
-				null, null);
+	public Cursor getRAddressCursor() {
+		return this.database.query(RAddressStore.TABLE_NAME, new String[] { RAddressStore.ID, RAddressStore.LINE1, RAddressStore.CITY, RAddressStore.POSTCODE }, null, null, null,
+				null, RAddressStore.ROW_CREATED_AT + " DESC");
 	}
-
+	
 	/**
-	 * Return a Cursor positioned at the defined todo
+	 * returns a cursor to navigate around the parcels data
+	 * 
+	 * @return
 	 */
-	public Cursor fetchTodo(long rowId) throws SQLException {
-		Cursor mCursor = database.query(true, DATABASE_TABLE, new String[] {
-				KEY_ROWID, KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION },
-				KEY_ROWID + "=" + rowId, null, null, null, null, null);
-		if (mCursor != null) {
-			mCursor.moveToFirst();
-		}
-		return mCursor;
+	public Cursor getDetailsCursor() {
+		return this.database.query(DetailsStore.TABLE_NAME, new String[] { DetailsStore.ID, DetailsStore.TITLE, DetailsStore.SURNAME, DetailsStore.PHONE }, null, null, null,
+				null, DetailsStore.ROW_CREATED_AT + " DESC");
 	}
+	
 
 }
 

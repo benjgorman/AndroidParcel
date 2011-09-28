@@ -53,7 +53,8 @@ public class ServicesTab extends ListActivity implements OnClickListener
   
  }
 
- public void onClick(View v)
+ @Override
+public void onClick(View v)
  {
   hideOthers(v);
  }

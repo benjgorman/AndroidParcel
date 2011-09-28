@@ -1,22 +1,20 @@
 package com.benjgorman.pharostest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.benjgorman.pharostest.stores.AddressStore;
+import com.benjgorman.pharostest.stores.DetailsStore;
 import com.benjgorman.pharostest.stores.OrderStore;
 import com.benjgorman.pharostest.stores.ParcelStore;
+import com.benjgorman.pharostest.stores.RAddressStore;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "PharosParcelDB";
 
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 7;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,7 +25,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase database) {
 		database.execSQL(ParcelStore.TABLE_CREATE);
 		database.execSQL(AddressStore.TABLE_CREATE);
+		database.execSQL(RAddressStore.TABLE_CREATE);
 		database.execSQL(OrderStore.TABLE_CREATE);
+		database.execSQL(DetailsStore.TABLE_CREATE);
 		
 	}
 
@@ -42,6 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		database.execSQL("DROP TABLE IF EXISTS " + ParcelStore.TABLE_NAME);
 		database.execSQL("DROP TABLE IF EXISTS " + OrderStore.TABLE_NAME);
 		database.execSQL("DROP TABLE IF EXISTS " + AddressStore.TABLE_NAME);
+		database.execSQL("DROP TABLE IF EXISTS " + RAddressStore.TABLE_NAME);
+		database.execSQL("DROP TABLE IF EXISTS " + DetailsStore.TABLE_NAME);
 		onCreate(database);
 	}
 	

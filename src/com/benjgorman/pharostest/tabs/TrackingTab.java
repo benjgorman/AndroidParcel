@@ -9,16 +9,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.benjgorman.pharostest.DatabaseAdapter;
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.id;
-import com.benjgorman.pharostest.R.layout;
 import com.benjgorman.pharostest.activites.TrackingHistory;
 import com.benjgorman.pharostest.activites.TrackingResult;
 import com.benjgorman.pharostest.tools.IntentIntegrator;
@@ -57,7 +52,8 @@ public class TrackingTab extends Activity
 
         final Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+            @Override
+			public void onClick(View v) 
             {
             	IntentIntegrator.initiateScan(TrackingTab.this);
             }
@@ -66,7 +62,8 @@ public class TrackingTab extends Activity
         
         final Button button4 = (Button) findViewById(R.id.btn_track_history);
         button4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+            @Override
+			public void onClick(View v) 
             {
 		  		launchHistory();
             }
@@ -75,7 +72,8 @@ public class TrackingTab extends Activity
         
         final Button button3 = (Button) findViewById(R.id.btn_text);
         button3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) 
+            @Override
+			public void onClick(View v) 
             { 
                 	final EditText simpleEditText = (EditText) findViewById(R.id.editBarcode);
                 	String trackingNo = simpleEditText.getText().toString();

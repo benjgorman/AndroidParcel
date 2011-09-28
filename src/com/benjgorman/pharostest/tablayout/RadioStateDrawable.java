@@ -35,8 +35,6 @@ package com.benjgorman.pharostest.tablayout;
 import java.io.InputStream;
 
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.drawable;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

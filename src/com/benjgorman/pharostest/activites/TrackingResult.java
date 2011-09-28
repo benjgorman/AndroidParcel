@@ -7,23 +7,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import com.benjgorman.pharostest.R;
-import com.benjgorman.pharostest.R.layout;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 
 public class TrackingResult extends Activity{
 	Context context;

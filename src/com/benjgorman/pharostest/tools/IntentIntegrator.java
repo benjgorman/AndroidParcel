@@ -213,7 +213,8 @@ public final class IntentIntegrator {
     downloadDialog.setTitle(stringTitle);
     downloadDialog.setMessage(stringMessage);
     downloadDialog.setPositiveButton(stringButtonYes, new DialogInterface.OnClickListener() {
-      public void onClick(DialogInterface dialogInterface, int i) {
+      @Override
+	public void onClick(DialogInterface dialogInterface, int i) {
         Uri uri = Uri.parse("market://search?q=pname:" + PACKAGE);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         try {
@@ -225,7 +226,8 @@ public final class IntentIntegrator {
       }
     });
     downloadDialog.setNegativeButton(stringButtonNo, new DialogInterface.OnClickListener() {
-      public void onClick(DialogInterface dialogInterface, int i) {}
+      @Override
+	public void onClick(DialogInterface dialogInterface, int i) {}
     });
     return downloadDialog.show();
   }

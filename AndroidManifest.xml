@@ -88,6 +88,10 @@
         <activity android:name=".activites.AccordianSampleActivity"
         		  android:label="Accordian Sample Activity">
         </activity>
+        
+        <activity android:name=".activites.Checkout"
+        		  android:label="Checkout">
+        </activity>
 
 
         <activity android:name=".activites.FAQ"
