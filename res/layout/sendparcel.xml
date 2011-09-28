@@ -109,6 +109,7 @@
 					android:layout_alignParentLeft="true"
        				android:layout_centerHorizontal="true"
       			/>
+
      		
      		<RelativeLayout
 			android:orientation="horizontal"
@@ -172,7 +173,14 @@
 	
     </LinearLayout>
   
-    </LinearLayout>
+  </LinearLayout>
+  
+  <LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:background="#ffffff">
+  </LinearLayout>
 
     <LinearLayout
 			android:orientation="vertical"
