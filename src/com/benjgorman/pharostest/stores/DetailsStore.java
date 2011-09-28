@@ -8,6 +8,7 @@ public class DetailsStore {
 	public static final String FORENAME = "forename";
 	public static final String SURNAME = "surname";
 	public static final String PHONE = "phone";
+	public static final String EMAIL = "email";
 	public static final String ROW_CREATED_AT = "createdAt";
 	public static final String TABLE_CREATE = "CREATE TABLE " +
 			TABLE_NAME + " (" +
@@ -16,15 +17,27 @@ public class DetailsStore {
 			FORENAME + " TEXT, " +
 			SURNAME + " TEXT, " +
 			PHONE + " TEXT, " +
+			EMAIL + " TEXT, " +
 			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 	
 	private String title;
 	private String forename;
 	private String surname;
 	private String phone;
+	private String email;
 
 	
-	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
 	public String getTitle() {
 		return title;
 	}

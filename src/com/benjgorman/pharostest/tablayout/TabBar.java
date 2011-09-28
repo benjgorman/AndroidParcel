@@ -52,23 +52,23 @@ public class TabBar  extends ScrollableTabActivity{
 
              case 1: 
             	 intent = new Intent(this, PackagesTab.class);
-            	 this.addTab("Packages", R.drawable.tabup, R.drawable.tabdown, intent);;   
+            	 this.addTab("Packages", R.drawable.packages_up, R.drawable.packages_down, intent);;   
             	 break;
              case 2: 
             	 intent = new Intent(this, TrackingTab.class);
-            	 this.addTab("Tracking", R.drawable.tabup, R.drawable.tabdown, intent);;      
+            	 this.addTab("Tracking", R.drawable.tracking_up, R.drawable.tracking_down, intent);;      
             	 break;
              case 3: 
             	 intent = new Intent(this, HistoryTab.class);
-            	 this.addTab("History", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 this.addTab("History", R.drawable.history_up, R.drawable.history_down, intent);;       
             	 break;
              case 4:
             	 intent = new Intent(this, ServicesTab.class);
-            	 this.addTab("Services", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 this.addTab("Services", R.drawable.services_up, R.drawable.services_down, intent);;       
             	 break;
              case 5:
             	 intent = new Intent(this, HelpTab.class);
-            	 this.addTab("Help", R.drawable.tabup, R.drawable.tabdown, intent);;       
+            	 this.addTab("Help", R.drawable.help_up, R.drawable.help_down, intent);;       
             	 break;
             
              default:; break;

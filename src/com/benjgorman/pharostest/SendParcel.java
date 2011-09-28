@@ -5,6 +5,7 @@ import com.benjgorman.pharostest.activites.FAQ;
 import com.benjgorman.pharostest.stores.AddressStore;
 import com.benjgorman.pharostest.stores.DetailsStore;
 import com.benjgorman.pharostest.stores.RAddressStore;
+import com.benjgorman.pharostest.stores.RDetailsStore;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -249,6 +250,67 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         });
         
+        final Button button12 = (Button) findViewById(R.id.btn_add_rdetails);
+        button12.setOnClickListener(new View.OnClickListener() {
+        	
+			public void onClick(View v) 
+            {
+            	Context mContext = v.getContext();
+            	final Dialog dialog = new Dialog(mContext);
+
+            	dialog.setContentView(R.layout.add_rdetails);
+            	dialog.setTitle("Add Recepient Details");
+            	
+            	
+            	final Button button9 = (Button) dialog.findViewById(R.id.btn_cancel_details);
+                button9.setOnClickListener(new View.OnClickListener() {
+                	 
+                	public void onClick(View v) 
+                    {
+
+                    	dialog.dismiss();
+                    }
+                
+                });
+                
+                final Button button12 = (Button) dialog.findViewById(R.id.btn_save_details);
+                button12.setOnClickListener(new View.OnClickListener() {
+                	
+					public void onClick(View v) 
+                    {
+                		EditText simpleEditText;
+                		
+                		simpleEditText = (EditText) dialog.findViewById(R.id.txtTitle);
+                    	String title = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtForename);
+                    	String forename = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtSurname);
+                    	String surname = simpleEditText.getText().toString();
+                    	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtPhone);
+                    	String phone = simpleEditText.getText().toString();
+                    	
+
+                		DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+                		RDetailsStore details = new RDetailsStore(title, forename, surname, phone);
+            		  	db.insertRDetails(details);
+            		  	
+            		  	setRDetailsSpinner();
+            		  	
+            		  	dialog.dismiss();
+                    }
+                
+                });
+
+            	
+            	dialog.show();
+            	
+            }
+        
+        });
+        
         
         final Button button7 = (Button) findViewById(R.id.btn_accept);
         button7.setOnClickListener(new View.OnClickListener() {
@@ -258,11 +320,11 @@ public class SendParcel extends Activity implements OnTouchListener{
 				final Context mContext = v.getContext();               
             	final Dialog dialog = new Dialog(mContext);   
             	
-				EditText nameEdit = (EditText) findViewById(R.id.txtName);
+				EditText nameEdit = (EditText) findViewById(R.id.txtWeight);
 		    	String sName = nameEdit.getText().toString();
 		    	
 		        if (sName.matches("")) {
-		        	Toast.makeText(mContext, "You have not entered a Name!", Toast.LENGTH_SHORT).show();
+		        	Toast.makeText(mContext, "You have not entered a weight!", Toast.LENGTH_SHORT).show();
 		        	return;
 		        }
 		        else
@@ -299,8 +361,10 @@ public class SendParcel extends Activity implements OnTouchListener{
     private void setServicesSpinner() {
     	
     	Spinner spinnerServices = (Spinner) findViewById(R.id.spinner_service);
+    	spinnerServices.setPrompt("Select a service...");
+    	
         ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
-                    android.R.layout.simple_spinner_dropdown_item,
+                    R.layout.spinner_dropdown,
                     new String[] { "UPS Standard (UK 1-2 Working Days, Europe 1-5 Working Days)", "UPS Express (UK Next Working Day, ROW 1-3 Working Days)", "UPS Express Saver (UK Next Working Day, ROW 2-4 Working Days)", "UPS	Expedited (Rest Of World 2-7 Working Days)", "Yodel	Standard Service 1 -3 Working Days", "Yodel	Saturday delivery service", "Yodel AM Delivery 1 - 3 Working Days","Yodel PM Delivery 1 - 3 Working Days","Yodel Evening Delivery, 1 - 3 Working Days", "Yodel Avoid School Run Delivery, 1 - 3 Working Days", "Yodel	 Northern Ireland Standard Service 1-5 Working Days", });
         spinnerServices.setAdapter(servicesArrayAdapter);
 		
@@ -309,66 +373,92 @@ public class SendParcel extends Activity implements OnTouchListener{
 	public void setCollectionAddressSpinner() {
     
     	Spinner s2 = (Spinner) findViewById(R.id.spinner_collection_address);
+    	s2.setPrompt("Select an address...");
         
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         
         Cursor cur = db.getAddressCursor();
              
         final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
-            R.layout.db_view_row, // Use a template
+            R.layout.address_view, // Use a template
                                                   // that displays a
                                                   // text view
             cur, // Give the cursor to the list adapter
-            new String[] {AddressStore.POSTCODE, AddressStore.CITY}, // Map the NAME column in the
+            new String[] {AddressStore.LINE1, AddressStore.POSTCODE, AddressStore.CITY}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
                                                  
-        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        adapter2.setDropDownViewResource(R.layout.address_view);
         s2.setAdapter(adapter2);
     }
     
     public void setRecepientAddressSpinner() {
         
     	Spinner s2 = (Spinner) findViewById(R.id.spinner_recepient_address);
+    	s2.setPrompt("Select an address...");
         
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         
         Cursor cur = db.getRAddressCursor();
              
         final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
-            R.layout.db_view_row, // Use a template
+            R.layout.address_view, // Use a template
                                                   // that displays a
                                                   // text view
             cur, // Give the cursor to the list adapter
-            new String[] {RAddressStore.LINE1, RAddressStore.CITY}, // Map the NAME column in the
+            new String[] {RAddressStore.LINE1, RAddressStore.POSTCODE, RAddressStore.CITY}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
                                                  
-        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        adapter2.setDropDownViewResource(R.layout.address_view);
         s2.setAdapter(adapter2);
     }
     
     public void setDetailsSpinner() {
 	
     	Spinner s2 = (Spinner) findViewById(R.id.spinner_details);
+    	s2.setPrompt("Select your details...");
         
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         
         Cursor cur = db.getDetailsCursor();
              
         final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
-            R.layout.db_view_row, // Use a template
+            R.layout.details_row, // Use a template
                                                   // that displays a
                                                   // text view
             cur, // Give the cursor to the list adapter
-            new String[] {DetailsStore.TITLE ,DetailsStore.SURNAME}, // Map the NAME column in the
+            new String[] {DetailsStore.TITLE,DetailsStore.FORENAME, DetailsStore.SURNAME, DetailsStore.PHONE, DetailsStore.EMAIL}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1}); // The "text1" view defined in
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3, R.id.tvDBViewRow4}); // The "text1" view defined in
                                              // the XML template
                                                  
-        adapter2.setDropDownViewResource(R.layout.db_view_row);
+        adapter2.setDropDownViewResource(R.layout.details_row);
+        s2.setAdapter(adapter2);
+    }
+    
+    public void setRDetailsSpinner() {
+    	
+    	Spinner s2 = (Spinner) findViewById(R.id.spinner_rdetails);
+    	s2.setPrompt("Select recepient details...");
+        
+        DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
+        
+        Cursor cur = db.getRDetailsCursor();
+             
+        final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
+            R.layout.details_row, // Use a template
+                                                  // that displays a
+                                 // text view
+            cur, // Give the cursor to the list adapter
+            new String[] {RDetailsStore.TITLE, RDetailsStore.FORENAME, RDetailsStore.SURNAME, RDetailsStore.PHONE}, // Map the NAME column in the
+                                                 // people database to...
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3}); // The "text1" view defined in
+                                             // the XML template
+                                                 
+        adapter2.setDropDownViewResource(R.layout.details_row);
         s2.setAdapter(adapter2);
     }
     

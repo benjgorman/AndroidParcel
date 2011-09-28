@@ -7,6 +7,7 @@ import com.benjgorman.pharostest.stores.AddressStore;
 import com.benjgorman.pharostest.stores.DetailsStore;
 import com.benjgorman.pharostest.stores.OrderStore;
 import com.benjgorman.pharostest.stores.RAddressStore;
+import com.benjgorman.pharostest.stores.RDetailsStore;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -44,6 +45,46 @@ public class DatabaseAdapter {
 	 * @param address
 	 * @return addressID
 	 */
+	public String insertRDetails(RDetailsStore details) {
+		String detailsID = null;
+
+		Cursor cursor = this.database.query(RDetailsStore.TABLE_NAME, 
+				new String[] {DetailsStore.ID}, 
+				DetailsStore.SURNAME + " = '" + details.getSurname() + "' AND " + 
+				DetailsStore.PHONE + " = '" + details.getPhone() + "'",
+				null, null, null, null);
+
+		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+			// Address found
+			detailsID = cursor.getString(0);
+		} else {
+			// Address not found, add the address
+			String insert = "INSERT INTO " +
+					RDetailsStore.TABLE_NAME + " (" + 
+					RDetailsStore.TITLE + ", " +
+					RDetailsStore.FORENAME + ", " +
+					RDetailsStore.SURNAME + ", " +
+					RDetailsStore.PHONE +
+				") values (?, ?, ?, ?)";
+
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			insertStatement.bindString(1, details.getTitle());
+			insertStatement.bindString(2, details.getForename());
+			insertStatement.bindString(3, details.getSurname());
+			insertStatement.bindString(4, details.getPhone());
+
+			Long result = insertStatement.executeInsert();
+			detailsID = result.toString();
+		}
+
+		return detailsID;
+	}
+	
+	/**
+	 * Adds an address to the database. If it already exists it returns the ID of the one found.
+	 * @param address
+	 * @return addressID
+	 */
 	public String insertDetails(DetailsStore details) {
 		String detailsID = null;
 
@@ -63,14 +104,16 @@ public class DatabaseAdapter {
 					DetailsStore.TITLE + ", " +
 					DetailsStore.FORENAME + ", " +
 					DetailsStore.SURNAME + ", " +
-					DetailsStore.PHONE +
-				") values (?, ?, ?, ?)";
+					DetailsStore.PHONE + ", " +
+					DetailsStore.EMAIL +
+				") values (?, ?, ?, ?, ?)";
 
 			SQLiteStatement insertStatement = this.database.compileStatement(insert);
 			insertStatement.bindString(1, details.getTitle());
 			insertStatement.bindString(2, details.getForename());
 			insertStatement.bindString(3, details.getSurname());
 			insertStatement.bindString(4, details.getPhone());
+			insertStatement.bindString(5, "Blank");
 
 			Long result = insertStatement.executeInsert();
 			detailsID = result.toString();
@@ -272,8 +315,18 @@ public class DatabaseAdapter {
 	 * 
 	 * @return
 	 */
+	public Cursor getRDetailsCursor() {
+		return this.database.query(RDetailsStore.TABLE_NAME, new String[] { RDetailsStore.ID, RDetailsStore.TITLE, RDetailsStore.FORENAME, RDetailsStore.SURNAME, RDetailsStore.PHONE }, null, null, null,
+				null, RDetailsStore.ROW_CREATED_AT + " DESC");
+	}
+	
+	/**
+	 * returns a cursor to navigate around the parcels data
+	 * 
+	 * @return
+	 */
 	public Cursor getDetailsCursor() {
-		return this.database.query(DetailsStore.TABLE_NAME, new String[] { DetailsStore.ID, DetailsStore.TITLE, DetailsStore.SURNAME, DetailsStore.PHONE }, null, null, null,
+		return this.database.query(DetailsStore.TABLE_NAME, new String[] { DetailsStore.ID, DetailsStore.TITLE, DetailsStore.FORENAME, DetailsStore.SURNAME, DetailsStore.PHONE, DetailsStore.EMAIL }, null, null, null,
 				null, DetailsStore.ROW_CREATED_AT + " DESC");
 	}
 	

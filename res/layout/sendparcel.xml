@@ -97,50 +97,42 @@
             	android:layout_alignParentRight="true">
             	</Button>
      		</RelativeLayout>
-     		<LinearLayout
-    			android:orientation="vertical"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:background="#ffffff">
-    			<TextView
-					android:id="@+id/lblName"
-					android:layout_width="fill_parent"
+     		
+     		<TextView
+					android:id="@+id/lblCollection"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Recepient's Full Name"
-					android:layout_weight="1"
-					
+					android:text="Recepient Details"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentLeft="true"
+       				android:layout_centerHorizontal="true"
       			/>
-      			<EditText 
-					android:layout_height="wrap_content" 
-	    			android:layout_width="fill_parent" 
-	    			android:textSize="14sp" 
-	    			android:id="@+id/txtName"
-	    			android:hint="Joe Bloggs"
-	    			android:layout_weight="1"
-	    			android:nextFocusDown="@+id/txtPhone"
-	   				/>
-      			<TextView
-					android:id="@+id/lblNumber"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="Recepient Phone Number"
-					android:layout_weight="1"
-					
-      			/>
-      			<EditText 
-					android:layout_height="wrap_content" 
-	    			android:layout_width="fill_parent" 
-	    			android:numeric="integer"
-	    			android:hint="1234 56789"
-	    			android:textSize="14sp" 
-	    			android:id="@+id/txtPhone" 
-	    			android:layout_weight="1">
-	    		</EditText>
-    			</LinearLayout>
+     		
+     		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="60px"
+			android:background="#ffffff">
+			
+				<Spinner android:text="No details"
+            	android:id="@+id/spinner_rdetails"
+            	android:layout_width="fill_parent"
+            	android:layout_height="fill_parent"
+            	android:background="@android:drawable/btn_default"
+            	android:layout_weight="1"
+            	android:layout_toLeftOf="@+id/btn_add_rdetails">
+            	</Spinner>
+            	<Button 
+            	android:id="@+id/btn_add_rdetails"
+            	android:text="+"
+            	android:layout_height="fill_parent"
+            	android:layout_width="wrap_content"
+            	android:layout_alignParentTop="true"
+            	android:layout_alignParentRight="true">
+            	</Button>
+     		</RelativeLayout>
     			
     			<TextView
 					android:id="@+id/lblCollection"
@@ -351,6 +343,7 @@ Restricted or Prohibited items will not be covered for loss or damage."
       			/>
     			<Spinner android:text="No Services"
             	android:id="@+id/spinner_service"
+            	android:background="@android:drawable/btn_default"
             	android:layout_width="fill_parent"
             	android:layout_height="wrap_content">
             	</Spinner>

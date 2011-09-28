@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:background="#AAA">
-	<Button android:layout_width="wrap_content" 
-			android:text="Send Package" 
-			android:layout_height="wrap_content" 
-			android:id="@+id/btn_sendpackage" 
-			android:layout_centerVertical="true" 
-			android:layout_centerHorizontal="true">
-	</Button>
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+ 	>
+	<ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"></ImageView>
 	
-	<Button android:layout_width="wrap_content" 
-			android:text="Get Quote" 
-			android:layout_height="wrap_content" 
-			android:id="@+id/btn_getquote" 
-			android:layout_above="@+id/btn_sendpackage" 
-			android:layout_centerHorizontal="true" 
-			android:layout_marginBottom="66dp">
-	</Button>
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="55px"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+		</LinearLayout>
+		
+	 <LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android" android:layout_margin="24dip" android:layout_marginTop="24dip">
+	<Button android:id="@+id/btn_getquote" android:layout_width="fill_parent" android:text="Get Quote" android:layout_height="wrap_content" android:layout_below="@+id/TextView01"></Button>
+	 <LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="55px"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+		</LinearLayout>
 	
-	<TextView android:id="@+id/TextView01" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" 
-			android:text="OR" android:textSize="20dip" 
-			android:textColor="#FFF" 
-			android:textStyle="bold" 
-			android:layout_above="@+id/btn_sendpackage" 
-			android:layout_centerHorizontal="true" 
-			android:layout_marginBottom="19dp">
-	</TextView>
-</RelativeLayout>
+	
+	<Button android:id="@+id/btn_sendpackage" android:layout_width="fill_parent" android:text="Send Package" android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+</LinearLayout>
