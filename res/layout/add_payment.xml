@@ -24,11 +24,12 @@
 					android:textSize="14px"
 					android:text="Card Type"
       			/>
-    			<Spinner android:text="No Services"
-            	android:id="@+id/spinner_card_type"
-            	android:layout_width="fill_parent"
-            	android:layout_height="wrap_content">
-            	</Spinner>
+    			<EditText 
+				android:layout_height="fill_parent" 
+    			android:layout_width="fill_parent" 
+    			android:textSize="14sp" 
+    			android:id="@+id/txtPayType" >
+    			</EditText>
               <TextView
 					android:id="@+id/lblCardName"
 					android:layout_width="fill_parent"
@@ -149,6 +150,7 @@
               		android:layout_height="fill_parent"
               		>
     			<Button
+    			 android:id="@+id/btn_savepay"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
      			 android:text="Save"
@@ -156,6 +158,7 @@
      			 />
      			 
      			 <Button
+     			 android:id="@+id/btn_cancelpay"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
      			 android:text="Cancel"

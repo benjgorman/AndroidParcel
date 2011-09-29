@@ -14,6 +14,12 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#ffffff" android:layout_gravity="center">
+  <LinearLayout
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="#ffffff" android:layout_gravity="center">
+  <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
   
   
 	    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
@@ -46,18 +52,25 @@
 	            	android:layout_below="@+id/spinner_collection_address">
 	    </Spinner>
 	    
-	    
-	    <Button 	android:id="@+id/btn_quoteme" 
-					android:layout_width="fill_parent" 
-					android:layout_height="wrap_content" 
-					android:text="Get Quote!" 
-					android:layout_centerHorizontal="true" android:layout_gravity="center|center_horizontal"/>		
+	    </LinearLayout>
+  
+  
+	    <RelativeLayout
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="#ffffff">
+  <Button android:id="@+id/btn_quoteme" android:layout_height="wrap_content" android:text="Get Quote!" android:layout_width="fill_parent"></Button>
+ </RelativeLayout>
+ 	
 </LinearLayout>
 <LinearLayout
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#ffffff">
+  
+  <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
  <ListView android:id="@android:id/list"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
@@ -65,7 +78,7 @@
                android:drawSelectorOnTop="false"
                />
                <Button 	android:id="@+id/btn_back" 
-					android:layout_width="wrap_content" 
+					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content" 
 					android:text="Back" 
 					android:layout_centerHorizontal="true" 

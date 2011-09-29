@@ -22,6 +22,7 @@ import com.benjgorman.pharostest.tools.IntentResult;
 //import android.content.pm.PackageManager;
 //import android.content.pm.PackageInfo;
 import android.speech.RecognizerIntent;
+import android.util.Log;
 import android.view.*;
 
 
@@ -102,6 +103,10 @@ public class TrackingTab extends Activity
     
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    	
+    	try
+    	{
+    	Log.d("TAG", Integer.toString(requestCode));
     	  IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
   		
     	 if (scanResult != null) 
@@ -129,9 +134,15 @@ public class TrackingTab extends Activity
              beginTracking(trackingNo);
              
          }
+    	}
+    	catch(Exception e)
+    	{
+    		
+    	}
          super.onActivityResult(requestCode, resultCode, intent);
     	  // else continue with any other code you need in the method
     	 
+         
     	 }
     
     public void launchHistory()

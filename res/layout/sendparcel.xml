@@ -17,7 +17,8 @@
 		android:layout_height="fill_parent"
 		android:orientation="vertical"
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		>	
+		>
+		<ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>	
 		<TextView
 					android:id="@+id/lblTitle"
 					android:layout_width="wrap_content"
@@ -116,6 +117,7 @@
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
   android:background="#ffffff">
+  <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
   	<TextView
 					android:id="@+id/lblCollection"
 					android:layout_width="wrap_content"
@@ -261,6 +263,7 @@
 	    			android:textSize="14sp" 
 					android:numeric="integer"
 					android:hint="kg"
+					android:text="4"
 					android:inputType="phone"
 	    			android:id="@+id/txtWeight"
 	    			android:layout_weight="1"
@@ -272,6 +275,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:text="30"
 					android:inputType="phone"
 	    			android:id="@+id/txtLength"
 	    			android:layout_weight="1"
@@ -283,6 +287,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:text="23"
 					android:inputType="phone"
 	    			android:id="@+id/txtWidth"
 	    			android:layout_weight="1"
@@ -294,6 +299,7 @@
 	    			android:textSize="14sp" 
 	    			android:numeric="integer"
 					android:hint="cm"
+					android:text="22"
 					android:inputType="phone"
 	    			android:id="@+id/txtHeight"
 	    			android:layout_weight="1"

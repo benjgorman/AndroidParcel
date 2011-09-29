@@ -20,9 +20,9 @@
 			android:layout_width="fill_parent"
 			android:layout_height="120px"
 			android:background="#ffffff">
-      			<Button android:onClick="selfDestruct" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Pay with Paypal" android:layout_gravity="center" android:id="@+id/button1"></Button>
-      			<TextView android:id="@+id/textView1" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:text="OR" android:layout_height="wrap_content" android:textColor="@color/black" android:layout_below="@+id/button1" android:layout_centerHorizontal="true"></TextView>
+      			<Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Pay with Paypal" android:layout_gravity="center" android:id="@+id/paypal_btn"></Button>
       			<TextView android:id="@+id/lblCard" android:layout_height="wrap_content" android:textSize="14px" android:layout_width="wrap_content" android:text="Select a Payment Method" android:textColor="#000000" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"></TextView>
+      			<TextView android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textView1" android:text="OR" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/black" android:layout_below="@+id/paypal_btn" android:layout_centerHorizontal="true"></TextView>
 			</RelativeLayout>
       			
     			
@@ -51,9 +51,9 @@
             	
      		</RelativeLayout>
 				<Button
+				 android:id="@+id/btn_complete"
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"
-     			 android:text="Finish Order"
-     			 android:onClick="selfDestruct" />
+     			 android:text="Finish Order"/>
 			
 	</LinearLayout>

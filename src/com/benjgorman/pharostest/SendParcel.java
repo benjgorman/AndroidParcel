@@ -358,7 +358,7 @@ public class SendParcel extends Activity implements OnTouchListener{
 		        }
             }
         
-        });      
+        });  
         
     }
     
@@ -504,6 +504,8 @@ public class SendParcel extends Activity implements OnTouchListener{
         	s2.setAdapter(servicesArrayAdapter);
         }
     }
+    
+
     
 
     
