@@ -55,6 +55,7 @@ public class SendParcel extends Activity implements OnTouchListener{
         setCollectionAddressSpinner();
         setRecepientAddressSpinner();
         setServicesSpinner();
+        setRDetailsSpinner();
         setDetailsSpinner();
         
         final Button button5 = (Button) findViewById(R.id.btn_addAddress);
@@ -391,9 +392,19 @@ public class SendParcel extends Activity implements OnTouchListener{
                                                  // people database to...
             new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
-                                                 
-        adapter2.setDropDownViewResource(R.layout.address_view);
-        s2.setAdapter(adapter2);
+        boolean isEmpty = adapter2.isEmpty();
+        if (isEmpty == false)
+        {
+        	adapter2.setDropDownViewResource(R.layout.address_view);
+        	s2.setAdapter(adapter2);
+        }
+        else
+        {
+        	ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
+                    R.layout.spinner_dropdown,
+                    new String[] {"Tap the button on the right to add Recepient Address"});
+        	s2.setAdapter(servicesArrayAdapter);
+        }
     }
     
     public void setRecepientAddressSpinner() {
@@ -414,9 +425,18 @@ public class SendParcel extends Activity implements OnTouchListener{
                                                  // people database to...
             new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
-                                                 
-        adapter2.setDropDownViewResource(R.layout.address_view);
-        s2.setAdapter(adapter2);
+        boolean isEmpty = adapter2.isEmpty();                                    
+        if (isEmpty == false)
+        {
+        	adapter2.setDropDownViewResource(R.layout.address_view);
+        	s2.setAdapter(adapter2);
+        }
+        else
+        {
+        	ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
+                    R.layout.spinner_dropdown,
+                    new String[] {"Tap the button on the right to add your Collection Address"});
+        }
     }
     
     public void setDetailsSpinner() {
@@ -437,32 +457,52 @@ public class SendParcel extends Activity implements OnTouchListener{
                                                  // people database to...
             new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3, R.id.tvDBViewRow4}); // The "text1" view defined in
                                              // the XML template
-                                                 
-        adapter2.setDropDownViewResource(R.layout.details_row);
-        s2.setAdapter(adapter2);
+        boolean isEmpty = adapter2.isEmpty();                                 
+        if (isEmpty == false)
+        {
+        	adapter2.setDropDownViewResource(R.layout.details_row);
+        	s2.setAdapter(adapter2);
+        }
+        else
+        {
+        	ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
+                    R.layout.spinner_dropdown,
+                    new String[] {"Tap the button on the right to add your Personal Details"});
+        	s2.setAdapter(servicesArrayAdapter);
+        }
     }
     
     public void setRDetailsSpinner() {
     	
     	Spinner s2 = (Spinner) findViewById(R.id.spinner_rdetails);
-    	s2.setPrompt("Select recepient details...");
+    	s2.setPrompt("Select your details...");
         
         DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
         
         Cursor cur = db.getRDetailsCursor();
              
         final SimpleCursorAdapter adapter2 = new SimpleCursorAdapter(this,
-            R.layout.details_row, // Use a template
+            R.layout.details_row2, // Use a template
                                                   // that displays a
-                                 // text view
+                                                  // text view
             cur, // Give the cursor to the list adapter
-            new String[] {RDetailsStore.TITLE, RDetailsStore.FORENAME, RDetailsStore.SURNAME, RDetailsStore.PHONE}, // Map the NAME column in the
+            new String[] {RDetailsStore.TITLE,RDetailsStore.FORENAME, RDetailsStore.SURNAME, RDetailsStore.PHONE}, // Map the NAME column in the
                                                  // people database to...
             new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
-                                                 
-        adapter2.setDropDownViewResource(R.layout.details_row);
-        s2.setAdapter(adapter2);
+        boolean isEmpty = adapter2.isEmpty();                                 
+        if (isEmpty == false)
+        {
+        	adapter2.setDropDownViewResource(R.layout.details_row2);
+        	s2.setAdapter(adapter2);
+        }
+        else
+        {
+        	ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
+                    R.layout.spinner_dropdown,
+                    new String[] {"Tap the button on the right to add your Personal Details"});
+        	s2.setAdapter(servicesArrayAdapter);
+        }
     }
     
 

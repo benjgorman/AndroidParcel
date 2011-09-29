@@ -1,5 +1,8 @@
 package com.benjgorman.pharostest.activites;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.SendParcel;
 import android.content.Context;
@@ -12,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.ViewFlipper;
 import android.app.ListActivity;
@@ -34,14 +38,14 @@ public class GetQuoteActivity extends ListActivity{
         //Add a few countries to the spinner
        Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_collection_address);
        ArrayAdapter countryArrayAdapter = new ArrayAdapter(this,
-                   android.R.layout.simple_spinner_dropdown_item,
+                   R.layout.spinner_dropdown,
                    new String[] { "UK", "Ireland", "Canada", "USA", "France", "Spain", "Germany", });
        spinnerCountries.setAdapter(countryArrayAdapter);
        
        //Add weight to the spinner
       Spinner spinnerWeight = (Spinner) findViewById(R.id.spinner_weight);
       ArrayAdapter weightArrayAdapter = new ArrayAdapter(this,
-                  android.R.layout.simple_spinner_dropdown_item,
+                  R.layout.spinner_dropdown,
                   new String[] { "0.5kg", "1kg", "1.5kg", "2kg", "2.5kg", "3kg", "3.5kg", "4kg", });
       spinnerWeight.setAdapter(weightArrayAdapter);
       
@@ -70,10 +74,30 @@ public class GetQuoteActivity extends ListActivity{
               vf.showPrevious();
       }
 
-      });        
+      });
       
-      setListAdapter(ArrayAdapter.createFromResource(getApplicationContext(),
-              R.array.services, R.layout.list_item));
+      ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
+      HashMap<String, String> map = new HashMap<String, String>();
+      map.put("service", "UPS Standard");
+      map.put("price", "£8.33");
+      mylist.add(map);
+      map = new HashMap<String, String>();
+      map.put("service", "UPS Express");
+      map.put("price", "£26.59");
+      mylist.add(map);
+      map = new HashMap<String, String>();
+      map.put("service", "UPS Express Saver");
+      map.put("price", "£23.76");
+      mylist.add(map);
+      map = new HashMap<String, String>();
+      map.put("service", "UPS Expedited");
+      map.put("price", "£8.25");
+      mylist.add(map);
+    
+      
+      SimpleAdapter mSchedule = new SimpleAdapter(this, mylist, R.layout.quote_row,
+                  new String[] {"service", "price"}, new int[] {R.id.SERVICE_CELL, R.id.PRICE_CELL});
+      setListAdapter(mSchedule);
       
       
        

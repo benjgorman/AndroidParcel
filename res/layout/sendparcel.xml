@@ -17,7 +17,7 @@
 		android:layout_height="fill_parent"
 		android:orientation="vertical"
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		>
+		>	
 		<TextView
 					android:id="@+id/lblTitle"
 					android:layout_width="wrap_content"
@@ -97,8 +97,26 @@
             	android:layout_alignParentRight="true">
             	</Button>
      		</RelativeLayout>
+     		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ffffff">
+			<ImageView android:id="@+id/imageView1" android:layout_alignParentBottom="true" android:layout_width="wrap_content" android:src="@drawable/step_1" android:layout_height="wrap_content"></ImageView>
+			</RelativeLayout>
      		
-     		<TextView
+     	
+    </LinearLayout>
+			
+  
+  </LinearLayout>
+  
+  <LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:background="#ffffff">
+  	<TextView
 					android:id="@+id/lblCollection"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -169,17 +187,15 @@
             	android:layout_alignParentTop="true"
             	android:layout_alignParentRight="true">
             	</Button>
+            	
      		</RelativeLayout>
-	
-    </LinearLayout>
-  
-  </LinearLayout>
-  
-  <LinearLayout
-  android:orientation="vertical"
-  android:layout_width="fill_parent"
-  android:layout_height="wrap_content"
-  android:background="#ffffff">
+	<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ffffff">
+			<ImageView android:id="@+id/imageView2" android:layout_alignParentBottom="true" android:layout_width="wrap_content" android:src="@drawable/step_2" android:layout_height="wrap_content"></ImageView>
+	</RelativeLayout>
   </LinearLayout>
 
     <LinearLayout
@@ -365,6 +381,13 @@ Restricted or Prohibited items will not be covered for loss or damage."
      			 android:layout_width="wrap_content"
      			 android:text="Accept Changes"
      			 />
+     			<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ffffff">
+			<ImageView android:id="@+id/imageView3" android:layout_alignParentBottom="true" android:layout_width="wrap_content" android:src="@drawable/step_3" android:layout_height="wrap_content"></ImageView>
+			</RelativeLayout>
 	</LinearLayout>
 </ViewFlipper>
     

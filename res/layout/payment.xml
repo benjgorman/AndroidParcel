@@ -2,50 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="fill_parent"
 			android:background="#ffffff">
-    <Button android:onClick="selfDestruct" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pay with Paypal" android:layout_gravity="center"></Button>
-     			 <TextView
-					android:id="@+id/lblOr"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="OR"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true" android:gravity="center|center_horizontal"/>
-            	<TextView
-					android:id="@+id/lblCard"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="#000000"
-					android:textSize="14px"
-					android:text="Select a Payment Method"
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-       				android:layout_centerHorizontal="true"
-      			/>
-    			<LinearLayout
-      			android:orientation="horizontal"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:background="#ffffff" 
-      			>
-    			<Spinner android:text="No Saved Addresses"
-            	android:id="@+id/spinner_card"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:layout_weight="1">
-            	</Spinner>
-            	<Button
-            	 android:id="@+id/btn_addCard"
-    			 android:layout_height="fill_parent"
-     			 android:layout_width="wrap_content"
-     			 android:text="Add" 
-     			 android:layout_weight="1"/>
-     			 </LinearLayout>
-	    			<CheckBox android:id="@+id/check1"
+    
+     			 <CheckBox android:id="@+id/check1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="There are no prohibited items in this consignment" android:textColor="@color/black"/>
 				<CheckBox android:id="@+id/check1"
@@ -54,6 +14,42 @@
 				<CheckBox android:id="@+id/check1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="I have read and understood the terms and conditions" android:textColor="@color/black"/>
+      			
+      			<RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="120px"
+			android:background="#ffffff">
+      			<Button android:onClick="selfDestruct" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Pay with Paypal" android:layout_gravity="center" android:id="@+id/button1"></Button>
+      			<TextView android:id="@+id/textView1" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:text="OR" android:layout_height="wrap_content" android:textColor="@color/black" android:layout_below="@+id/button1" android:layout_centerHorizontal="true"></TextView>
+      			<TextView android:id="@+id/lblCard" android:layout_height="wrap_content" android:textSize="14px" android:layout_width="wrap_content" android:text="Select a Payment Method" android:textColor="#000000" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"></TextView>
+			</RelativeLayout>
+      			
+    			
+    			<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="60px"
+			android:background="#ffffff">
+			
+				<Spinner android:text="No details"
+            	android:id="@+id/spinner_card"
+            	android:layout_width="fill_parent"
+            	android:layout_height="fill_parent"
+            	android:background="@android:drawable/btn_default"
+            	android:layout_weight="1"
+            	android:layout_toLeftOf="@+id/btn_addCard">
+            	</Spinner>
+            	<Button 
+            	android:id="@+id/btn_addCard"
+            	android:text="+"
+            	android:layout_height="fill_parent"
+            	android:layout_width="wrap_content"
+            	android:layout_alignParentTop="true"
+            	android:layout_alignParentRight="true">
+            	</Button>
+            	
+     		</RelativeLayout>
 				<Button
     			 android:layout_height="wrap_content"
      			 android:layout_width="fill_parent"

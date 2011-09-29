@@ -6,6 +6,7 @@ import java.util.List;
 import com.benjgorman.pharostest.stores.AddressStore;
 import com.benjgorman.pharostest.stores.DetailsStore;
 import com.benjgorman.pharostest.stores.OrderStore;
+import com.benjgorman.pharostest.stores.PaymentStore;
 import com.benjgorman.pharostest.stores.RAddressStore;
 import com.benjgorman.pharostest.stores.RDetailsStore;
 
@@ -49,9 +50,9 @@ public class DatabaseAdapter {
 		String detailsID = null;
 
 		Cursor cursor = this.database.query(RDetailsStore.TABLE_NAME, 
-				new String[] {DetailsStore.ID}, 
-				DetailsStore.SURNAME + " = '" + details.getSurname() + "' AND " + 
-				DetailsStore.PHONE + " = '" + details.getPhone() + "'",
+				new String[] {RDetailsStore.ID}, 
+				RDetailsStore.SURNAME + " = '" + details.getSurname() + "' AND " + 
+				RDetailsStore.PHONE + " = '" + details.getPhone() + "'",
 				null, null, null, null);
 
 		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
@@ -78,6 +79,44 @@ public class DatabaseAdapter {
 		}
 
 		return detailsID;
+	}
+	
+	/**
+	 * Adds an address to the database. If it already exists it returns the ID of the one found.
+	 * @param address
+	 * @return addressID
+	 */
+	public String insertPayment(PaymentStore payment) {
+		String paymentID = null;
+
+		Cursor cursor = this.database.query(PaymentStore.TABLE_NAME, 
+				new String[] {PaymentStore.ID}, 
+				PaymentStore.NUMBER + " = '" + payment.getNumber() + "' AND " + 
+				PaymentStore.NAME + " = '" + payment.getName() + "'",
+				null, null, null, null);
+
+		if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+			// Address found
+			paymentID = cursor.getString(0);
+		} else {
+			// Address not found, add the address
+			String insert = "INSERT INTO " +
+					PaymentStore.TABLE_NAME + " (" + 
+					PaymentStore.TYPE + ", " +
+					PaymentStore.NAME + ", " +
+					PaymentStore.NUMBER +
+				") values (?, ?, ?)";
+
+			SQLiteStatement insertStatement = this.database.compileStatement(insert);
+			insertStatement.bindString(1, payment.getType());
+			insertStatement.bindString(2, payment.getName());
+			insertStatement.bindString(3, payment.getNumber());
+
+			Long result = insertStatement.executeInsert();
+			paymentID = result.toString();
+		}
+
+		return paymentID;
 	}
 	
 	/**
@@ -318,6 +357,16 @@ public class DatabaseAdapter {
 	public Cursor getRDetailsCursor() {
 		return this.database.query(RDetailsStore.TABLE_NAME, new String[] { RDetailsStore.ID, RDetailsStore.TITLE, RDetailsStore.FORENAME, RDetailsStore.SURNAME, RDetailsStore.PHONE }, null, null, null,
 				null, RDetailsStore.ROW_CREATED_AT + " DESC");
+	}
+	
+	/**
+	 * returns a cursor to navigate around the parcels data
+	 * 
+	 * @return
+	 */
+	public Cursor getPaymentCursor() {
+		return this.database.query(PaymentStore.TABLE_NAME, new String[] { PaymentStore.ID, PaymentStore.NUMBER, PaymentStore.TYPE, PaymentStore.NAME}, null, null, null,
+				null, PaymentStore.ROW_CREATED_AT + " DESC");
 	}
 	
 	/**
