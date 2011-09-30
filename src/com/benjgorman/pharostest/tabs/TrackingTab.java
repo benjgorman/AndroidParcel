@@ -84,19 +84,6 @@ public class TrackingTab extends Activity
         
         });
         
-     
-        
-        
-//        final Button button2 = (Button) findViewById(R.id.btn_speak);
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) 
-//            {
-//                	Intent intent = new Intent(v.getContext(), VoiceRecognitionDemo.class);
-//                	startActivityForResult(intent, 0);
-//            }
-//        
-//        });
-        
     }
     
     @Override

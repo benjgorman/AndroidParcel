@@ -11,21 +11,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-
-/*
- * This activity demonstrates the use of ScrollableTabActivity by extending the class
- * 
- * Required files:
- * ScrollableTabActivity.java
- * RadioStateDrawable.java
- * TabBarButton.java
- * res/drawable/bottom_bar_highlight.9.png
- * res/drawable/bottom_bar.9.png
- * res/drawable/scrollbar_horizontal_thumb.xml
- * res/drawable/scrollbar_horizontal_track.xml
- * res/layout/customslidingtabhost.xml
- * res/layout/scrollgroupradiobuttonview.xml
- */
 public class TabBar  extends ScrollableTabActivity{
 
 	@Override
@@ -43,11 +28,6 @@ public class TabBar  extends ScrollableTabActivity{
         {
         	Intent intent;
         	
-        	/*
-        	 * This adds a title and an image to the tab bar button
-        	 * Image should be a PNG file with transparent background.
-        	 * Shades are opaque areas in on and off state are specific as parameters
-        	 */
         	 switch (i) {
 
              case 1: 
@@ -76,19 +56,12 @@ public class TabBar  extends ScrollableTabActivity{
         	
         }
         
-        /*
-         * commit is required to redraw the bar after add tabs are added
-         * if you know of a better way, drop me your suggestion please.
-         */
-        commit();
+       
+        commit(); //redraws bar
     }
  
     private class SliderBarActivityDelegateImpl extends SliderBarActivityDelegate
     {
-    	/*
-    	 * Optional callback method
-    	 * called when users tap on the tab bar button
-    	 */
     	@Override
 		protected void onTabChanged(int tabIndex) 
     	{

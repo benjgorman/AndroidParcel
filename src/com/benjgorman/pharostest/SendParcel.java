@@ -43,12 +43,10 @@ public class SendParcel extends Activity implements OnTouchListener{
         
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);  
 
-        // Set main.XML as the layout for this Activity
         setContentView(R.layout.sendparcel);
         
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
 
-        // Add these two lines
         LinearLayout layMain = (LinearLayout) findViewById(R.id.layout_main);
         layMain.setOnTouchListener(this); 
 

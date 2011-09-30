@@ -76,6 +76,7 @@ public class GetQuoteActivity extends ListActivity{
 
       });
       
+      //hardcoded prices
       ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
       HashMap<String, String> map = new HashMap<String, String>();
       map.put("service", "UPS Standard");

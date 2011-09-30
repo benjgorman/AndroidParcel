@@ -42,9 +42,9 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * Adds an address to the database. If it already exists it returns the ID of the one found.
-	 * @param address
-	 * @return addressID
+	 * Adds an details to the database. If it already exists it returns the ID of the one found.
+	 * @param rdetails
+	 * @return rdetailsID
 	 */
 	public String insertRDetails(RDetailsStore details) {
 		String detailsID = null;
@@ -82,9 +82,9 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * Adds an address to the database. If it already exists it returns the ID of the one found.
-	 * @param address
-	 * @return addressID
+	 * Adds an payment to the database. If it already exists it returns the ID of the one found.
+	 * @param payment
+	 * @return paymentID
 	 */
 	public String insertPayment(PaymentStore payment) {
 		String paymentID = null;
@@ -120,9 +120,9 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * Adds an address to the database. If it already exists it returns the ID of the one found.
-	 * @param address
-	 * @return addressID
+	 * Adds details to the database. If it already exists it returns the ID of the one found.
+	 * @param details
+	 * @return detailsID
 	 */
 	public String insertDetails(DetailsStore details) {
 		String detailsID = null;
@@ -162,9 +162,9 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * Adds an address to the database. If it already exists it returns the ID of the one found.
-	 * @param address
-	 * @return addressID
+	 * Adds an raddress to the database. If it already exists it returns the ID of the one found.
+	 * @param raddress
+	 * @return raddressID
 	 */
 	public String insertRAddress(RAddressStore address) {
 		String addressID = null;
@@ -316,7 +316,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the order data
 	 * 
 	 * @return
 	 */
@@ -326,7 +326,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the address data
 	 * 
 	 * @return
 	 */
@@ -336,7 +336,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the raddress data
 	 * 
 	 * @return
 	 */
@@ -346,7 +346,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the details data
 	 * 
 	 * @return
 	 */
@@ -356,7 +356,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the details data
 	 * 
 	 * @return
 	 */
@@ -366,7 +366,7 @@ public class DatabaseAdapter {
 	}
 	
 	/**
-	 * returns a cursor to navigate around the parcels data
+	 * returns a cursor to navigate around the details data
 	 * 
 	 * @return
 	 */
