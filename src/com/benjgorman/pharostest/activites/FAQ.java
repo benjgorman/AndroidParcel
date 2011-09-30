@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.animation.ScaleAnimation;
@@ -26,9 +27,14 @@ public class FAQ extends ListActivity implements OnClickListener
  public void onCreate(Bundle savedInstanceState)
  {
   super.onCreate(savedInstanceState);
+  
+  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+  
   setContentView(R.layout.faq);
   
   this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+  
+  getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
   
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);

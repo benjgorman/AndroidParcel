@@ -11,7 +11,7 @@
     android:layout_height="fill_parent"
     android:background="#ffffff"
  	>
-    <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
+    <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content" android:layout_gravity="center"></ImageView>
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
@@ -19,15 +19,17 @@
 		xmlns:android="http://schemas.android.com/apk/res/android" android:layout_margin="24dip" android:layout_marginTop="24dip">
 		<LinearLayout
 		android:orientation="horizontal"
-		android:layout_width="wrap_content"
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 <EditText
         android:id="@+id/editBarcode"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:hint="Enter tracking number">
+        android:hint="Enter number"
+        android:layout_weight="1"
+        android:singleLine="true">
 </EditText>
-<Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="100px" android:layout_height="wrap_content" android:layout_weight="1">
+<Button android:text="Enter" android:id="@+id/btn_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1">
 </Button>
 </LinearLayout>
 			<Button 

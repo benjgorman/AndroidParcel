@@ -8,56 +8,95 @@ public class OrderStore {
 	public static final String TRACKING_NO = "trackingNo";
 	public static final String PICKUP_ID = "pickupID";
 	public static final String DELIVER_ID = "deliverID";
+	public static final String RDETAIL_ID = "rdetailID";
+	public static final String DETAIL_ID = "detailID";
 	public static final String PARCEL_ID = "parcelID";
 	public static final String TABLE_CREATE = "CREATE TABLE " + 
 			TABLE_NAME + " (" + 
 			ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-			TRACKING_NO + " TEXT, " + 
+			TRACKING_NO + " TEXT, " +
+			RDETAIL_ID + " INT, " +
+			DETAIL_ID + " INT, " +
 			PICKUP_ID + " INT, " + 
 			DELIVER_ID + " INT, " + 
 			PARCEL_ID + " INT, " + 
 			ROW_CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " + 
 			"UNIQUE (" + TRACKING_NO + "))";
-
+	
 	private String trackingNo;
-	private AddressStore pickup;
-	private AddressStore deliver;
-	private ParcelStore parcel;
+	private String pickupID;
+	private String deliverID;
+	private String rdetailID;
+	private String detailID;
+	private String parcelID;	
 	
-	
-	public OrderStore(String trackingNo, AddressStore pickup,
-			AddressStore deliver, ParcelStore parcel) {
+	public OrderStore(String trackingNo, String pickupID, String deliverID, String rdetailID, String detailID, String parcelID) {
 		this.trackingNo = trackingNo;
-		this.pickup = pickup;
-		this.deliver = deliver;
-		this.parcel = parcel;
+		this.pickupID = pickupID;
+		this.deliverID = deliverID;
+		this.rdetailID = rdetailID;
+		this.parcelID = parcelID;
+		
 	}
 	
-	
-	public ParcelStore getParcel() {
-		return parcel;
-	}
-	public void setParcel(ParcelStore parcel) {
-		this.parcel = parcel;
-	}
 	public String getTrackingNo() {
 		return trackingNo;
 	}
+
+
 	public void setTrackingNo(String trackingNo) {
 		this.trackingNo = trackingNo;
 	}
 
-	public AddressStore getPickup() {
-		return pickup;
+
+	public String getPickupID() {
+		return pickupID;
 	}
-	public void setPickup(AddressStore pickup) {
-		this.pickup = pickup;
+
+
+	public void setPickupID(String pickupID) {
+		this.pickupID = pickupID;
 	}
-	public AddressStore getDeliver() {
-		return deliver;
+
+
+	public String getDeliverID() {
+		return deliverID;
 	}
-	public void setDeliver(AddressStore deliver) {
-		this.deliver = deliver;
+
+
+	public void setDeliverID(String deliverID) {
+		this.deliverID = deliverID;
 	}
+
+
+	public String getRdetailID() {
+		return rdetailID;
+	}
+
+
+	public void setRdetailID(String rdetailID) {
+		this.rdetailID = rdetailID;
+	}
+
+
+	public String getDetailID() {
+		return detailID;
+	}
+
+
+	public void setDetailID(String detailID) {
+		this.detailID = detailID;
+	}
+
+
+	public String getParcelID() {
+		return parcelID;
+	}
+
+
+	public void setParcelID(String parcelID) {
+		this.parcelID = parcelID;
+	}
+
 	
 }

@@ -24,8 +24,6 @@ public class HistoryTab extends ListActivity{
 		super.onCreate(savedInstanceState);
 		ListAdapter adapter;
 		
-		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		
 		setContentView(R.layout.history);
         
         
@@ -33,9 +31,9 @@ public class HistoryTab extends ListActivity{
         Cursor orderCursor = db.getOrderCursor();
 
         adapter = new SimpleCursorAdapter(
-                this, R.layout.rowlayout,   orderCursor,               
-                new String[] { OrderStore.TRACKING_NO },         
-                new int[] {R.id.trackingNo}); 
+                this, R.layout.history_row,   orderCursor,               
+                new String[] { OrderStore.TRACKING_NO, OrderStore.ID },         
+                new int[] {R.id.trackingNo, R.id.orderNo}); 
        
         setListAdapter(adapter);
     }

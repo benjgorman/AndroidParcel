@@ -6,6 +6,7 @@
               android:layout_height="fill_parent"
               android:layout_width="fill_parent"
               android:padding="10dp"
+              android:background="#ffffff"
               >
               <ScrollView
               android:layout_width="fill_parent"
@@ -34,7 +35,9 @@
     			android:id="@+id/txtline1" 
    				android:layout_alignParentTop="true" 
     			android:layout_toRightOf="@+id/lblline1"
-    			android:layout_centerHorizontal="true">
+    			android:layout_centerHorizontal="true"
+    			android:singleLine="true"
+    			android:inputType="textCapWords">
     			</EditText>
              
               <TextView
@@ -50,6 +53,8 @@
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
     			android:id="@+id/txtline2" 
+    			android:singleLine="true"
+    			android:inputType="textCapWords"
    				>
     			</EditText>
              
@@ -65,7 +70,9 @@
 				android:layout_height="wrap_content" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtline3" 
+    			android:id="@+id/txtline3"
+    			android:singleLine="true"
+    			android:inputType="textCapWords"
    				>
     			</EditText>
     			
@@ -81,7 +88,9 @@
 				android:layout_height="wrap_content" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtCity" >
+    			android:id="@+id/txtCity"
+    			android:singleLine="true"
+    			android:inputType="textCapWords">
     			</EditText>
     			
     			<TextView
@@ -96,7 +105,9 @@
 				android:layout_height="wrap_content" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp"
-    			android:id="@+id/txtCounty" > >
+    			android:id="@+id/txtCounty"
+    			android:singleLine="true"
+    			android:inputType="textCapWords">
     			</EditText>
     			
     			<TextView
@@ -113,7 +124,8 @@
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
     			android:id="@+id/txtPostcode" 
->
+				android:singleLine="true"
+				android:inputType="textCapCharacters">
     			</EditText>
     			
     			 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

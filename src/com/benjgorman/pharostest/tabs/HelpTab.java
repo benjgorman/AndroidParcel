@@ -19,8 +19,6 @@ public class HelpTab extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
         setContentView(R.layout.help);
      
         context = this;

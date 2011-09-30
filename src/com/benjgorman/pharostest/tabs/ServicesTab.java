@@ -28,8 +28,6 @@ public class ServicesTab extends ListActivity implements OnClickListener
   super.onCreate(savedInstanceState);
   setContentView(R.layout.services);
   
-  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-  
   panel1 = (LinearLayout) findViewById(R.id.panel1);
   panel2 = (LinearLayout) findViewById(R.id.panel2);
   panel3 = (LinearLayout) findViewById(R.id.panel3);

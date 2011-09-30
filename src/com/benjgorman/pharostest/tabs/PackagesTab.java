@@ -22,8 +22,6 @@ public class PackagesTab extends Activity{
 	{
         super.onCreate(savedInstanceState);
         
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
         setContentView(R.layout.sendpackage);
      
         context = this;

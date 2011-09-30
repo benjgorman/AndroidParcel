@@ -388,9 +388,9 @@ public class SendParcel extends Activity implements OnTouchListener{
                                                   // that displays a
                                                   // text view
             cur, // Give the cursor to the list adapter
-            new String[] {AddressStore.LINE1, AddressStore.POSTCODE, AddressStore.CITY}, // Map the NAME column in the
+            new String[] {AddressStore.LINE1, AddressStore.LINE2, AddressStore.CITY, AddressStore.POSTCODE}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
         boolean isEmpty = adapter2.isEmpty();
         if (isEmpty == false)
@@ -421,9 +421,9 @@ public class SendParcel extends Activity implements OnTouchListener{
                                                   // that displays a
                                                   // text view
             cur, // Give the cursor to the list adapter
-            new String[] {RAddressStore.LINE1, RAddressStore.POSTCODE, RAddressStore.CITY}, // Map the NAME column in the
+            new String[] {RAddressStore.LINE1, RAddressStore.LINE2, RAddressStore.CITY, RAddressStore.POSTCODE}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow3}); // The "text1" view defined in
+            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3}); // The "text1" view defined in
                                              // the XML template
         boolean isEmpty = adapter2.isEmpty();                                    
         if (isEmpty == false)
@@ -435,7 +435,8 @@ public class SendParcel extends Activity implements OnTouchListener{
         {
         	ArrayAdapter servicesArrayAdapter = new ArrayAdapter<Object>(this,
                     R.layout.spinner_dropdown,
-                    new String[] {"Tap the button on the right to add your Collection Address"});
+                    new String[] {"Tap the button on the right to add your Recepient Address"});
+        	s2.setAdapter(servicesArrayAdapter);
         }
     }
     
@@ -455,7 +456,7 @@ public class SendParcel extends Activity implements OnTouchListener{
             cur, // Give the cursor to the list adapter
             new String[] {DetailsStore.TITLE,DetailsStore.FORENAME, DetailsStore.SURNAME, DetailsStore.PHONE, DetailsStore.EMAIL}, // Map the NAME column in the
                                                  // people database to...
-            new int[] {R.id.tvDBViewRow, R.id.tvDBViewRow1, R.id.tvDBViewRow2, R.id.tvDBViewRow3, R.id.tvDBViewRow4}); // The "text1" view defined in
+            new int[] {R.id.tvTitle, R.id.tvForename, R.id.tvSurname, R.id.tvPhone, R.id.tvEmail}); // The "text1" view defined in
                                              // the XML template
         boolean isEmpty = adapter2.isEmpty();                                 
         if (isEmpty == false)

@@ -6,63 +6,151 @@
     android:background="#ffffff"
     android:id="@+id/layout_main"
     >
-<ViewFlipper android:id="@+id/quote"
+<com.benjgorman.pharostest.MyViewFlipper
+ android:id="@+id/quote"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"> 
+        android:layout_height="fill_parent">
 <LinearLayout
   android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="#ffffff" android:layout_gravity="center">
-  <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="#ffffff">
+<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+<LinearLayout
   android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:background="#ffffff" android:layout_gravity="center">
-  <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
+  android:layout_width="fill_parent"
+  android:background="#ffffff" 
+  android:layout_height="fill_parent">
+  	<LinearLayout
+  	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+  	android:background="#ffffff">
+  		<ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
   
   
-	    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+	    		<TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
 	    			android:layout_width="wrap_content" 
 	    			android:text="Where are you sending to?" 
 	    			android:id="@+id/txt_country"
 	    			android:textColor="#000000"
 	    			android:layout_height="wrap_content">
-	    </TextView>
-	
-	    <Spinner 
+	    		</TextView>
+
+	    		<Spinner 
 	    			android:text=""
 			       	android:id="@+id/spinner_collection_address"
 			       	android:layout_width="fill_parent"
 			       	android:layout_height="wrap_content">
-	    </Spinner>
-	            	
-	    <TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
+	    		</Spinner>
+
+	    		<TextView 	android:textAppearance="?android:attr/textAppearanceMedium" 
 	    			android:layout_width="wrap_content" 
 	    			android:text="How much does it weigh?" 
 	    			android:id="@+id/txt_weight" 
 	    			android:textColor="#000000"
 	    			android:layout_height="wrap_content"> 
-	    </TextView> 
-	    
-	    <Spinner 	android:text="" 
+	    		</TextView> 
+
+	    		<Spinner 	android:text="" 
 	            	android:id="@+id/spinner_weight"
 	            	android:layout_width="fill_parent"
 	            	android:layout_height="wrap_content"
 	            	android:layout_below="@+id/spinner_collection_address">
-	    </Spinner>
-	    
-	    </LinearLayout>
-  
-  
-	    <RelativeLayout
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:background="#ffffff">
-  <Button android:id="@+id/btn_quoteme" android:layout_height="wrap_content" android:text="Get Quote!" android:layout_width="fill_parent"></Button>
- </RelativeLayout>
+	    		</Spinner>
+
+			<LinearLayout
+    			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
+      			<TextView
+					android:id="@+id/lblLength"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Length"
+					android:layout_weight="1"
+      			/>
+      			<TextView
+					android:id="@+id/lblWidth"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Width"
+					android:layout_weight="1"
+					
+      			/>
+      			<TextView
+					android:id="@+id/lblHeight"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:textSize="14px"
+					android:text="Height"
+					android:layout_weight="1"
+					
+      			/>
+    			</LinearLayout>
+			<LinearLayout
+    			android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
+    				<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
+					android:text="30"
+					android:inputType="phone"
+	    			android:id="@+id/txtLength"
+	    			android:layout_weight="1"
+	   				>
+    				</EditText>
+    				<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
+					android:text="23"
+					android:inputType="phone"
+	    			android:id="@+id/txtWidth"
+	    			android:layout_weight="1"
+	   				>
+    				</EditText>
+    				<EditText 
+					android:layout_height="wrap_content" 
+	    			android:layout_width="fill_parent" 
+	    			android:textSize="14sp" 
+	    			android:numeric="integer"
+					android:hint="cm"
+					android:text="22"
+					android:inputType="phone"
+	    			android:id="@+id/txtHeight"
+	    			android:layout_weight="1"
+	   				>
+    				</EditText>
+    				
+				</LinearLayout>
+
+	   </LinearLayout>
+  <RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="#ffffff">
+			<Button android:id="@+id/btn_quoteme" android:layout_alignParentBottom="true" android:layout_height="wrap_content" android:text="Get Quote!" android:layout_width="fill_parent"></Button>
+			</RelativeLayout>
  	
+</LinearLayout>
+</ScrollView>
 </LinearLayout>
 <LinearLayout
   android:orientation="vertical"
@@ -70,8 +158,8 @@
   android:layout_height="match_parent"
   android:background="#ffffff">
   
-  <ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
- <ListView android:id="@android:id/list"
+  	<ImageView android:layout_width="wrap_content" android:id="@+id/imageView1" android:src="@drawable/pharos_logo" android:layout_height="wrap_content"></ImageView>
+ 	<ListView android:id="@android:id/list"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_weight="1"
@@ -84,5 +172,5 @@
 					android:layout_centerHorizontal="true" 
 					android:layout_gravity="center"/>		
   </LinearLayout>
-</ViewFlipper>
+</com.benjgorman.pharostest.MyViewFlipper>
 </LinearLayout>

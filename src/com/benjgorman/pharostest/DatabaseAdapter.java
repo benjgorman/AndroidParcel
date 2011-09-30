@@ -293,11 +293,7 @@ public class DatabaseAdapter {
 	}
 	
 	
-	/**
-	 * returns the parcel history as a list of parcel objects
-	 * 
-	 * @return
-	 */
+	
 	public List<OrderStore> listOrderHistory() {
 		
 		Cursor cursor = this.getOrderCursor();
@@ -306,7 +302,7 @@ public class DatabaseAdapter {
 		// If a record exists
 		if (cursor.moveToFirst()) {
 			do {
-				OrderStore order = new OrderStore(cursor.getColumnName(1), null, null, null);
+				OrderStore order = new OrderStore(cursor.getColumnName(1), null, null, null, null, null);
 				list.add(order);
 			} while (cursor.moveToNext());
 		}
@@ -335,7 +331,7 @@ public class DatabaseAdapter {
 	 * @return
 	 */
 	public Cursor getAddressCursor() {
-		return this.database.query(AddressStore.TABLE_NAME, new String[] { AddressStore.ID, AddressStore.LINE1, AddressStore.CITY, AddressStore.POSTCODE }, null, null, null,
+		return this.database.query(AddressStore.TABLE_NAME, new String[] { AddressStore.ID, AddressStore.LINE1, AddressStore.LINE2, AddressStore.CITY, AddressStore.POSTCODE }, null, null, null,
 				null, AddressStore.ROW_CREATED_AT + " DESC");
 	}
 	
@@ -345,7 +341,7 @@ public class DatabaseAdapter {
 	 * @return
 	 */
 	public Cursor getRAddressCursor() {
-		return this.database.query(RAddressStore.TABLE_NAME, new String[] { RAddressStore.ID, RAddressStore.LINE1, RAddressStore.CITY, RAddressStore.POSTCODE }, null, null, null,
+		return this.database.query(RAddressStore.TABLE_NAME, new String[] { RAddressStore.ID, RAddressStore.LINE1, AddressStore.LINE2, RAddressStore.CITY, RAddressStore.POSTCODE }, null, null, null,
 				null, RAddressStore.ROW_CREATED_AT + " DESC");
 	}
 	

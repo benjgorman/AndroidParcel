@@ -38,8 +38,6 @@ public class TrackingTab extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracking);
         
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
         Button speakButton = (Button) findViewById(R.id.btn_speak);
         
         wordsList = (ListView) findViewById(R.id.list);

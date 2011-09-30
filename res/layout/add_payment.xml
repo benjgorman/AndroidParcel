@@ -1,11 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/layout_root"
               android:orientation="vertical"
-              android:minWidth="300dp" 
-			  android:minHeight="400dp"
+              android:minWidth="280dp" 
+			  android:minHeight="300dp"
               android:layout_height="fill_parent"
               android:layout_width="fill_parent"
               android:padding="10dp"
+              android:background="#ffffff"
               >
               <ScrollView
               android:layout_width="fill_parent"
@@ -22,13 +23,14 @@
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Card Type"
+					android:text="Card Type (Visa, Mastercard etc)"
       			/>
     			<EditText 
 				android:layout_height="fill_parent" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtPayType" >
+    			android:id="@+id/txtPayType" 
+    			android:inputType="textCapCharacters">
     			</EditText>
               <TextView
 					android:id="@+id/lblCardName"
@@ -36,13 +38,15 @@
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Name on card"
+					android:text="Cardholder Full Name"
+					
       			/>
       			<EditText 
 				android:layout_height="fill_parent" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtCardName" >
+    			android:id="@+id/txtCardName" 
+    			android:inputType="textCapCharacters">
     			</EditText>
     			<TextView
 					android:id="@+id/lblCardNo"
@@ -50,13 +54,14 @@
 					android:layout_height="wrap_content"
 					android:textColor="#000000"
 					android:textSize="14px"
-					android:text="Number on card"
+					android:text="Card Number"
       			/>
       			<EditText 
 				android:layout_height="fill_parent" 
     			android:layout_width="fill_parent" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtCardNo" >
+    			android:id="@+id/txtCardNo" 
+    			android:inputType="phone">
     			</EditText>
     			
     			
@@ -79,7 +84,8 @@
 					android:layout_height="fill_parent" 
 	    			android:layout_width="100px" 
 	    			android:textSize="14sp" 
-	    			android:id="@+id/txtCardStartMonth" >
+	    			android:id="@+id/txtCardStartMonth" 
+	    			android:inputType="phone">
 	    			</EditText>
 	    			<TextView
 						android:layout_width="wrap_content"
@@ -92,7 +98,8 @@
 					android:layout_height="fill_parent" 
 	    			android:layout_width="100px" 
 	    			android:textSize="14sp" 
-	    			android:id="@+id/txtCardStartYear" >
+	    			android:id="@+id/txtCardStartYear" 
+	    			android:inputType="phone">
 	    			</EditText>
     			</LinearLayout>
     			<TextView
@@ -112,7 +119,8 @@
 					android:layout_height="fill_parent" 
 	    			android:layout_width="100px" 
 	    			android:textSize="14sp" 
-	    			android:id="@+id/txtCardEndMonth" >
+	    			android:id="@+id/txtCardEndMonth"
+	    			android:inputType="phone">
 	    			</EditText>
 	    			<TextView
 						android:layout_width="wrap_content"
@@ -125,7 +133,8 @@
 					android:layout_height="fill_parent" 
 	    			android:layout_width="100px" 
 	    			android:textSize="14sp" 
-	    			android:id="@+id/txtCardEndYear" >
+	    			android:id="@+id/txtCardEndYear"
+	    			android:inputType="phone">
 	    			</EditText>
     			</LinearLayout>
 
@@ -142,7 +151,8 @@
 				android:layout_height="fill_parent" 
     			android:layout_width="100px" 
     			android:textSize="14sp" 
-    			android:id="@+id/txtCardIssueNo" >
+    			android:id="@+id/txtCardIssueNo"
+    			android:inputType="phone">
     			</EditText>
     			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               		android:orientation="horizontal"
