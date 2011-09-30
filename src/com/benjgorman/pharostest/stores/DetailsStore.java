@@ -85,11 +85,12 @@ public class DetailsStore {
 	}
 
 
-	public DetailsStore(String title, String forename, String surname, String phone) {
+	public DetailsStore(String title, String forename, String surname, String phone, String email) {
 		this.title = title;
 		this.forename = forename;
 		this.surname = surname;
 		this.phone = phone;
+		this.email = email;
 		
 	}
 

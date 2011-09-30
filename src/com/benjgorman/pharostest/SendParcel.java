@@ -235,9 +235,12 @@ public class SendParcel extends Activity implements OnTouchListener{
                     	simpleEditText = (EditText) dialog.findViewById(R.id.txtPhone);
                     	String phone = simpleEditText.getText().toString();
                     	
+                    	simpleEditText = (EditText) dialog.findViewById(R.id.txtEmail);
+                    	String email = simpleEditText.getText().toString();
+                    	
 
                 		DatabaseAdapter db = new DatabaseAdapter(getApplicationContext());
-                		DetailsStore details = new DetailsStore(title, forename, surname, phone);
+                		DetailsStore details = new DetailsStore(title, forename, surname, phone, email);
             		  	db.insertDetails(details);
             		  	
             		  	setDetailsSpinner();

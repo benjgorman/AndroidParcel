@@ -1,5 +1,8 @@
 package com.benjgorman.pharostest.activites;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.benjgorman.pharostest.DatabaseAdapter;
 import com.benjgorman.pharostest.R;
 import com.benjgorman.pharostest.stores.PaymentStore;
@@ -9,6 +12,7 @@ import com.benjgorman.pharostest.tablayout.TabBar;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -16,13 +20,16 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.ViewFlipper;
 
-public class Checkout extends Activity{
+public class Checkout extends ListActivity{
 	Context context;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -107,7 +114,40 @@ public class Checkout extends Activity{
 				
             }
         
-        });  
+        });
+        
+        Button buttonNext = (Button) findViewById(R.id.btn_next);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+//            @Override
+  		public void onClick(View view) {
+                // Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.quote);
+
+                // Set an animation from res/anim: I pick push left in
+                vf.setAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_left));
+                vf.showNext();
+        }
+        });
+        
+        ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("service", "Total: \t");
+        map.put("price", "£8.33");
+        mylist.add(map);
+        map = new HashMap<String, String>();
+        map.put("service", "VAT: \t");
+        map.put("price", "£2.59");
+        mylist.add(map);
+        map = new HashMap<String, String>();
+        map.put("service", "Subtotal: \t");
+        map.put("price", "£10.92");
+        mylist.add(map);
+      
+        
+        SimpleAdapter mSchedule = new SimpleAdapter(this, mylist, R.layout.quote_row,
+                    new String[] {"service", "price"}, new int[] {R.id.SERVICE_CELL, R.id.PRICE_CELL});
+        setListAdapter(mSchedule);
+        
                
 	}
 	

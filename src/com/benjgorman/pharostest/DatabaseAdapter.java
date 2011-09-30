@@ -152,7 +152,7 @@ public class DatabaseAdapter {
 			insertStatement.bindString(2, details.getForename());
 			insertStatement.bindString(3, details.getSurname());
 			insertStatement.bindString(4, details.getPhone());
-			insertStatement.bindString(5, "Blank");
+			insertStatement.bindString(5, details.getEmail());
 
 			Long result = insertStatement.executeInsert();
 			detailsID = result.toString();
